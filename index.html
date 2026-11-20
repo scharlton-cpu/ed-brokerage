@@ -838,8 +838,8 @@ function photo(name, o = {}) { return { src: `img/${name}-1672.webp`, srcset: `i
 const SITE = {
   mode: 'draft',              // 'draft' | 'prod'
   formEndpoint: null,         // e.g. 'https://formspree.io/f/xxxx' — the quote form will not send until this is set
-  phone: null, email: null, address: null, parish: null, hours: null,
-  owner: null, license: null, years: null,
+  phone: '+1 (473) 422-6198', whatsapp: '14734226198', email: null, address: null, parish: null, hours: null,
+  owner: 'Tiffany Miller', license: null, years: null,
   social: { instagram: null, facebook: null, tiktok: null },
   rental: {
     minAge: null, deposit: null,
@@ -1061,7 +1061,13 @@ function renderFields() {
   document.body.classList.toggle('prod', prod);
   document.querySelectorAll('[data-f]').forEach(el => {
     const v = get(el.dataset.f);
-    if (v != null && v !== '') { el.textContent = v; el.className = el.className.replace(/\bph\b/g, '').trim(); }
+    if (v != null && v !== '') {
+      el.className = el.className.replace(/\bph\b/g, '').trim();
+      if (el.dataset.f === 'phone') {
+        const tel = '+' + String(v).replace(/\D/g, '');
+        el.innerHTML = `<a href="tel:${tel}">${escapeHTML(v)}</a>` + (SITE.whatsapp ? ` · <a href="https://wa.me/${SITE.whatsapp}" target="_blank" rel="noopener">Message on WhatsApp</a>` : '');
+      } else el.textContent = v;
+    }
     else { el.textContent = '[' + (el.dataset.ph || 'To confirm') + ']'; el.classList.add('ph'); }
   });
   document.querySelectorAll('[data-needs]').forEach(el => {
