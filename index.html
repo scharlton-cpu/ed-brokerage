@@ -657,6 +657,60 @@ footer { background: var(--navy); color: var(--on-navy-2); }
 .about-body .values li { padding: 1.1rem 0; grid-template-columns: 3rem 1fr; }
 .about-body .values h3 { font-size: 1.15rem; }
 .about-body .values p { font-size: .95rem; margin-top: .25rem; }
+
+/* ---- Phase 2b: real photography ---- */
+/* 01 intro: split composition with teal offset */
+.mtc-main { grid-column: 1 / span 8; }
+.mtc-main::before { content: ""; position: absolute; left: -24px; bottom: -24px; width: 45%; height: 70%; background: var(--teal); z-index: 0; }
+.mtc-main .media { position: relative; z-index: 1; aspect-ratio: 1672 / 941; }
+.mtc-copy { grid-column: 8 / span 5; margin-top: 0; align-self: center; }
+@media (max-width: 960px) { .mtc-main { grid-column: 1; } .mtc-main::before { left: -12px; top: 12px; } .mtc-copy { grid-column: 1; margin: -2.5rem 0 0 1.25rem; } .mtc-main .media { aspect-ratio: 1672 / 941; } }
+@media (max-width: 560px) { .mtc-main .media { aspect-ratio: 4 / 3; } }
+
+/* 02 / 03 at their native proportions, medium panels */
+.cat.a .cat-media .media { aspect-ratio: 822 / 312; max-width: 822px; }
+.cat-cap { display: block; margin-top: .9rem; font: 600 .74rem var(--f-body); letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+.cat.a h3, .cat-pair > article:last-child h3 { font-size: clamp(1.7rem, 2.8vw, 2.4rem); }
+.cat-pair > article:last-child .media { aspect-ratio: 824 / 299; max-width: 824px; }
+.cat-pair > article:last-child { padding-top: clamp(1rem, 3vw, 2.5rem); }
+@media (max-width: 560px) { .cat.a .cat-media .media, .cat-pair > article:last-child .media { aspect-ratio: 16 / 9; } }
+
+/* Journey: photographic path */
+.path { list-style: none; margin: 2.5rem 0 0; padding: 0 0 clamp(3rem, 6vw, 5rem); display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; position: relative; }
+.path::before { content: ""; position: absolute; left: 0; right: 0; top: 22px; height: 2px; background: linear-gradient(90deg, rgba(246,245,240,.25) 0 24%, var(--amber) 24% 100%); }
+.step { display: grid; gap: .9rem; align-content: start; position: relative; }
+.step:nth-child(even) { margin-top: 3.5rem; }
+.step-top { display: flex; align-items: center; gap: .75rem; }
+.step-n { width: 46px; height: 46px; display: grid; place-items: center; background: var(--amber); color: var(--navy); font: 800 1rem var(--f-head); position: relative; z-index: 1; }
+.step:first-child .step-n { background: var(--navy-3); color: var(--on-navy); }
+.step-tag { font: 600 .66rem var(--f-body); letter-spacing: .14em; text-transform: uppercase; color: var(--on-navy-2); }
+.step-tag.ed { color: var(--amber); }
+.step .media { aspect-ratio: 4 / 3.3; max-width: 100%; }
+.step .media > img { transition: transform 1.2s var(--ease); }
+.step:hover .media > img { transform: scale(1.05); }
+.step h3 { font-size: clamp(1.2rem, 1.7vw, 1.5rem); letter-spacing: -.02em; }
+.step:last-child h3 { color: var(--amber); }
+.step p { color: var(--on-navy-2); font-size: .95rem; }
+@media (max-width: 1000px) { .path { grid-template-columns: 1fr 1fr; row-gap: 3rem; } .path::before { display: none; } .step:nth-child(even) { margin-top: 2.5rem; } }
+@media (max-width: 600px) {
+  .path { grid-template-columns: 1fr; padding-left: 1.5rem; border-left: 2px solid var(--amber); row-gap: 2.5rem; }
+  .step:nth-child(even) { margin-top: 0; }
+  .step .media { aspect-ratio: 16 / 10; }
+}
+.journey .journey-foot { border-top: 1px solid var(--line-dark); }
+
+/* 04 about: native-ratio photo in a layered teal panel */
+.about { align-items: stretch; }
+.about-photo { aspect-ratio: auto !important; min-height: 0 !important; background: var(--teal); padding: clamp(2.5rem, 6vw, 5rem) clamp(1.25rem, 4vw, 3.5rem); display: grid; gap: 2.5rem; align-content: center; }
+.about-frame { position: relative; margin: 0 16px 0 0; }
+.about-frame::before { content: ""; position: absolute; inset: 16px -16px -16px 16px; border: 2px solid var(--amber); }
+.about-photo .media, .about-frame .media { position: relative !important; inset: auto !important; aspect-ratio: 822 / 321; max-width: 822px; }
+.about-frame .stamp { position: relative; right: auto; bottom: auto; margin: -1.75rem 0 0 auto; z-index: 5; width: fit-content; max-width: 19rem; }
+.about-help { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; border-top: 1px solid rgba(255,255,255,.22); }
+.about-help li { display: grid; gap: .15rem; padding: .9rem 0; border-bottom: 1px solid rgba(255,255,255,.22); color: #d9e7ea; font-size: .95rem; }
+.about-help b { color: #fff; font: 600 1rem var(--f-head); }
+@media (max-width: 560px) { .about-photo .media, .about-frame .media { aspect-ratio: 16 / 9; } }
+.feature .media > img { object-position: var(--pos, 70% 45%); }
 </style>
 
 </head>
@@ -743,8 +797,7 @@ footer { background: var(--navy); color: var(--on-navy-2); }
   <section class="mtc" id="home-customs" aria-labelledby="h-mtc">
     <div class="wrap mtc-grid">
       <div class="mtc-main rise">
-        <div class="media reveal" data-img="family" data-fallback="hero_family" data-need="Photo 01 · Family packing a barrel" data-alt="A Caribbean family packing a shipping barrel together"></div>
-        <div class="mtc-inset"><div class="media reveal" data-img="boxes" data-fallback="customs_inset" data-need="Photo 02 · Boxes being packed and sealed" data-alt="Shipping boxes being packed and sealed"></div></div>
+        <div class="media reveal" data-img="family" data-alt="A family packing groceries and clothes into a blue shipping barrel" data-sizes="(min-width: 960px) 66vw, 100vw"></div>
       </div>
       <div class="mtc-copy rise">
         <span class="eyebrow">Connecting families. Clearing cargo.</span>
@@ -765,11 +818,11 @@ footer { background: var(--navy); color: var(--on-navy-2); }
       </div>
 
       <article class="cat a rise">
-        <div class="cat-media"><div class="media reveal" data-img="boxes_wide" data-fallback="hero_containers2" data-need="Photo 02 · Boxes being packed and sealed" data-alt="Shipping boxes being packed and sealed"></div></div>
+        <div class="cat-media"><div class="media reveal" data-img="boxes" data-alt="A woman taping a shipping box shut beside blue barrels and groceries"></div><span class="cat-cap">Groceries · Gifts · Clothing · Household essentials</span></div>
         <div class="cat-body">
           <span class="cat-idx" aria-hidden="true">01</span>
-          <span class="cat-kicker">Personal shipments</span>
-          <h3>Barrels &amp; Boxes</h3>
+          <span class="cat-kicker">Barrels, boxes &amp; personal shipments</span>
+          <h3>Packed with care. Cleared with confidence.</h3>
           <p>From groceries and gifts to clothing and household essentials, we help clear personal shipments arriving in Grenada.</p>
           <a class="btn btn-navy" href="#contact" data-service="customs" data-ctype="Barrels or boxes">Clear my barrel <span class="ar" aria-hidden="true">→</span></a>
         </div>
@@ -777,7 +830,7 @@ footer { background: var(--navy); color: var(--on-navy-2); }
 
       <div class="cat-pair">
         <article class="rise">
-          <div class="media reveal" data-img="personal" data-fallback="customs" data-need="Photo · Personal imports / online orders" data-alt="An overseas order being prepared for clearance"></div>
+          <div class="media reveal" data-img="personal" data-fallback="customs" data-alt="An overseas order being prepared for clearance"></div>
           <span class="cat-idx" aria-hidden="true">02</span>
           <span class="cat-kicker">Online orders</span>
           <h3>Personal Imports</h3>
@@ -785,17 +838,17 @@ footer { background: var(--navy); color: var(--on-navy-2); }
           <a class="btn btn-line" href="#contact" data-service="customs" data-ctype="Personal import or online order">Ask about my order <span class="ar" aria-hidden="true">→</span></a>
         </article>
         <article class="rise">
-          <div class="media reveal" data-img="unloading" data-fallback="hero_containers" data-need="Photo 03 · Dockworkers unloading cargo" data-alt="Dockworkers unloading cargo at the port"></div>
+          <div class="media reveal" data-img="unloading" data-alt="Dockworkers unloading barrels and boxes from a container at the port"></div>
           <span class="cat-idx" aria-hidden="true">03</span>
-          <span class="cat-kicker">Business</span>
-          <h3>Commercial Cargo</h3>
-          <p>Customs clearance support for merchandise, business supplies, equipment and commercial shipments.</p>
+          <span class="cat-kicker">Cargo arrival &amp; commercial clearance</span>
+          <h3>When your shipment arrives, we get to work.</h3>
+          <p>Barrels, boxes and commercial cargo reach the port, and the clearance process begins. We provide customs clearance support for merchandise, business supplies, equipment and commercial shipments.</p>
           <a class="btn btn-line" href="#contact" data-service="customs" data-ctype="Commercial cargo">Quote my cargo <span class="ar" aria-hidden="true">→</span></a>
         </article>
       </div>
 
       <article class="cat wide rise" style="margin-top:clamp(3.5rem,7vw,6rem)">
-        <div class="media reveal" data-img="vehicle_import" data-fallback="sales" data-need="Photo · Vehicle import" data-alt="Vehicles ready for the road in Grenada"></div>
+        <div class="media reveal" data-img="vehicle_import" data-fallback="sales" data-alt="Vehicles ready for the road in Grenada"></div>
         <div class="cat-body">
           <span class="cat-idx" aria-hidden="true">04</span>
           <span class="cat-kicker">Cars, SUVs and trucks</span>
@@ -813,7 +866,7 @@ footer { background: var(--navy); color: var(--on-navy-2); }
           <p>Understand the anticipated duties, taxes and clearance requirements before moving forward. We'll give you an estimate based on your documents. Final charges are set by Grenada Customs.</p>
           <div style="display:flex;gap:1.25rem;flex-wrap:wrap;align-items:center"><a class="btn btn-navy" href="#contact" data-service="customs" data-ctype="Not sure yet, I need guidance">Get guidance <span class="ar" aria-hidden="true">→</span></a><a class="tlink" href="#guide">Read the Customs Guide</a></div>
         </div>
-        <div class="cat-media"><div class="media reveal" data-img="broker" data-fallback="customs" data-need="Photo 04 · Broker assisting a customer" data-alt="A customs broker going through documents with a customer"></div></div>
+        <div class="cat-media"><div class="media reveal" data-img="customs" data-alt="Customs paperwork and a calculator on a desk overlooking the harbour"></div></div>
       </article>
     </div>
   </section>
@@ -827,12 +880,14 @@ footer { background: var(--navy); color: var(--on-navy-2); }
       </div>
       <div class="roles" aria-hidden="true"><span>Overseas · your shipper</span><span>In Grenada · E&amp;D customs clearance</span></div>
     </div>
-    <ol class="stages">
-      <li class="stage"><div class="media reveal" data-img="boxes_tall" data-fallback="hero_ship" data-need="Photo 02 · Packing boxes and barrels" data-alt="Boxes being packed for shipment to Grenada"></div><div class="stage-body"><span class="stage-tag">Overseas · your shipper</span><span class="stage-n">01</span><h3>Packed with care</h3><p>The journey begins with the things that matter, carefully packed and prepared for shipment to Grenada.</p></div></li>
-      <li class="stage"><div class="media reveal" data-img="unloading_tall" data-fallback="hero_tall" data-need="Photo 03 · Cargo being unloaded" data-alt="Cargo being unloaded at the port of St. George's"></div><div class="stage-body"><span class="stage-tag ed">E&amp;D's role begins</span><span class="stage-n">02</span><h3>Arrival in Grenada</h3><p>Your shipment arrives, and the clearance process begins.</p></div></li>
-      <li class="stage"><div class="media reveal" data-img="exam" data-fallback="customs_tall" data-need="Photo 05 · Cargo being examined" data-alt="Cargo being examined in a warehouse"></div><div class="stage-body"><span class="stage-tag ed">E&amp;D customs clearance</span><span class="stage-n">03</span><h3>Cleared with E&amp;D</h3><p>We coordinate the documentation, duty assessment and communication with customs, keeping you informed along the way.</p></div></li>
-      <li class="stage"><div class="media reveal" data-img="collect" data-fallback="explore_tall" data-need="Photo 06 · Customer collecting barrels" data-alt="A customer collecting released barrels and boxes"></div><div class="stage-body"><span class="stage-tag ed">Released to you</span><span class="stage-n">04</span><h3>Ready for collection</h3><p>Once the applicable charges are settled and customs authorizes release, your goods are ready for collection.</p></div></li>
-    </ol>
+    <div class="wrap">
+      <ol class="path">
+        <li class="step rise"><div class="step-top"><span class="step-n">01</span><span class="step-tag">Overseas · your shipper</span></div><div class="media reveal" data-img="boxes_path" data-alt="A shipping box being taped shut"></div><h3>Packed with care</h3><p>The journey begins with the things that matter, carefully packed and prepared for shipment to Grenada.</p></li>
+        <li class="step rise"><div class="step-top"><span class="step-n">02</span><span class="step-tag ed">E&amp;D's role begins</span></div><div class="media reveal" data-img="unloading_path" data-alt="Barrels being unloaded at the port of St. George's"></div><h3>Arrival in Grenada</h3><p>Your shipment arrives, and the clearance process begins.</p></li>
+        <li class="step rise"><div class="step-top"><span class="step-n">03</span><span class="step-tag ed">Customs clearance</span></div><div class="media reveal" data-img="exam_path" data-alt="A barrel being examined against its paperwork"></div><h3>Cleared with E&amp;D</h3><p>We coordinate the documentation, duty assessment and communication with customs, keeping you informed along the way.</p></li>
+        <li class="step rise"><div class="step-top"><span class="step-n">04</span><span class="step-tag ed">Released to you</span></div><div class="media reveal" data-img="collect" data-alt="A smiling woman collecting her blue barrel and boxes into a pickup truck"></div><h3>Released. Collected. Home.</h3><p>Once the applicable charges are settled and customs authorizes release, your goods are ready for collection.</p></li>
+      </ol>
+    </div>
     <div class="wrap"><p class="journey-foot">E&amp;D provides customs clearance in Grenada. We don't pack, forward or ship personal goods from overseas.</p></div>
   </section>
 
@@ -841,14 +896,14 @@ footer { background: var(--navy); color: var(--on-navy-2); }
     <div class="wrap">
       <div class="cus-intro">
         <div class="cus-copy rise">
-          <span class="eyebrow">Customs clearance</span>
-          <h2 id="h-customs">From arrival to release.</h2>
+          <span class="eyebrow">From arrival to release</span>
+          <h2 id="h-customs">We handle the details.</h2>
           <p>Clearance feels complicated because nobody explains it. We handle the paperwork, the duty math and the back and forth with customs. Here's what happens when you hand it to us, and who does what at each stage.</p>
           <div class="legend" aria-label="Who is responsible"><span><i class="who you">You</i>Customer</span><span><i class="who ed">E&amp;D</i>Your broker</span><span><i class="who cus">Customs</i>Grenada Customs</span></div>
           <div><a class="btn btn-navy" href="#contact" data-service="customs">Start a clearance <span class="ar" aria-hidden="true">→</span></a></div>
         </div>
         <figure class="cus-frame rise" style="margin-top:0">
-          <div class="media reveal" data-img="customs" data-scene="documents" data-alt="Customs paperwork, a laptop and a calculator on a desk overlooking the harbour" data-sizes="(min-width: 960px) 55vw, 100vw"></div>
+          <div class="media reveal" data-img="exam" data-alt="Cargo staff checking the contents of a barrel against the paperwork" data-sizes="(min-width: 960px) 55vw, 100vw"></div>
           <figcaption><span>Before we file</span>Your documents checked and a duty estimate in hand.</figcaption>
         </figure>
       </div>
@@ -893,7 +948,7 @@ footer { background: var(--navy); color: var(--on-navy-2); }
         <p>Straight answers to the questions we hear most. Every shipment is different, so treat this as a starting point and ask us about yours.</p>
       </div>
       <article class="feature rise">
-        <div class="media reveal" data-img="broker_feature" data-fallback="customs" data-need="Photo 04 · Broker assisting a customer" data-alt="A customs broker explaining shipping documents to a customer"></div>
+        <div class="media reveal" data-img="broker_feature" data-alt="A customs broker explaining shipping documents to a customer"></div>
         <div class="feature-body">
           <span class="kick">Featured guide</span>
           <h3>How do I clear a barrel in Grenada?</h3>
@@ -1068,9 +1123,16 @@ footer { background: var(--navy); color: var(--on-navy-2); }
   <!-- ABOUT -->
   <section id="about" aria-labelledby="h-about">
     <div class="about">
-      <div class="about-photo rise">
-        <div class="media reveal" data-img="broker_about" data-fallback="customs" data-need="Photo 04 · Broker assisting a customer" data-alt="A Caribbean business professional helping a customer with shipping documents"></div>
-        <p class="stamp">We explain the process before anything is filed.</p>
+      <div class="about-photo">
+        <figure class="about-frame rise">
+          <div class="media reveal" data-img="broker_about" data-alt="A professional going through shipping documents with a customer"></div>
+          <figcaption class="stamp">We explain the process before anything is filed.</figcaption>
+        </figure>
+        <ul class="about-help" aria-label="How we help">
+          <li><b>Documentation guidance</b><span>What to send, and what's missing, before you're at the counter.</span></li>
+          <li><b>Personal assistance</b><span>One team that knows your shipment.</span></li>
+          <li><b>Updates at every stage</b><span>By phone or WhatsApp, from arrival to release.</span></li>
+        </ul>
       </div>
       <div class="about-body">
         <span class="eyebrow">About E&amp;D</span>
@@ -1149,6 +1211,7 @@ footer { background: var(--navy); color: var(--on-navy-2); }
    null = not yet supplied. In "draft" mode it shows as a dashed
    placeholder; in "prod" mode the element is hidden.
    ========================================================= */
+function small(name, w, h, o = {}) { return { src: `img/${name}.webp`, w, h, ...o }; }
 function photo(name, o = {}) { return { src: `img/${name}-1672.webp`, srcset: `img/${name}-960.webp 960w, img/${name}-1672.webp 1672w`, ...o }; }
 const SITE = {
   mode: 'prod',               // 'draft' shows placeholders and the review bar; 'prod' is the public site
@@ -1193,17 +1256,16 @@ const SITE = {
     customs_inset: photo('customs', { position: '62% 75%', mobile: '62% 75%' }),
     explore_tall: photo('explore', { position: '78% 60%', mobile: '78% 60%' }),
     // Phase 2 photography. Set each to photo('name', {...}) once the files are in img/.
-    family: null,          // Photo 01: family packing a barrel
-    boxes: null,           // Photo 02: boxes being packed and sealed
-    boxes_wide: null,      // Photo 02 (wide crop)
-    boxes_tall: null,      // Photo 02 (tall crop for the journey)
-    unloading: null,       // Photo 03: dockworkers unloading cargo
-    unloading_tall: null,  // Photo 03 (tall crop)
-    broker: null,          // Photo 04: broker assisting customer
-    broker_feature: null,  // Photo 04 (guide feature)
-    broker_about: null,    // Photo 04 (about section)
-    exam: null,            // Photo 05: cargo being examined
-    collect: null,         // Photo 06: customer collecting barrels
+    family:         photo('01-family-packing-barrel', { position: '50% 45%', mobile: '52% 45%' }),
+    boxes:          small('02-packing-shipping-box', 822, 312, { position: '45% 50%' }),
+    boxes_path:     small('02-packing-shipping-box', 822, 312, { position: '42% 50%' }),
+    unloading:      small('03-cargo-arrival-unloading', 824, 299, { position: '45% 50%' }),
+    unloading_path: small('03-cargo-arrival-unloading', 824, 299, { position: '62% 50%' }),
+    broker_feature: small('04-broker-customer-consultation', 822, 321, { position: '70% 45%' }),
+    broker_about:   small('04-broker-customer-consultation', 822, 321, { position: '50% 45%' }),
+    exam:           photo('05-cargo-examination', { position: '55% 45%', mobile: '58% 45%' }),
+    exam_path:      photo('05-cargo-examination', { position: '58% 40%' }),
+    collect:        small('06-barrel-collection', 822, 301, { position: '30% 50%' }),
     personal: null,        // optional: personal imports
     vehicle_import: null   // optional: vehicle import
   }
@@ -1387,7 +1449,7 @@ function renderMedia(el) {
     const i = new Image();
     const hero = !!el.closest('.hero');
     if (o.srcset) { i.srcset = o.srcset; i.sizes = el.dataset.sizes || '100vw'; }
-    i.src = o.src; i.width = 1672; i.height = 941;
+    i.src = o.src; i.width = o.w || 1672; i.height = o.h || 941;
     i.alt = el.dataset.alt || ''; i.loading = hero ? 'eager' : 'lazy'; i.decoding = 'async';
     if (hero) i.fetchPriority = 'high';
     if (o.position) el.style.setProperty('--pos', o.position); else el.style.removeProperty('--pos');
