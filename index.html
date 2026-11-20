@@ -1,0 +1,1262 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#081C2C">
+<meta property="og:title" content="E&amp;D Brokerage | From port to road">
+<meta property="og:description" content="Customs clearance, car rental and vehicle sales in Grenada.">
+<meta property="og:image" content="/img/hero-1672.webp">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23E9AD34'/%3E%3Ctext x='32' y='41' font-family='Arial' font-weight='800' font-size='24' text-anchor='middle' fill='%23081C2C'%3EE%26amp;D%3C/text%3E%3C/svg%3E">
+<link rel="preload" as="image" href="img/hero-1672.webp" imagesrcset="img/hero-960.webp 960w, img/hero-1672.webp 1672w" imagesizes="100vw">
+<title>E&amp;D Brokerage</title>
+<meta name="description" content="E&amp;D Brokerage clears shipments through Grenada customs, rents cars and sells vehicles. From port to road, we get you moving.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap">
+<style>
+/* Layout: "From port to road" told top to bottom. Cinematic full-bleed imagery, alternating navy and warm-white bands, editorial type, square-cornered panels with hairlines instead of soft cards. Single committed look (no dark-mode variant): every color set explicitly. */
+:root {
+  color-scheme: light;
+  --navy: #081C2C;
+  --navy-2: #0e2a40;
+  --navy-3: #16374f;
+  --amber: #E9AD34;
+  --amber-ink: #5a3d00;
+  --teal: #245361;
+  --teal-2: #2f6b7b;
+  --warm: #F6F5F0;
+  --white: #FFFFFF;
+  --ink: #0b1a26;
+  --ink-2: #3c4b57;
+  --muted: #6a7680;
+  --line: #dedbd1;
+  --line-dark: rgba(246,245,240,.14);
+  --on-navy: #F6F5F0;
+  --on-navy-2: #b7c3cc;
+  --ph: #2f6fe4;
+  --err: #b3261e;
+
+  --f-head: "Sora", "Manrope", "Segoe UI", system-ui, sans-serif;
+  --f-body: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+
+  --step--1: .875rem;
+  --step-0: 1.0625rem;
+  --step-1: 1.25rem;
+  --step-2: clamp(1.4rem, 2.2vw, 1.75rem);
+  --step-3: clamp(2rem, 4.2vw, 3.25rem);
+  --step-4: clamp(2.6rem, 6.6vw, 5.5rem);
+
+  --r: 4px;
+  --wrap: 1240px;
+  --ease: cubic-bezier(.2,.7,.2,1);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { background: var(--warm); color: var(--ink); font: 400 var(--step-0)/1.6 var(--f-body); -webkit-font-smoothing: antialiased; overflow-x: clip; }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 90; background: var(--navy); }
+h1, h2, h3, h4 { font-family: var(--f-head); margin: 0; line-height: 1.04; letter-spacing: -.03em; font-weight: 700; text-wrap: balance; }
+p { margin: 0; }
+a { color: inherit; }
+img { display: block; max-width: 100%; }
+:focus-visible { outline: 3px solid var(--amber); outline-offset: 3px; }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.wrap { max-width: var(--wrap); margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+@media (min-width: 760px) { .wrap { padding-left: max(40px, env(safe-area-inset-left, 0px)); padding-right: max(40px, env(safe-area-inset-right, 0px)); } }
+
+/* ---------- Draft system ---------- */
+.ph { display: inline-block; border: 1.5px dashed var(--ph); background: rgba(47,111,228,.08); color: var(--ph); padding: 0 .4em; font-weight: 600; line-height: 1.4; border-radius: 3px; font-family: var(--f-body); letter-spacing: 0; }
+.dark .ph, .hero .ph { color: #9cbcff; border-color: #9cbcff; background: rgba(156,188,255,.1); }
+.devbar { background: #eef1fb; color: #1d2a55; font-size: .84rem; border-bottom: 1.5px dashed var(--ph); }
+.devbar .wrap { display: flex; gap: .5rem 1rem; align-items: center; flex-wrap: wrap; padding-block: .5rem; }
+.devbar b { font-size: .7rem; letter-spacing: .12em; text-transform: uppercase; color: var(--ph); }
+.devbar .toggle { margin-left: auto; display: inline-flex; border: 1px solid #c4cdea; border-radius: 3px; overflow: hidden; }
+.devbar .toggle button { font: 600 .78rem var(--f-body); padding: .35rem .7rem; border: 0; background: #fff; color: #1d2a55; cursor: pointer; }
+.devbar .toggle button[aria-pressed="true"] { background: var(--ph); color: #fff; }
+.illus { position: absolute; z-index: 4; left: 12px; bottom: 12px; font-size: .64rem; letter-spacing: .12em; text-transform: uppercase; color: #fff; background: rgba(8,28,44,.55); border: 1px dashed rgba(255,255,255,.5); padding: .2rem .5rem; pointer-events: none; }
+body.prod .illus, body.prod .devonly { display: none !important; }
+
+/* ---------- Media (photo slots) ---------- */
+.media { position: relative; overflow: hidden; background: var(--navy-2); isolation: isolate; }
+.media > img, .media > svg.scene { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+.media::after { content: ""; position: absolute; inset: 0; z-index: 2; pointer-events: none; opacity: .22; mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
+.shade::before { content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none; background: linear-gradient(180deg, rgba(8,28,44,.15), rgba(8,28,44,.75)); }
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .media.reveal > img, .media.reveal > svg.scene { animation: settle linear both; animation-timeline: view(); animation-range: entry 0% cover 45%; }
+    @keyframes settle { from { scale: 1.12; } to { scale: 1; } }
+    .rise { animation: rise linear both; animation-timeline: view(); animation-range: entry 0% entry 40%; }
+    @keyframes rise { from { transform: translateY(36px); } to { transform: none; } }
+  }
+}
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } html { scroll-behavior: auto; } }
+
+/* ---------- Buttons ---------- */
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: .6rem; min-height: 48px; padding: .8rem 1.4rem; font: 600 .97rem/1 var(--f-body); text-decoration: none; border: 1.5px solid transparent; border-radius: var(--r); cursor: pointer; transition: background .2s var(--ease), color .2s, border-color .2s, transform .2s var(--ease); white-space: nowrap; }
+.btn .ar { transition: transform .2s var(--ease); }
+.btn:hover .ar { transform: translateX(4px); }
+.btn-amber { background: var(--amber); color: var(--navy); }
+.btn-amber:hover { background: #f2bd4f; }
+.btn-line-light { border-color: rgba(246,245,240,.45); color: var(--on-navy); }
+.btn-line-light:hover { border-color: var(--on-navy); background: rgba(246,245,240,.06); }
+.btn-navy { background: var(--navy); color: var(--on-navy); }
+.btn-navy:hover { background: var(--navy-3); }
+.btn-line { border-color: var(--ink); color: var(--ink); }
+.btn-line:hover { background: var(--ink); color: var(--warm); }
+.tlink { display: inline-flex; gap: .5rem; align-items: center; font-weight: 600; text-decoration: none; border-bottom: 1.5px solid currentColor; padding-bottom: 2px; }
+.tlink .ar { transition: transform .2s var(--ease); }
+.tlink:hover .ar { transform: translateX(4px); }
+
+/* ---------- Nav ---------- */
+.nav { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 80; background: var(--navy); color: var(--on-navy); border-bottom: 1px solid var(--line-dark); }
+.nav .wrap { display: flex; align-items: center; gap: 1.5rem; min-height: 72px; }
+.brand { display: inline-flex; align-items: center; gap: .7rem; text-decoration: none; }
+.brand-mark { width: 40px; height: 40px; display: grid; place-items: center; background: var(--amber); color: var(--navy); font: 800 .95rem/1 var(--f-head); letter-spacing: -.04em; }
+.brand-name { font: 700 1.05rem/1.1 var(--f-head); letter-spacing: -.02em; }
+.brand-name small { display: block; font: 500 .7rem/1.3 var(--f-body); letter-spacing: .12em; text-transform: uppercase; color: var(--on-navy-2); }
+.menu { display: flex; gap: .2rem; margin-left: auto; list-style: none; padding: 0; margin-block: 0; }
+.menu a { display: block; padding: .6rem .8rem; text-decoration: none; font-size: .94rem; color: var(--on-navy-2); transition: color .2s; position: relative; }
+.menu a::after { content: ""; position: absolute; left: .8rem; right: .8rem; bottom: .35rem; height: 1.5px; background: var(--amber); transform: scaleX(0); transform-origin: left; transition: transform .25s var(--ease); }
+.menu a:hover { color: var(--on-navy); }
+.menu a:hover::after { transform: scaleX(1); }
+.burger { display: none; margin-left: auto; width: 48px; height: 48px; border: 1px solid var(--line-dark); background: transparent; color: var(--on-navy); cursor: pointer; border-radius: var(--r); }
+.burger span { display: block; width: 20px; height: 1.5px; background: currentColor; margin: 5px auto; transition: transform .25s var(--ease), opacity .2s; }
+.burger[aria-expanded="true"] span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+.burger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.burger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+.mnav { background: var(--navy); border-top: 1px solid var(--line-dark); }
+.mnav ul { list-style: none; margin: 0; padding: .5rem 0 1.25rem; }
+.mnav a { display: flex; justify-content: space-between; padding: 1rem 0; text-decoration: none; font: 600 1.25rem var(--f-head); border-bottom: 1px solid var(--line-dark); }
+.mnav .btn { width: 100%; margin-top: 1rem; }
+@media (max-width: 1020px) { .menu, .nav .cta-desk { display: none; } .burger { display: block; } }
+
+/* ---------- Hero ---------- */
+.hero { position: relative; color: var(--on-navy); background: var(--navy); }
+.hero .media { position: absolute; inset: 0; }
+.hero .media::before { content: ""; position: absolute; inset: 0; z-index: 1; background: linear-gradient(90deg, rgba(8,28,44,.86) 0%, rgba(8,28,44,.6) 38%, rgba(8,28,44,.08) 70%), linear-gradient(0deg, rgba(8,28,44,.72), transparent 38%); }
+@media (max-width: 700px) { .hero .media::before { background: linear-gradient(0deg, rgba(8,28,44,.92) 0%, rgba(8,28,44,.6) 55%, rgba(8,28,44,.35) 100%); } }
+.hero-in { position: relative; z-index: 3; display: grid; gap: 3rem; padding-block: clamp(4.5rem, 10vw, 8.5rem) clamp(2.5rem, 5vw, 4rem); }
+.eyebrow { font: 600 .78rem/1 var(--f-body); letter-spacing: .2em; text-transform: uppercase; display: inline-flex; gap: .75rem; align-items: center; }
+.eyebrow::before { content: ""; width: 28px; height: 1.5px; background: var(--amber); }
+.hero .eyebrow { color: var(--amber); }
+.hero h1 { font-size: var(--step-4); font-weight: 800; letter-spacing: -.045em; line-height: .98; margin-top: 1.4rem; max-width: 12ch; }
+.hero h1 span { display: block; color: var(--amber); }
+.hero-copy { margin-top: 1.6rem; max-width: 34rem; font-size: clamp(1.05rem, 1.5vw, 1.25rem); color: #d5dde3; }
+.hero-cta { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 2.25rem; }
+.hero-foot { display: flex; justify-content: flex-end; }
+.shipment { width: min(100%, 520px); background: rgba(8,28,44,.86); border: 1px solid var(--line-dark); padding: 1.1rem 1.25rem 1.2rem; }
+.ship-top { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; flex-wrap: wrap; font-size: .8rem; color: var(--on-navy-2); }
+.ship-top strong { font: 600 .95rem var(--f-head); color: var(--on-navy); letter-spacing: 0; }
+.ship-top .ex { font-size: .66rem; letter-spacing: .14em; text-transform: uppercase; border: 1px solid rgba(233,173,52,.5); color: var(--amber); padding: .2rem .45rem; }
+.track { list-style: none; padding: 0; margin: 1.1rem 0 0; display: grid; grid-template-columns: repeat(4, 1fr); position: relative; }
+.track::before { content: ""; position: absolute; left: 7px; right: 7px; top: 7px; height: 2px; background: rgba(246,245,240,.18); }
+.track::after { content: ""; position: absolute; left: 7px; top: 7px; height: 2px; width: calc(66% - 7px); background: var(--amber); }
+.track li { position: relative; z-index: 1; padding-top: 1.5rem; font-size: .78rem; line-height: 1.3; color: var(--on-navy-2); }
+.track li::before { content: ""; position: absolute; top: 0; left: 0; width: 16px; height: 16px; border-radius: 50%; background: var(--navy); border: 2px solid rgba(246,245,240,.35); }
+.track li.done::before { background: var(--amber); border-color: var(--amber); }
+.track li.now::before { border-color: var(--amber); box-shadow: 0 0 0 4px rgba(233,173,52,.2); }
+.track li b { display: block; color: var(--on-navy); font-weight: 600; font-size: .82rem; }
+.track li.next b { color: var(--on-navy-2); }
+
+/* ---------- Trust strip ---------- */
+.trust { background: var(--navy-2); color: var(--on-navy-2); border-top: 1px solid var(--line-dark); }
+.trust ul { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); }
+.trust li { padding: 1.1rem 1.25rem; font-size: .9rem; display: flex; gap: .7rem; align-items: center; border-left: 1px solid var(--line-dark); }
+.trust li:first-child { border-left: 0; padding-left: 0; }
+.trust svg { flex: none; color: var(--amber); }
+.trust b { color: var(--on-navy); font-weight: 600; }
+@media (max-width: 900px) { .trust ul { grid-template-columns: 1fr 1fr; } .trust li { border-left: 0; padding-left: 0; border-top: 1px solid var(--line-dark); } .trust li:nth-child(-n+2) { border-top: 0; } }
+@media (max-width: 480px) { .trust ul { grid-template-columns: 1fr; } .trust li:nth-child(2) { border-top: 1px solid var(--line-dark); } }
+
+/* ---------- Sections ---------- */
+section[id] { scroll-margin-top: 76px; }
+.band { padding-block: clamp(4.5rem, 9vw, 8rem); }
+.band.white { background: var(--white); }
+.band.dark { background: var(--navy); color: var(--on-navy); }
+.sec-head { display: grid; gap: 1.25rem; margin-bottom: clamp(2.5rem, 5vw, 4rem); }
+.sec-head.split { grid-template-columns: 1fr; align-items: end; }
+@media (min-width: 900px) { .sec-head.split { grid-template-columns: 1.2fr 1fr; gap: 4rem; } }
+.sec-head .eyebrow { color: var(--teal); }
+.dark .sec-head .eyebrow { color: var(--amber); }
+.sec-head h2 { font-size: var(--step-3); max-width: 16ch; }
+.sec-head p { color: var(--ink-2); font-size: 1.1rem; max-width: 36rem; }
+.dark .sec-head p { color: var(--on-navy-2); }
+
+/* ---------- Services ---------- */
+.svc-list { display: grid; gap: clamp(1rem, 2vw, 1.5rem); }
+.svc { display: grid; grid-template-columns: 1fr; background: var(--white); border: 1px solid var(--line); min-width: 0; }
+@media (min-width: 900px) {
+  .svc { grid-template-columns: 1.35fr 1fr; min-height: 460px; }
+  .svc.flip { grid-template-columns: 1fr 1.35fr; }
+  .svc.flip .media { order: 2; }
+}
+.svc .media { min-height: 280px; }
+.svc-body { padding: clamp(1.75rem, 4vw, 3.25rem); display: grid; gap: 1.1rem; align-content: center; position: relative; }
+.svc-num { font: 800 clamp(4.5rem, 9vw, 7.5rem)/.8 var(--f-head); letter-spacing: -.06em; color: transparent; -webkit-text-stroke: 1.5px var(--line); }
+.svc h3 { font-size: clamp(1.75rem, 3vw, 2.5rem); }
+.svc p { color: var(--ink-2); max-width: 30rem; }
+.svc ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 0; border-top: 1px solid var(--line); }
+.svc li { padding: .65rem 0; border-bottom: 1px solid var(--line); font-size: .97rem; display: flex; gap: .75rem; }
+.svc li::before { content: ""; width: 6px; height: 6px; background: var(--amber); margin-top: .6rem; flex: none; }
+.svc .actions { display: flex; gap: 1.25rem; align-items: center; flex-wrap: wrap; margin-top: .5rem; }
+.svc.v-customs { background: var(--navy); color: var(--on-navy); border-color: var(--navy); }
+.svc.v-customs p { color: var(--on-navy-2); }
+.svc.v-customs ul, .svc.v-customs li { border-color: var(--line-dark); }
+.svc.v-customs .svc-num { -webkit-text-stroke-color: rgba(233,173,52,.55); }
+.svc.v-rental .svc-num { -webkit-text-stroke-color: var(--teal-2); }
+.svc.v-rental li::before { background: var(--teal); }
+.svc.v-sales { background: var(--warm); }
+
+/* ---------- Customs ---------- */
+.legend { display: flex; flex-wrap: wrap; gap: .5rem 1.25rem; font-size: .88rem; color: var(--ink-2); }
+.legend span { display: inline-flex; align-items: center; gap: .5rem; }
+.who { display: inline-flex; align-items: center; font: 600 .7rem/1 var(--f-body); letter-spacing: .1em; text-transform: uppercase; padding: .35rem .55rem; border-radius: 2px; }
+.who.you { background: var(--amber); color: var(--navy); }
+.who.ed { background: var(--teal); color: #fff; }
+.who.cus { background: transparent; color: var(--navy); box-shadow: inset 0 0 0 1.5px var(--navy); }
+.timeline { list-style: none; margin: 2rem 0 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); counter-reset: t; position: relative; }
+.timeline::before { content: ""; position: absolute; left: 0; right: 0; top: 23px; height: 1.5px; background: var(--line); }
+.timeline li { counter-increment: t; position: relative; padding-right: 1.75rem; display: grid; gap: .8rem; align-content: start; }
+.tnum { width: 48px; height: 48px; display: grid; place-items: center; background: var(--navy); color: var(--on-navy); font: 700 1.05rem var(--f-head); position: relative; z-index: 1; }
+.tnum::before { content: counter(t, decimal-leading-zero); }
+.timeline li:last-child .tnum { background: var(--amber); color: var(--navy); }
+.timeline h3 { font-size: 1.3rem; letter-spacing: -.02em; margin-top: .4rem; }
+.timeline p { color: var(--ink-2); font-size: .98rem; }
+.timeline .tags { display: flex; gap: .35rem; flex-wrap: wrap; }
+@media (max-width: 900px) {
+  .timeline { grid-template-columns: 1fr; gap: 0; }
+  .timeline::before { left: 23px; right: auto; top: 0; bottom: 0; width: 1.5px; height: auto; }
+  .timeline li { grid-template-columns: 48px 1fr; column-gap: 1.25rem; padding: 0 0 2rem; }
+  .timeline li > :not(.tnum) { grid-column: 2; }
+  .timeline .tnum { grid-row: 1 / span 4; }
+  .timeline h3 { margin-top: 0; }
+}
+.fine { font-size: .86rem; color: var(--muted); margin-top: 1.5rem; max-width: 46rem; }
+
+.docs { margin-top: clamp(3rem, 6vw, 5rem); display: grid; grid-template-columns: 1fr; border: 1px solid var(--line); background: var(--warm); }
+@media (min-width: 960px) { .docs { grid-template-columns: .9fr 1.1fr; } }
+.docs .media { min-height: 260px; }
+.docs-in { padding: clamp(1.5rem, 4vw, 3rem); display: grid; gap: 1.25rem; align-content: start; }
+.docs-in h3 { font-size: clamp(1.6rem, 2.6vw, 2.1rem); }
+.docs-in > p { color: var(--ink-2); }
+.sheet { background: var(--white); border: 1px solid var(--line); }
+.sheet-head { display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: .85rem 1.1rem; border-bottom: 1px solid var(--line); font-size: .82rem; color: var(--muted); }
+.sheet-head b { font: 600 .85rem var(--f-head); color: var(--ink); letter-spacing: 0; }
+.meter { height: 3px; background: var(--line); }
+.meter i { display: block; height: 100%; width: 0; background: var(--teal); transition: width .35s var(--ease); }
+.doc-row { width: 100%; display: grid; grid-template-columns: 24px 1fr auto; gap: .9rem; align-items: center; padding: .9rem 1.1rem; background: none; border: 0; border-bottom: 1px solid var(--line); font: inherit; text-align: left; color: var(--ink); cursor: pointer; transition: background .15s; }
+.doc-row:last-child { border-bottom: 0; }
+.doc-row:hover { background: #faf9f5; }
+.doc-row .box { width: 22px; height: 22px; border: 1.5px solid var(--ink-2); display: grid; place-items: center; transition: background .15s, border-color .15s; }
+.doc-row[aria-pressed="true"] .box { background: var(--teal); border-color: var(--teal); }
+.doc-row[aria-pressed="true"] .box::after { content: ""; width: 10px; height: 6px; border-left: 2px solid #fff; border-bottom: 2px solid #fff; transform: rotate(-45deg) translate(1px, -1px); }
+.doc-row small { font-size: .74rem; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.doc-row[aria-pressed="true"] small { color: var(--teal); }
+.docs-cta { display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; }
+
+/* ---------- Rental ---------- */
+.rent-hero { position: relative; min-height: clamp(460px, 58vw, 780px); color: var(--on-navy); display: grid; align-items: end; }
+.rent-hero .media { position: absolute; inset: 0; }
+.rent-hero .media::before { content: ""; position: absolute; inset: 0; z-index: 1; background: linear-gradient(0deg, rgba(8,28,44,.88) 0%, rgba(8,28,44,.3) 50%, transparent 75%); }
+.rent-hero .wrap { position: relative; z-index: 3; padding-block: 3rem; width: 100%; }
+.rent-hero .eyebrow { color: var(--amber); }
+.rent-hero h2 { font-size: var(--step-4); font-weight: 800; letter-spacing: -.045em; margin-top: 1rem; }
+.rent-hero p { margin-top: 1rem; max-width: 36rem; color: #d5dde3; font-size: 1.1rem; }
+
+.rsteps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(6, 1fr); counter-reset: r; border-top: 1px solid var(--ink); }
+.rsteps li { counter-increment: r; padding: 1.4rem 1.25rem 1.4rem 0; display: grid; gap: .5rem; align-content: start; }
+.rsteps li + li { padding-left: 1.25rem; border-left: 1px solid var(--line); }
+.rsteps li::before { content: counter(r, decimal-leading-zero); font: 700 .9rem var(--f-head); color: var(--teal); }
+.rsteps h3 { font-size: 1.1rem; letter-spacing: -.015em; }
+.rsteps p { font-size: .92rem; color: var(--ink-2); }
+@media (max-width: 1100px) { .rsteps { grid-template-columns: repeat(3, 1fr); } .rsteps li:nth-child(4) { border-left: 0; padding-left: 0; } .rsteps li:nth-child(n+4) { border-top: 1px solid var(--line); } }
+@media (max-width: 700px) {
+  .rsteps { grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: 78%; overflow-x: auto; scroll-snap-type: x mandatory; border-top: 0; gap: .75rem; padding-bottom: .75rem; }
+  .rsteps li, .rsteps li + li, .rsteps li:nth-child(n+4) { scroll-snap-align: start; border: 1px solid var(--line); border-top: 3px solid var(--teal); padding: 1.25rem; background: var(--white); }
+  .swipe-hint { display: block !important; }
+}
+.swipe-hint { display: none; font-size: .82rem; color: var(--muted); margin-top: .5rem; }
+
+.fleet { margin-top: clamp(3.5rem, 7vw, 5.5rem); }
+.fleet-top { display: flex; justify-content: space-between; align-items: end; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 1.5rem; }
+.fleet-top h3 { font-size: var(--step-2); }
+.tabs { display: flex; border-bottom: 1px solid var(--line); overflow-x: auto; }
+.tabs button { font: 600 .97rem var(--f-body); background: none; border: 0; padding: 1rem 1.25rem; color: var(--muted); cursor: pointer; position: relative; white-space: nowrap; }
+.tabs button::after { content: ""; position: absolute; left: 0; right: 0; bottom: -1px; height: 3px; background: var(--amber); transform: scaleX(0); transition: transform .25s var(--ease); }
+.tabs button[aria-selected="true"] { color: var(--ink); }
+.tabs button[aria-selected="true"]::after { transform: scaleX(1); }
+.tabs button:hover { color: var(--ink); }
+.fleet-panel { display: grid; grid-template-columns: 1fr; border: 1px solid var(--line); border-top: 0; background: var(--white); }
+@media (min-width: 960px) { .fleet-panel { grid-template-columns: 1.5fr 1fr; } }
+.fleet-panel .media { aspect-ratio: 16 / 10; max-width: 100%; }
+@media (min-width: 960px) { .fleet-panel .media { aspect-ratio: auto; min-height: 460px; } }
+.fp-body { padding: clamp(1.5rem, 3vw, 2.5rem); display: grid; gap: 1.25rem; align-content: start; }
+.fp-body h4 { font-size: clamp(1.6rem, 2.6vw, 2.2rem); }
+.fp-body > p { color: var(--ink-2); }
+.spec { display: grid; grid-template-columns: 1fr 1fr; margin: 0; border-top: 1px solid var(--line); }
+.spec div { padding: .8rem 0; border-bottom: 1px solid var(--line); }
+.spec div:nth-child(odd) { padding-right: 1rem; }
+.spec dt { font-size: .74rem; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+.spec dd { margin: .15rem 0 0; font-weight: 600; }
+.rate { display: flex; align-items: baseline; gap: .5rem; flex-wrap: wrap; }
+.rate .from { font-size: .85rem; color: var(--muted); }
+.rate .amt { font: 700 2rem/1 var(--f-head); letter-spacing: -.03em; }
+.rate .per { color: var(--muted); }
+.terms { display: grid; grid-template-columns: repeat(4, 1fr); border: 1px solid var(--line); border-top: 0; background: var(--white); }
+.terms div { padding: 1rem 1.25rem; border-left: 1px solid var(--line); }
+.terms div:first-child { border-left: 0; }
+.terms dt { font-size: .74rem; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+.terms dd { margin: .2rem 0 0; font-weight: 600; font-size: .95rem; }
+@media (max-width: 800px) { .terms { grid-template-columns: 1fr 1fr; } .terms div:nth-child(3) { border-left: 0; } .terms div:nth-child(n+3) { border-top: 1px solid var(--line); } }
+.fleet-swap { transition: opacity .2s; }
+
+/* ---------- Explore ---------- */
+.explore { display: grid; grid-template-columns: 1fr; gap: 0; }
+@media (min-width: 960px) { .explore { grid-template-columns: 1.2fr 1fr; } }
+.explore .big { min-height: 420px; }
+.explore-side { background: var(--teal); color: #fff; padding: clamp(2rem, 4vw, 3.5rem); display: grid; gap: 1.25rem; align-content: center; }
+.explore-side .eyebrow { color: var(--amber); }
+.explore-side h2 { font-size: var(--step-3); }
+.explore-side p { color: #d6e6ea; max-width: 30rem; }
+.dest { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-top: 1rem; }
+@media (max-width: 900px) { .dest { grid-template-columns: 1fr 1fr; } }
+.dest article { display: grid; gap: .65rem; }
+.dest .media { aspect-ratio: 4 / 3; max-width: 100%; }
+.dest h3 { font-size: 1.1rem; letter-spacing: -.015em; }
+.dest p { font-size: .9rem; color: var(--muted); margin-top: -.35rem; }
+.keepleft { margin-top: 2rem; display: flex; gap: 1rem; align-items: center; padding: 1rem 1.25rem; border-left: 3px solid var(--amber); background: var(--white); font-size: .97rem; color: var(--ink-2); }
+.keepleft b { font: 700 .78rem var(--f-head); letter-spacing: .1em; color: var(--ink); white-space: nowrap; }
+
+/* ---------- Sales ---------- */
+.inv { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+@media (max-width: 1000px) { .inv { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 620px) { .inv { grid-template-columns: 1fr; } }
+.unit { border: 1px solid var(--line); background: var(--white); display: flex; flex-direction: column; min-width: 0; transition: border-color .2s; }
+.unit:hover { border-color: var(--ink-2); }
+.unit .media { aspect-ratio: 4 / 3; max-width: 100%; background: #e9e7df; }
+.pending { position: absolute; inset: 0; z-index: 3; display: grid; place-items: center; text-align: center; color: var(--muted); font-size: .85rem; border: 1.5px dashed var(--ph); margin: 12px; background: repeating-linear-gradient(135deg, rgba(47,111,228,.05) 0 12px, transparent 12px 24px); }
+.pending svg { color: #b4b1a6; margin: 0 auto .5rem; }
+.status { position: absolute; z-index: 4; top: 12px; right: 12px; font: 600 .72rem/1 var(--f-body); letter-spacing: .08em; text-transform: uppercase; background: var(--navy); color: var(--on-navy); padding: .45rem .6rem; }
+.unit-body { padding: 1.4rem; display: grid; gap: 1rem; flex: 1; align-content: start; }
+.unit h3 { font-size: 1.3rem; letter-spacing: -.02em; }
+.unit .spec { grid-template-columns: 1fr 1fr; }
+.unit-foot { margin-top: auto; display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding-top: .25rem; flex-wrap: wrap; }
+.unit-foot .price { font: 700 1.4rem var(--f-head); letter-spacing: -.02em; }
+.inv-empty { grid-column: 1 / -1; border: 1px solid var(--line); background: var(--white); padding: 2.5rem; display: grid; gap: 1rem; justify-items: start; }
+.inv-empty h3 { font-size: 1.5rem; }
+
+.source { margin-top: clamp(3rem, 6vw, 5rem); display: grid; grid-template-columns: 1fr; background: var(--navy); color: var(--on-navy); }
+@media (min-width: 960px) { .source { grid-template-columns: 1fr 1fr; } }
+.source .media { min-height: 300px; }
+.source-in { padding: clamp(2rem, 4vw, 3.5rem); display: grid; gap: 1.5rem; align-content: center; }
+.source-in .eyebrow { color: var(--amber); }
+.source-in h3 { font-size: clamp(1.8rem, 3.2vw, 2.6rem); }
+.source-in > p { color: var(--on-navy-2); }
+.verbs { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(5, 1fr); border-top: 1px solid var(--line-dark); }
+.verbs li { padding: 1rem .5rem 0 0; font: 700 1.05rem var(--f-head); letter-spacing: -.02em; }
+.verbs li span { display: block; font: 500 .7rem var(--f-body); letter-spacing: .12em; color: var(--amber); margin-bottom: .3rem; }
+@media (max-width: 560px) { .verbs { grid-template-columns: 1fr 1fr 1fr; row-gap: 1rem; } }
+
+/* ---------- Why ---------- */
+.why { display: grid; grid-template-columns: 1fr; gap: clamp(2.5rem, 5vw, 4rem); }
+@media (min-width: 960px) { .why { grid-template-columns: 1.1fr 1fr; align-items: stretch; } }
+.why h2 { font-size: clamp(2.6rem, 6vw, 5rem); font-weight: 800; letter-spacing: -.045em; line-height: .98; }
+.why h2 span { display: block; }
+.why h2 span:last-child { color: var(--amber); }
+.why .media { min-height: 320px; margin-top: 2.5rem; }
+.values { list-style: none; margin: 0; padding: 0; display: grid; align-content: center; }
+.values li { display: grid; grid-template-columns: 3.5rem 1fr; gap: 1rem; padding: 1.6rem 0; border-top: 1px solid var(--line-dark); }
+.values li:last-child { border-bottom: 1px solid var(--line-dark); }
+.values .n { font: 700 .9rem var(--f-head); color: var(--amber); padding-top: .3rem; }
+.values h3 { font-size: 1.45rem; letter-spacing: -.02em; }
+.values p { color: var(--on-navy-2); margin-top: .4rem; }
+
+/* ---------- Quote ---------- */
+.quote { display: grid; grid-template-columns: 1fr; gap: clamp(2rem, 5vw, 4.5rem); }
+@media (min-width: 980px) { .quote { grid-template-columns: .9fr 1.1fr; } }
+.q-left h2 { font-size: var(--step-3); margin-top: 1.25rem; }
+.q-left .eyebrow { color: var(--teal); }
+.q-left > p { color: var(--ink-2); font-size: 1.1rem; margin-top: 1.25rem; max-width: 30rem; }
+.contact { list-style: none; margin: 2.25rem 0 0; padding: 0; border-top: 1px solid var(--line); }
+.contact li { display: grid; grid-template-columns: 9rem 1fr; gap: 1rem; padding: 1rem 0; border-bottom: 1px solid var(--line); }
+.contact dt, .contact .k { font-size: .76rem; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); padding-top: .2rem; }
+.contact .v { font-weight: 600; display: flex; flex-wrap: wrap; gap: .35rem; align-items: center; }
+@media (max-width: 480px) { .contact li { grid-template-columns: 1fr; gap: .2rem; } }
+.form { background: var(--white); border: 1px solid var(--line); padding: clamp(1.5rem, 3.5vw, 2.75rem); display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; min-width: 0; }
+.f { grid-column: 1 / -1; display: grid; gap: .45rem; min-width: 0; }
+@media (min-width: 600px) { .f.half { grid-column: span 1; } }
+.f label, .f legend { font-weight: 600; font-size: .9rem; padding: 0; }
+.f .opt { font-weight: 400; color: var(--muted); }
+input, select, textarea { font: inherit; font-size: 1rem; color: var(--ink); background: var(--warm); border: 1px solid var(--line); border-bottom: 1.5px solid var(--ink-2); border-radius: 0; padding: .85rem .9rem; width: 100%; min-height: 48px; transition: border-color .2s, background .2s; }
+input:focus, select:focus, textarea:focus { outline: none; background: var(--white); border-color: var(--teal); box-shadow: 0 0 0 3px rgba(36,83,97,.18); }
+input[aria-invalid="true"] { border-color: var(--err); }
+textarea { min-height: 120px; resize: vertical; }
+fieldset { border: 0; margin: 0; padding: 0; min-width: 0; }
+.choices { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: .5rem; margin-top: .2rem; }
+.choices label { position: relative; cursor: pointer; }
+.choices input { position: absolute; opacity: 0; width: 1px; height: 1px; min-height: 0; }
+.choices span { display: flex; align-items: center; min-height: 48px; padding: .6rem .9rem; border: 1px solid var(--line); background: var(--warm); font-weight: 500; font-size: .92rem; transition: border-color .15s, background .15s; }
+.choices input:checked + span { background: var(--navy); color: var(--on-navy); border-color: var(--navy); }
+.choices input:focus-visible + span { outline: 3px solid var(--amber); outline-offset: 2px; }
+.svc-fields { grid-column: 1 / -1; display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; padding-top: 1.25rem; border-top: 1px dashed var(--line); }
+.svc-fields .hint { grid-column: 1 / -1; font-size: .82rem; letter-spacing: .1em; text-transform: uppercase; color: var(--teal); font-weight: 600; }
+.privacy { grid-column: 1 / -1; font-size: .86rem; color: var(--muted); display: flex; gap: .6rem; align-items: flex-start; }
+.privacy svg { flex: none; margin-top: .15rem; color: var(--teal); }
+.f-submit { grid-column: 1 / -1; }
+.f-submit .btn { width: 100%; }
+.notice { grid-column: 1 / -1; padding: 1rem 1.1rem; font-size: .93rem; border-left: 3px solid var(--amber); background: #fbf3df; color: var(--ink); }
+.notice.err { border-color: var(--err); background: #fbe9e7; }
+.notice.ok { border-color: var(--teal); background: #e5f0f1; }
+
+/* ---------- Footer ---------- */
+footer { background: var(--navy); color: var(--on-navy-2); }
+.foot { padding-block: 4rem 2.5rem; display: grid; gap: 2.5rem; }
+.foot-top { display: grid; grid-template-columns: 1fr; gap: 2rem; }
+@media (min-width: 860px) { .foot-top { grid-template-columns: 1.4fr 1fr 1fr; } }
+.foot-tag { font: 700 clamp(1.8rem, 3.6vw, 2.8rem)/1.02 var(--f-head); letter-spacing: -.04em; color: var(--on-navy); margin-top: 1.5rem; }
+.foot-tag span { color: var(--amber); }
+.foot h4 { font: 600 .74rem var(--f-body); letter-spacing: .14em; text-transform: uppercase; color: var(--on-navy-2); margin-bottom: 1rem; }
+.foot ul { list-style: none; padding: 0; margin: 0; display: grid; gap: .55rem; }
+.foot ul a { text-decoration: none; color: var(--on-navy); }
+.foot ul a:hover { color: var(--amber); }
+.legal { border-top: 1px solid var(--line-dark); padding-top: 1.5rem; font-size: .84rem; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; }
+
+/* ---------- Photography ---------- */
+.media > img { object-position: var(--pos, 50% 50%); transform-origin: var(--pos, 50% 50%); transition: transform 1.4s var(--ease); }
+@media (max-width: 700px) { .media > img { object-position: var(--pos-m, var(--pos, 50% 50%)); transform-origin: var(--pos-m, var(--pos, 50% 50%)); } }
+.media.photo { background: var(--navy-2); }
+.media.photo::after { display: none; }
+.svc:hover .media > img, .promo:hover .media > img, .source:hover .media > img, .cus-frame:hover .media > img { transform: scale(1.04); }
+@media (prefers-reduced-motion: no-preference) { .hero .media.photo > img { animation: heroIn 2s var(--ease) both; } @keyframes heroIn { from { scale: 1.07; } to { scale: 1; } } }
+.photo-note { position: absolute; z-index: 4; right: 12px; bottom: 12px; font-size: .7rem; letter-spacing: .04em; color: #fff; background: rgba(8,28,44,.62); padding: .3rem .55rem; pointer-events: none; }
+
+/* Customs intro: copy beside an offset-framed photo */
+.cus-intro { display: grid; grid-template-columns: 1fr; gap: 2.5rem; align-items: center; margin-bottom: clamp(3.5rem, 7vw, 5.5rem); }
+@media (min-width: 960px) { .cus-intro { grid-template-columns: 1fr 1.2fr; gap: 4.5rem; } }
+.cus-copy { display: grid; gap: 1.25rem; align-content: center; }
+.cus-copy .eyebrow { color: var(--teal); }
+.cus-copy h2 { font-size: var(--step-3); }
+.cus-copy p { color: var(--ink-2); font-size: 1.1rem; max-width: 34rem; }
+.cus-frame { position: relative; margin: 0 16px 16px 0; }
+.cus-frame::before { content: ""; position: absolute; inset: 22px -16px -16px 22px; background: var(--teal); }
+.cus-frame .media { position: relative; aspect-ratio: 1672 / 941; max-width: 100%; }
+.cus-frame figcaption { position: absolute; z-index: 5; left: -1px; bottom: -1px; background: var(--navy); color: var(--on-navy); padding: 1rem 1.25rem; font: 600 .95rem/1.35 var(--f-head); letter-spacing: -.01em; max-width: 19rem; }
+.cus-frame figcaption span { display: block; font: 500 .72rem var(--f-body); letter-spacing: .14em; text-transform: uppercase; color: var(--amber); margin-bottom: .35rem; }
+@media (max-width: 560px) { .cus-frame figcaption { position: static; max-width: none; } }
+
+/* Checklist panel without image */
+.docs { grid-template-columns: 1fr !important; }
+@media (min-width: 960px) { .docs .docs-in { grid-template-columns: .8fr 1.2fr; column-gap: 3.5rem; align-items: start; } }
+.docs-l { display: grid; gap: 1.1rem; align-content: start; }
+.docs-l h3 { font-size: clamp(1.6rem, 2.6vw, 2.1rem); }
+.docs-l > p { color: var(--ink-2); }
+
+/* Sales promo */
+.promo { position: relative; margin: 0 0 clamp(2.5rem, 5vw, 4rem); }
+.promo .media { aspect-ratio: 1672 / 941; max-width: 100%; }
+@media (max-width: 700px) { .promo .media { aspect-ratio: 4 / 3; } }
+.promo-cap { position: absolute; z-index: 5; left: 0; bottom: 0; background: var(--navy); color: var(--on-navy); padding: clamp(1.5rem, 3vw, 2.25rem); display: grid; gap: .9rem; max-width: 30rem; justify-items: start; }
+.promo-cap .eyebrow { color: var(--amber); }
+.promo-cap strong { font: 700 clamp(1.4rem, 2.6vw, 2rem)/1.08 var(--f-head); letter-spacing: -.03em; }
+.promo .photo-note { top: 12px; bottom: auto; }
+@media (max-width: 700px) { .promo-cap { position: static; max-width: none; } }
+
+/* Explore: full-bleed photo with destinations overlaid */
+.explore-full { position: relative; color: #fff; display: grid; min-height: clamp(600px, 64vw, 860px); background: var(--navy); }
+.explore-full .media { position: absolute; inset: 0; }
+.explore-full .media::before { content: ""; position: absolute; inset: 0; z-index: 1; background: linear-gradient(90deg, rgba(8,28,44,.78) 0%, rgba(8,28,44,.35) 45%, rgba(8,28,44,0) 70%), linear-gradient(0deg, rgba(8,28,44,.9) 0%, rgba(8,28,44,.45) 32%, transparent 55%); }
+.ex-in { position: relative; z-index: 3; display: grid; align-content: space-between; gap: 3rem; padding-block: clamp(4rem, 8vw, 6.5rem) clamp(2rem, 4vw, 3rem); width: 100%; }
+.ex-head { display: grid; gap: 1.25rem; max-width: 34rem; }
+.ex-head .eyebrow { color: var(--amber); }
+.ex-head h2 { font-size: var(--step-4); font-weight: 800; letter-spacing: -.045em; line-height: .98; }
+.ex-head p { color: #dfe6ea; font-size: 1.1rem; }
+.ex-dest { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid rgba(255,255,255,.35); }
+.ex-dest li { padding: 1.25rem 1.25rem 0 0; display: grid; gap: .3rem; align-content: start; }
+.ex-dest li + li { padding-left: 1.25rem; border-left: 1px solid rgba(255,255,255,.2); }
+.ex-dest .n { font: 600 .74rem var(--f-body); letter-spacing: .14em; color: var(--amber); }
+.ex-dest h3 { font-size: clamp(1.15rem, 1.8vw, 1.45rem); letter-spacing: -.02em; }
+.ex-dest p { font-size: .92rem; color: #d5dde3; }
+@media (max-width: 760px) { .ex-dest { grid-template-columns: 1fr 1fr; } .ex-dest li:nth-child(3) { border-left: 0; padding-left: 0; } .ex-dest li:nth-child(n+3) { border-top: 1px solid rgba(255,255,255,.2); margin-top: 1.25rem; } }
+.keepleft-band { background: var(--white); padding-block: 1.5rem; border-bottom: 1px solid var(--line); }
+.keepleft-band .keepleft { margin: 0; background: var(--warm); }
+</style>
+
+</head>
+<body>
+<div class="devbar devonly" id="devbar">
+  <div class="wrap">
+    <b>Draft</b>
+    <span><span class="ph">Dashed boxes</span> are details still needed from E&amp;D. Photos are illustrative marketing images, not E&amp;D's actual premises, fleet or inventory.</span>
+    <span class="toggle" role="group" aria-label="Preview mode"><button type="button" data-mode="draft" aria-pressed="true">Draft view</button><button type="button" data-mode="prod" aria-pressed="false">Public view</button></span>
+  </div>
+</div>
+
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="E&amp;D Brokerage, home"><span class="brand-mark" aria-hidden="true">E&amp;D</span><span class="brand-name">E&amp;D Brokerage<small>Grenada</small></span></a>
+    <ul class="menu">
+      <li><a href="#customs">Customs Clearance</a></li>
+      <li><a href="#rental">Car Rental</a></li>
+      <li><a href="#sales">Vehicle Sales</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a class="btn btn-amber cta-desk" href="#contact" data-service="customs">Get a Quote</a>
+    <button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="mnav"><span></span><span></span><span></span><span class="sr">Menu</span></button>
+  </div>
+  <nav class="mnav" id="mnav" aria-label="Mobile" hidden>
+    <div class="wrap">
+      <ul>
+        <li><a href="#customs">Customs Clearance <span aria-hidden="true">→</span></a></li>
+        <li><a href="#rental">Car Rental <span aria-hidden="true">→</span></a></li>
+        <li><a href="#sales">Vehicle Sales <span aria-hidden="true">→</span></a></li>
+        <li><a href="#about">About <span aria-hidden="true">→</span></a></li>
+        <li><a href="#contact">Contact <span aria-hidden="true">→</span></a></li>
+      </ul>
+      <a class="btn btn-amber" href="#contact" data-service="customs">Get a Quote</a>
+    </div>
+  </nav>
+</header>
+
+<main id="top">
+  <!-- HERO -->
+  <section class="hero" aria-labelledby="h1">
+    <div class="media" data-img="hero" data-scene="harbour" data-alt="Container ship and cranes at the port of St. George's at dusk"></div>
+    <div class="wrap hero-in">
+      <div>
+        <span class="eyebrow">Your trusted partner in Grenada</span>
+        <h1 id="h1">From port to road. <span>We get you moving.</span></h1>
+        <p class="hero-copy">From clearing your shipment to getting behind the wheel, E&amp;D Brokerage makes doing business in Grenada simpler.</p>
+        <div class="hero-cta">
+          <a class="btn btn-amber" href="#contact" data-service="customs">Get a Quote <span class="ar" aria-hidden="true">→</span></a>
+          <a class="btn btn-line-light" href="#services">Explore Our Services</a>
+        </div>
+      </div>
+      <div class="hero-foot">
+        <aside class="shipment" aria-label="Illustrative example of a shipment progress update">
+          <div class="ship-top"><span>Shipment progress · <strong>B/L EXAMPLE‑0417</strong></span><span class="ex">Illustrative example</span></div>
+          <ol class="track">
+            <li class="done"><b>Arrived</b>Logged at port</li>
+            <li class="done"><b>Documents</b>Checked</li>
+            <li class="now"><b>Duties</b>Being assessed</li>
+            <li class="next"><b>Release</b>Ready to collect</li>
+          </ol>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST -->
+  <div class="trust" aria-label="What you can expect">
+    <div class="wrap">
+      <ul>
+        <li data-needs="license"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg><span><b>Licensed customs broker</b> · Lic. <span data-f="license" data-ph="License no."></span></span></li>
+        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="4" y="10" width="16" height="11" rx="1"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg><span><b>Private</b> document handling</span></li>
+        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 4h14v16H5z"/><path d="M8 9h8M8 13h8M8 17h4"/></svg><span><b>Upfront</b> duty estimates</span></li>
+        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/></svg><span><b>WhatsApp</b> updates</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- SERVICES -->
+  <section class="band" id="services" aria-labelledby="h-services">
+    <div class="wrap">
+      <div class="sec-head split rise">
+        <div><span class="eyebrow">What we do</span><h2 id="h-services" style="margin-top:1.25rem">Three services. One trusted partner.</h2></div>
+        <p>Most people juggle a broker, a rental desk and a car lot. With E&amp;D it's one team and one number, from the moment your cargo lands to the day you drive away.</p>
+      </div>
+      <div class="svc-list">
+        <article class="svc v-customs rise">
+          <div class="media reveal" data-img="customs" data-scene="documents" data-alt="Shipping documents and a customs stamp on a desk"></div>
+          <div class="svc-body">
+            <span class="svc-num" aria-hidden="true">01</span>
+            <h3>Customs Clearance</h3>
+            <p>We handle the paperwork, the duty math and the back and forth with customs, so your goods get released without the headache.</p>
+            <ul><li>Commercial cargo and personal shipments</li><li>Barrels and personal effects from family abroad</li><li>Vehicle imports, start to finish</li><li>Duty and tax estimates before you commit</li></ul>
+            <div class="actions"><a class="btn btn-amber" href="#contact" data-service="customs">Quote my clearance <span class="ar" aria-hidden="true">→</span></a><a class="tlink" href="#customs">How it works</a></div>
+          </div>
+        </article>
+        <article class="svc v-rental flip rise">
+          <div class="media reveal" data-img="rental" data-scene="coastal" data-alt="SUV on a coastal road in Grenada at golden hour"></div>
+          <div class="svc-body">
+            <span class="svc-num" aria-hidden="true">02</span>
+            <h3>Car Rental</h3>
+            <p>Daily, weekly and monthly rentals for visitors, Grenadians home for the holidays, and the weeks when your own car is in the shop.</p>
+            <ul><li>Clean, serviced vehicles</li><li>Flexible daily to monthly terms</li><li>Simple paperwork, quick handover</li></ul>
+            <div class="actions"><a class="btn btn-navy" href="#contact" data-service="rental">Book a car <span class="ar" aria-hidden="true">→</span></a><a class="tlink" href="#rental">See the fleet</a></div>
+          </div>
+        </article>
+        <article class="svc v-sales rise">
+          <div class="media reveal" data-img="sales" data-scene="showroom" data-car="sedan" data-alt="A car under showroom lights"></div>
+          <div class="svc-body">
+            <span class="svc-num" aria-hidden="true">03</span>
+            <h3>Vehicle Sales</h3>
+            <p>Quality vehicles, honestly priced. Found one overseas instead? We'll help you source it, ship it and clear it.</p>
+            <ul><li>Inspected vehicles ready to drive</li><li>Overseas sourcing on request</li><li>Clearance handled in house</li></ul>
+            <div class="actions"><a class="btn btn-line" href="#sales">Browse vehicles <span class="ar" aria-hidden="true">→</span></a><a class="tlink" href="#contact" data-service="import">Import a vehicle</a></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CUSTOMS -->
+  <section class="band white" id="customs" aria-labelledby="h-customs">
+    <div class="wrap">
+      <div class="cus-intro">
+        <div class="cus-copy rise">
+          <span class="eyebrow">Customs clearance</span>
+          <h2 id="h-customs">From arrival to release.</h2>
+          <p>Clearance feels complicated because nobody explains it. We handle the paperwork, the duty math and the back and forth with customs. Here's what happens when you hand it to us, and who does what at each stage.</p>
+          <div class="legend" aria-label="Who is responsible"><span><i class="who you">You</i>Customer</span><span><i class="who ed">E&amp;D</i>Your broker</span><span><i class="who cus">Customs</i>Grenada Customs</span></div>
+          <div><a class="btn btn-navy" href="#contact" data-service="customs">Start a clearance <span class="ar" aria-hidden="true">→</span></a></div>
+        </div>
+        <figure class="cus-frame rise" style="margin-top:0">
+          <div class="media reveal" data-img="customs" data-scene="documents" data-alt="Customs paperwork, a laptop and a calculator on a desk overlooking the harbour" data-sizes="(min-width: 960px) 55vw, 100vw"></div>
+          <figcaption><span>Before we file</span>Your documents checked and a duty estimate in hand.</figcaption>
+        </figure>
+      </div>
+      <ol class="timeline">
+        <li class="rise"><span class="tnum" aria-hidden="true"></span><div class="tags"><i class="who you">You</i></div><h3>Send us your documents</h3><p>Snap a photo and WhatsApp it, or email it over. We'll tell you right away if anything is missing.</p></li>
+        <li class="rise"><span class="tnum" aria-hidden="true"></span><div class="tags"><i class="who ed">E&amp;D</i></div><h3>We classify and calculate</h3><p>Every item gets a tariff classification, and you get a duty and tax estimate before anything is filed.</p></li>
+        <li class="rise"><span class="tnum" aria-hidden="true"></span><div class="tags"><i class="who ed">E&amp;D</i><i class="who cus">Customs</i></div><h3>We file and follow up</h3><p>We lodge your declaration and handle any questions or inspections from customs, with updates at every stage.</p></li>
+        <li class="rise"><span class="tnum" aria-hidden="true"></span><div class="tags"><i class="who cus">Customs</i><i class="who you">You</i></div><h3>Released and on its way</h3><p>Once duties are settled and customs issues the release order, you collect your goods, or ask us about delivery.</p></li>
+      </ol>
+      <p class="fine">Estimates are based on the documents provided. Final duties and taxes are set by Grenada Customs, and processing times vary by shipment.</p>
+
+      <div class="docs rise">
+        <div class="docs-in">
+          <div class="docs-l">
+            <h3>What to have ready</h3>
+            <p>Bring what you have. We'll help with the rest. Tick off what you've got to see where you stand.</p>
+            <p class="fine" style="margin-top:0">Requirements can vary by shipment. We'll confirm the list for yours.</p>
+            <div class="docs-cta"><a class="btn btn-amber" href="#contact" data-service="customs">Send Your Documents <span class="ar" aria-hidden="true">→</span></a></div>
+          </div>
+          <div class="sheet">
+            <div class="sheet-head"><b>Document checklist</b><span id="doc-count" aria-live="polite">0 of 5 ready</span></div>
+            <div class="meter" aria-hidden="true"><i id="doc-meter"></i></div>
+            <div id="doc-list">
+              <button type="button" class="doc-row" id="doc-bl" aria-pressed="false"><span class="box" aria-hidden="true"></span><span>Bill of lading or airway bill</span><small>Needed</small></button>
+              <button type="button" class="doc-row" id="doc-inv" aria-pressed="false"><span class="box" aria-hidden="true"></span><span>Commercial invoice or receipts</span><small>Needed</small></button>
+              <button type="button" class="doc-row" id="doc-pk" aria-pressed="false"><span class="box" aria-hidden="true"></span><span>Packing list</span><small>Needed</small></button>
+              <button type="button" class="doc-row" id="doc-id" aria-pressed="false"><span class="box" aria-hidden="true"></span><span>Photo ID or business registration</span><small>Needed</small></button>
+              <button type="button" class="doc-row" id="doc-veh" aria-pressed="false"><span class="box" aria-hidden="true"></span><span>Vehicles only: title and registration</span><small>If importing a vehicle</small></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RENTAL -->
+  <section id="rental" aria-labelledby="h-rental">
+    <div class="rent-hero">
+      <div class="media reveal" data-img="rental" data-scene="coastal" data-alt="SUV on a coastal road in Grenada at golden hour"></div>
+      <div class="wrap">
+        <span class="eyebrow">Car rental</span>
+        <h2 id="h-rental">Your island. Your ride.</h2>
+        <p>Home for Carnival, here on business, or waiting on your own car to clear. Here's how you go from first message to open road.</p>
+      </div>
+    </div>
+    <div class="band" style="padding-top:clamp(3rem,6vw,4.5rem)">
+      <div class="wrap">
+        <ol class="rsteps" aria-label="Six steps to rent a car">
+          <li><h3>Pick your ride</h3><p>Compact for town, SUV for the hills, or a pickup for hauling. Tell us your dates.</p></li>
+          <li><h3>Book in one message</h3><p>WhatsApp us or use the form below. We'll confirm the car, the rate and the pickup spot.</p></li>
+          <li><h3>Show your license</h3><p>Bring a valid driver's license. Visiting? You'll need a local driving permit. Ask us how.</p></li>
+          <li><h3>Grab the keys</h3><p>We walk around the car with you, sign the agreement, and the keys are yours.</p></li>
+          <li><h3>Explore Grenada</h3><p>Grand Anse in the morning, Grand Etang by lunch, Grenville by sunset.</p></li>
+          <li><h3>Drop it back</h3><p>Return it on the agreed day and we check it in with you. Need more time? Message us.</p></li>
+        </ol>
+        <p class="swipe-hint" aria-hidden="true">Swipe to see all six steps →</p>
+
+        <div class="fleet rise">
+          <div class="fleet-top"><h3>Choose your vehicle</h3><span class="fine" style="margin:0">Rates and availability are confirmed when you book.</span></div>
+          <div class="tabs" role="tablist" aria-label="Vehicle category">
+            <button role="tab" id="tab-eco" aria-controls="fleet-panel" aria-selected="true" data-k="eco" type="button">Economy and Compact</button>
+            <button role="tab" id="tab-suv" aria-controls="fleet-panel" aria-selected="false" data-k="suv" type="button" tabindex="-1">SUVs</button>
+            <button role="tab" id="tab-pick" aria-controls="fleet-panel" aria-selected="false" data-k="pick" type="button" tabindex="-1">Pickups and Vans</button>
+          </div>
+          <div class="fleet-panel" id="fleet-panel" role="tabpanel" aria-labelledby="tab-eco">
+            <div class="media" id="fleet-media" data-img="fleet_eco" data-scene="showroom" data-car="sedan" data-tone="light" data-alt="Economy car"></div>
+            <div class="fp-body fleet-swap" id="fleet-body">
+              <h4 id="fp-title">Economy and Compact</h4>
+              <p id="fp-desc">Easy on gas, easy to park. Great for getting around town.</p>
+              <dl class="spec">
+                <div><dt>Seats</dt><dd id="fp-seats">4 to 5</dd></div>
+                <div><dt>Best for</dt><dd id="fp-best">Town and short trips</dd></div>
+                <div><dt>Highlights</dt><dd id="fp-hl">Fuel saver</dd></div>
+                <div><dt>Availability</dt><dd><span data-f="rental.eco.availability" data-ph="Availability" id="fp-avail"></span></dd></div>
+              </dl>
+              <div class="rate"><span class="from">From</span><span class="amt">EC$ <span data-f="rental.eco.rate" data-ph="Rate" id="fp-rate"></span></span><span class="per">per day</span></div>
+              <a class="btn btn-amber" id="fp-book" href="#contact" data-service="rental" data-category="Economy and Compact">Book an Economy car <span class="ar" aria-hidden="true">→</span></a>
+            </div>
+          </div>
+          <dl class="terms">
+            <div><dt>To rent</dt><dd>Valid driver's license</dd></div>
+            <div><dt>Minimum age</dt><dd><span data-f="rental.minAge" data-ph="Age"></span></dd></div>
+            <div><dt>Deposit</dt><dd>EC$ <span data-f="rental.deposit" data-ph="Amount"></span></dd></div>
+            <div><dt>Longer stays</dt><dd>Weekly and monthly rates on request</dd></div>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPLORE -->
+  <section class="explore-full" id="explore" aria-labelledby="h-explore">
+    <div class="media reveal" data-img="explore" data-scene="jungle" data-alt="A coastal road above a curving Caribbean beach"></div>
+    <div class="wrap ex-in">
+      <div class="ex-head rise">
+        <span class="eyebrow">Discover Grenada</span>
+        <h2 id="h-explore">The island is yours to explore.</h2>
+        <p>Rent from E&amp;D and the whole island opens up. A few of our favorite drives to get you started.</p>
+      </div>
+      <ol class="ex-dest" aria-label="Suggested destinations">
+        <li><span class="n">01</span><h3>Grand Anse Beach</h3><p>Two miles of white sand</p></li>
+        <li><span class="n">02</span><h3>Grand Etang</h3><p>Crater lake in the rainforest</p></li>
+        <li><span class="n">03</span><h3>The Carenage</h3><p>St. George's harbour</p></li>
+        <li><span class="n">04</span><h3>Grenville</h3><p>The east coast drive</p></li>
+      </ol>
+    </div>
+  </section>
+  <div class="keepleft-band"><div class="wrap"><p class="keepleft"><b>KEEP LEFT</b><span>Grenada drives on the left. Take the first few roundabouts slowly and give yourself time on the hill roads.</span></p></div></div>
+
+  <!-- SALES -->
+  <section class="band" id="sales" aria-labelledby="h-sales">
+    <div class="wrap">
+      <div class="sec-head split rise">
+        <div><span class="eyebrow">Vehicle sales</span><h2 id="h-sales" style="margin-top:1.25rem">Your next move starts here.</h2></div>
+        <p>Every vehicle is inspected and priced straight. Here's what's on the lot right now. Don't see the one? Ask, and we'll help you find it.</p>
+      </div>
+      <figure class="promo rise">
+        <div class="media reveal" data-img="sales" data-scene="showroom" data-alt="A row of vehicles parked outside a modern dealership"></div>
+        <figcaption class="promo-cap"><span class="eyebrow">On the lot</span><strong>Inspected. Priced straight. Ready to drive.</strong><a class="btn btn-amber" href="#inventory">See what's available <span class="ar" aria-hidden="true">↓</span></a></figcaption>
+      </figure>
+      <div class="inv" id="inventory" style="scroll-margin-top:90px"></div>
+
+      <div class="source rise">
+        <div class="media reveal" data-img="sourcing" data-scene="ship" data-alt="Car carrier ship arriving in Grenada"></div>
+        <div class="source-in">
+          <span class="eyebrow">Overseas sourcing</span>
+          <h3>Found the right car overseas?</h3>
+          <p>Send us the listing. We'll help you buy it, ship it to Grenada and clear it through customs, then hand you the keys.</p>
+          <ol class="verbs">
+            <li><span>01</span>Find it.</li>
+            <li><span>02</span>Buy it.</li>
+            <li><span>03</span>Ship it.</li>
+            <li><span>04</span>Clear it.</li>
+            <li><span>05</span>Drive it.</li>
+          </ol>
+          <div><a class="btn btn-amber" href="#contact" data-service="import">Ask About Importing <span class="ar" aria-hidden="true">→</span></a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY / ABOUT -->
+  <section class="band dark" id="about" aria-labelledby="h-why">
+    <div class="wrap why">
+      <div class="rise">
+        <span class="eyebrow" style="color:var(--amber)">Why E&amp;D</span>
+        <h2 id="h-why" style="margin-top:1.5rem"><span>Less waiting.</span><span>Fewer phone calls.</span><span>Straight answers.</span></h2>
+        <div class="media reveal" data-img="why" data-scene="harbour" data-alt="Port of St. George's"></div>
+      </div>
+      <ol class="values">
+        <li class="rise"><span class="n">01</span><div><h3>Three services under one roof</h3><p>Clear your car through customs and drive one of ours while you wait. Same team, same number.</p></div></li>
+        <li class="rise"><span class="n">02</span><div><h3>Transparent estimates</h3><p>You see a duty and fee estimate before we file, so you know what to expect before anything is committed.</p></div></li>
+        <li class="rise"><span class="n">03</span><div><h3>Local expertise</h3><p>We work in Grenada's port and customs system every day. We know the process and what each step needs. <span class="devonly" data-needs="years">Clearing cargo here for <span data-f="years" data-ph="Years"></span> years.</span></p></div></li>
+        <li class="rise"><span class="n">04</span><div><h3>Consistent communication</h3><p>Updates by phone or WhatsApp at each stage, so you always know where things stand.</p></div></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- QUOTE -->
+  <section class="band white" id="contact" aria-labelledby="h-quote">
+    <div class="wrap quote">
+      <div class="q-left rise">
+        <span class="eyebrow">Get a quote</span>
+        <h2 id="h-quote">Tell us what you need. We'll take it from here.</h2>
+        <p>Send a few details and we'll come back to you with next steps and a clear price. Prefer to talk? Reach us directly.</p>
+        <ul class="contact">
+          <li data-needs="phone"><span class="k">Phone · WhatsApp</span><span class="v"><span data-f="phone" data-ph="Phone number"></span></span></li>
+          <li data-needs="email"><span class="k">Email</span><span class="v"><span data-f="email" data-ph="Email address"></span></span></li>
+          <li data-needs="address"><span class="k">Office</span><span class="v"><span data-f="address" data-ph="Street address"></span><span data-f="parish" data-ph="Parish"></span><span>Grenada</span></span></li>
+          <li data-needs="hours"><span class="k">Hours</span><span class="v"><span data-f="hours" data-ph="Mon to Fri, 8am to 5pm"></span></span></li>
+        </ul>
+      </div>
+
+      <form class="form rise" id="qf" novalidate aria-describedby="q-privacy">
+        <div class="f half"><label for="q-name">Your name</label><input id="q-name" name="name" autocomplete="name" placeholder="Jane Doe" required></div>
+        <div class="f half"><label for="q-phone">Phone or WhatsApp</label><input id="q-phone" name="phone" autocomplete="tel" inputmode="tel" placeholder="+1 (473) ..." required></div>
+        <div class="f"><label for="q-email">Email <span class="opt">(optional)</span></label><input id="q-email" name="email" type="email" autocomplete="email" placeholder="you@example.com"></div>
+        <fieldset class="f">
+          <legend>What can we help with?</legend>
+          <div class="choices">
+            <label><input type="radio" name="service" id="sv-customs" value="customs" checked><span>Customs clearance</span></label>
+            <label><input type="radio" name="service" id="sv-import" value="import"><span>Vehicle import</span></label>
+            <label><input type="radio" name="service" id="sv-rental" value="rental"><span>Car rental</span></label>
+            <label><input type="radio" name="service" id="sv-buy" value="buy"><span>Buy a vehicle</span></label>
+            <label><input type="radio" name="service" id="sv-other" value="other"><span>Something else</span></label>
+          </div>
+        </fieldset>
+        <div class="svc-fields" id="svc-fields" aria-live="polite"></div>
+        <p class="privacy" id="q-privacy"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="4" y="10" width="16" height="11" rx="1"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg><span>We only use your details to respond to this request. We don't share them or add you to marketing lists.</span></p>
+        <div class="f-submit"><button class="btn btn-amber" type="submit" id="q-submit">Request My Quote <span class="ar" aria-hidden="true">→</span></button></div>
+        <div class="notice" id="q-notice" role="status" hidden></div>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <div class="foot-top">
+      <div>
+        <a class="brand" href="#top"><span class="brand-mark" aria-hidden="true">E&amp;D</span><span class="brand-name" style="color:var(--on-navy)">E&amp;D Brokerage<small>Grenada</small></span></a>
+        <p class="foot-tag">From port to road. <span>We get you moving.</span></p>
+      </div>
+      <div><h4>Services</h4><ul><li><a href="#customs">Customs Clearance</a></li><li><a href="#rental">Car Rental</a></li><li><a href="#sales">Vehicle Sales</a></li><li><a href="#contact" data-service="import">Overseas Sourcing</a></li></ul></div>
+      <div><h4>Company</h4><ul><li><a href="#about">About</a></li><li><a href="#contact">Contact</a></li><li data-needs="social.instagram"><span data-f="social.instagram" data-ph="Instagram"></span></li><li data-needs="social.facebook"><span data-f="social.facebook" data-ph="Facebook"></span></li><li data-needs="social.tiktok"><span data-f="social.tiktok" data-ph="TikTok"></span></li></ul></div>
+    </div>
+    <div class="legal">
+      <span>© 2026 E&amp;D Brokerage<span data-needs="owner">. Owned by <span data-f="owner" data-ph="Owner name"></span></span><span data-needs="license">. Licensed customs broker <span data-f="license" data-ph="License no."></span></span>.</span>
+      <span>St. George's, Grenada</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* =========================================================
+   SITE CONFIG — the single place for unverified business info.
+   null = not yet supplied. In "draft" mode it shows as a dashed
+   placeholder; in "prod" mode the element is hidden.
+   ========================================================= */
+function photo(name, o = {}) { return { src: `img/${name}-1672.webp`, srcset: `img/${name}-960.webp 960w, img/${name}-1672.webp 1672w`, ...o }; }
+const SITE = {
+  mode: 'draft',              // 'draft' | 'prod'
+  formEndpoint: null,         // e.g. 'https://formspree.io/f/xxxx' — the quote form will not send until this is set
+  phone: null, email: null, address: null, parish: null, hours: null,
+  owner: null, license: null, years: null,
+  social: { instagram: null, facebook: null, tiktok: null },
+  rental: {
+    minAge: null, deposit: null,
+    eco:  { rate: null, availability: null },
+    suv:  { rate: null, availability: null },
+    pick: { rate: null, availability: null }
+  },
+  // Vehicles for sale. Only real, available vehicles with real photos belong here.
+  inventory: [
+    { title: null, year: null, mileage: null, transmission: null, fuel: null, price: null, status: null, photo: null },
+    { title: null, year: null, mileage: null, transmission: null, fuel: null, price: null, status: null, photo: null },
+    { title: null, year: null, mileage: null, transmission: null, fuel: null, price: null, status: null, photo: null }
+  ],
+  // Photography. Set a key to an image URL (WebP/AVIF preferred) to replace the illustration.
+  // Optional: { src, srcset, position } e.g. { src: 'img/hero-1600.webp', srcset: 'img/hero-800.webp 800w, img/hero-1600.webp 1600w', position: '60% 50%' }
+  // position = desktop focal point, mobile = phone focal point, zoom = crop-in factor, note = caption shown on the image.
+  // All photos are illustrative marketing imagery, not E&D's actual premises, fleet or inventory.
+  images: {
+    hero:      photo('hero',    { position: '55% 50%', mobile: '66% 50%' }),
+    customs:   photo('customs', { position: '45% 55%', mobile: '38% 60%' }),
+    rental:    photo('rental',  { position: '60% 55%', mobile: '74% 62%' }),
+    sales:     photo('sales',   { position: '40% 55%', mobile: '30% 62%', note: 'Illustrative photo. Not current inventory.' }),
+    explore:   photo('explore', { position: '55% 50%', mobile: '74% 55%' }),
+    why:       photo('customs', { position: '82% 45%', mobile: '84% 45%' }),
+    sourcing:  photo('hero',    { position: '50% 62%', mobile: '52% 62%' }),
+    fleet_eco:  photo('sales', { position: '56% 56%', zoom: 1.9, note: 'Illustrative photo' }),
+    fleet_suv:  photo('sales', { position: '22% 58%', zoom: 1.6, note: 'Illustrative photo' }),
+    fleet_pick: photo('sales', { position: '90% 50%', zoom: 1.9, note: 'Illustrative photo' })
+  }
+};
+
+/* ---------- Illustration painter (stand-ins for photography) ---------- */
+const Scenes = (() => {
+  const C = { navy: '#081C2C', navy2: '#0e2a40', navy3: '#16374f', teal: '#245361', teal2: '#2f6b7b', amber: '#E9AD34', amber2: '#f3c76a', warm: '#F6F5F0', rust: '#9a4a32', sand: '#e8dcc0' };
+  let n = 0; const id = p => p + (++n);
+  const lg = (g, s, x2 = 0, y2 = 1) => `<linearGradient id="${g}" x1="0" y1="0" x2="${x2}" y2="${y2}">${s.map(([o, c, a]) => `<stop offset="${o}" stop-color="${c}"${a != null ? ` stop-opacity="${a}"` : ''}/>`).join('')}</linearGradient>`;
+  const rg = (g, s, cx = .5, cy = .5, r = .5) => `<radialGradient id="${g}" cx="${cx}" cy="${cy}" r="${r}">${s.map(([o, c, a]) => `<stop offset="${o}" stop-color="${c}"${a != null ? ` stop-opacity="${a}"` : ''}/>`).join('')}</radialGradient>`;
+  const rnd = s => () => (s = (s * 16807) % 2147483647) / 2147483647;
+  const palm = (x, y, s, c) => `<g transform="translate(${x} ${y}) scale(${s})" fill="none" stroke="${c}" stroke-linecap="round"><path d="M0 0 C6 -60 -4 -120 10 -170" stroke-width="7"/><g stroke-width="9"><path d="M10 -170 q-50 -10 -80 25"/><path d="M10 -170 q50 -15 85 20"/><path d="M10 -170 q-30 -40 -70 -40"/><path d="M10 -170 q35 -40 75 -35"/><path d="M10 -170 q0 -40 -10 -60"/></g></g>`;
+  function car(kind, x, y, w, body, glass = '#9fb7c6', sheen) {
+    const s = w / 400;
+    const P = {
+      sedan: 'M20 150 C20 120 40 108 80 104 L120 100 L170 58 C182 48 196 44 214 44 L280 44 C300 44 314 50 326 62 L362 100 L370 102 C392 108 396 124 396 150 L396 168 L20 168 Z',
+      suv: 'M18 160 L18 112 C18 100 26 92 40 90 L70 86 L104 40 C110 32 120 28 132 28 L300 28 C316 28 326 34 334 44 L372 90 L380 92 C394 96 398 106 398 118 L398 168 L18 168 Z',
+      pickup: 'M14 160 L14 112 C14 100 22 94 36 92 L66 88 L98 42 C104 34 114 30 126 30 L216 30 C226 30 232 36 232 46 L232 92 L392 92 C398 92 400 96 400 102 L400 168 L14 168 Z'
+    };
+    const W = {
+      sedan: 'M136 100 L180 64 C188 58 196 56 206 56 L246 56 L250 100 Z M262 100 L258 56 L282 56 C296 56 306 62 314 72 L338 100 Z',
+      suv: 'M86 88 L114 48 C118 42 124 40 132 40 L196 40 L196 88 Z M208 88 L208 40 L296 40 C306 40 314 44 320 52 L352 88 Z',
+      pickup: 'M80 90 L106 52 C110 46 116 42 124 42 L218 42 L218 90 Z'
+    };
+    const wx = kind === 'pickup' ? [96, 320] : [100, 312];
+    return `<g transform="translate(${x} ${y}) scale(${s})"><ellipse cx="208" cy="176" rx="200" ry="10" fill="#000" opacity=".35"/><path d="${P[kind]}" fill="${body}"/><path d="${P[kind]}" fill="url(#${sheen})" opacity=".6"/><path d="${W[kind]}" fill="${glass}"/><path d="M20 134 H396" stroke="#fff" stroke-opacity=".18" stroke-width="3"/><rect x="380" y="112" width="14" height="9" fill="#fff4cf"/><rect x="18" y="114" width="9" height="9" fill="#c94a33"/>${wx.map(c => `<circle cx="${c}" cy="166" r="34" fill="#0a0f14"/><circle cx="${c}" cy="166" r="18" fill="#8f99a3"/><circle cx="${c}" cy="166" r="7" fill="#3b444d"/>`).join('')}</g>`;
+  }
+  const sheenDef = g => lg(g, [[0, '#fff', .55], [.45, '#fff', 0], [1, '#000', .35]]);
+  const lights = (seed, cnt, yfn, W) => { const r = rnd(seed); let s = ''; for (let i = 0; i < cnt; i++) { const x = r() * W, y = yfn(x) + r() * 60; s += `<rect x="${x.toFixed(1)}" y="${y.toFixed(1)}" width="${(2 + r() * 3).toFixed(1)}" height="${(2 + r() * 2).toFixed(1)}" fill="${r() > .3 ? C.amber2 : '#fff6dc'}" opacity="${(.45 + r() * .55).toFixed(2)}"/>`; } return s; };
+
+  const S = {
+    harbour(W, H) {
+      const sky = id('k'), sea = id('w'), glow = id('g'), cg = id('c');
+      const hill = x => H * .43 + Math.sin(x / 150) * H * .025 - Math.cos(x / 360) * H * .04;
+      const cols = [C.teal, C.navy3, C.amber, '#c9c4b5', C.teal2, C.rust, '#d8d3c4', C.navy2];
+      let box = ''; const base = H * .66, bw = W * .022, bh = H * .028, x0 = W * .2;
+      for (let r = 0; r < 4; r++) for (let i = 0; i < 24; i++) { if (r === 3 && (i % 4 === 0 || i > 20)) continue; box += `<rect x="${x0 + i * (bw + 2)}" y="${base - (r + 1) * (bh + 1.5)}" width="${bw}" height="${bh}" fill="${cols[(i * 3 + r * 5) % cols.length]}"/>`; }
+      return `<defs>${lg(sky, [[0, C.navy], [.4, '#16324a'], [.68, '#5b5a57'], [.82, '#c98a45'], [.9, C.amber2]])}${lg(sea, [[0, '#2a3d48'], [.15, C.navy3], [1, C.navy]])}${rg(glow, [[0, '#ffd98a', .9], [.35, C.amber, .35], [1, C.amber, 0]])}${lg(cg, [[0, '#fff', .25], [1, '#000', .45]])}</defs>
+      <rect width="${W}" height="${H}" fill="url(#${sky})"/>
+      <ellipse cx="${W * .72}" cy="${H * .5}" rx="${W * .35}" ry="${H * .28}" fill="url(#${glow})"/>
+      <circle cx="${W * .72}" cy="${H * .49}" r="${H * .035}" fill="#fff1c9"/>
+      <path d="M0 ${H * .4} C${W * .15} ${H * .33} ${W * .3} ${H * .37} ${W * .45} ${H * .35} S${W * .75} ${H * .32} ${W} ${H * .38} V${H * .55} H0Z" fill="#2b3b47" opacity=".8"/>
+      <path d="M0 ${hill(0)} ${Array.from({ length: 41 }, (_, i) => `L${i * W / 40} ${hill(i * W / 40)}`).join(' ')} L${W} ${H * .6} L0 ${H * .6}Z" fill="#0c2131"/>
+      ${lights(5, 260, hill, W)}
+      <rect y="${H * .6}" width="${W}" height="${H * .4}" fill="url(#${sea})"/>
+      ${Array.from({ length: 34 }, (_, i) => `<rect x="${W * .6 + ((i * 37) % 260) - 60}" y="${H * .62 + i * H * .009}" width="${30 + (i * 23) % 120}" height="1.5" fill="${C.amber2}" opacity="${.15 + (i % 5) * .08}"/>`).join('')}
+      ${Array.from({ length: 24 }, (_, i) => `<rect x="${(i * 211) % W}" y="${H * .64 + (i * 41) % (H * .3)}" width="${40 + (i * 17) % 90}" height="1" fill="#fff" opacity=".08"/>`).join('')}
+      <path d="M${W * .18} ${base} L${W * .74} ${base} L${W * .71} ${H * .73} L${W * .2} ${H * .73}Z" fill="#05121c"/>
+      <rect x="${W * .18}" y="${base}" width="${W * .56}" height="${H * .008}" fill="${C.rust}"/>
+      ${box}
+      <rect x="${W * .66}" y="${base - H * .16}" width="${W * .045}" height="${H * .16}" fill="#d8d3c4"/><rect x="${W * .664}" y="${base - H * .15}" width="${W * .037}" height="${H * .012}" fill="#0c2131"/>
+      <g stroke="#0a1b28" stroke-width="${W * .006}" fill="none"><path d="M${W * .8} ${H * .8} V${H * .26} M${W * .85} ${H * .8} V${H * .26} M${W * .77} ${H * .28} H${W * .97} M${W * .8} ${H * .33} L${W * .85} ${H * .27}"/><path d="M${W * .9} ${H * .8} V${H * .31} M${W * .94} ${H * .8} V${H * .31} M${W * .875} ${H * .33} H${W}"/></g>
+      <circle cx="${W * .97}" cy="${H * .28}" r="3" fill="#ff5a3d"/><circle cx="${W * .8}" cy="${H * .26}" r="3" fill="${C.amber}"/>
+      <rect x="${W * .76}" y="${H * .8}" width="${W * .24}" height="${H * .2}" fill="#05121c"/>
+      ${Array.from({ length: 6 }, (_, i) => `<rect x="${W * .77 + i * W * .036}" y="${H * .76 - (i % 2) * H * .03}" width="${W * .033}" height="${H * .04}" fill="${[C.teal, '#c9c4b5', C.amber, C.rust, C.teal2, C.navy3][i]}" opacity=".9"/>`).join('')}`;
+    },
+    documents(W, H) {
+      const d = id('d'), lamp = id('l');
+      const paper = (x, y, w, h, rot, lines) => `<g transform="rotate(${rot} ${x + w / 2} ${y + h / 2})"><rect x="${x + 6}" y="${y + 10}" width="${w}" height="${h}" fill="#000" opacity=".3"/><rect x="${x}" y="${y}" width="${w}" height="${h}" fill="${C.warm}"/><rect x="${x + w * .08}" y="${y + h * .07}" width="${w * .45}" height="${h * .035}" fill="${C.navy}" opacity=".8"/>${Array.from({ length: lines }, (_, i) => `<rect x="${x + w * .08}" y="${y + h * (.16 + i * .06)}" width="${w * (i % 3 === 2 ? .5 : .84)}" height="${h * .012}" fill="#a9a597"/>`).join('')}<rect x="${x + w * .08}" y="${y + h * .78}" width="${w * .84}" height="${h * .1}" fill="none" stroke="#a9a597" stroke-width="1.5"/></g>`;
+      return `<defs>${lg(d, [[0, '#11324a'], [1, C.navy]], 1, 1)}${rg(lamp, [[0, '#ffe3a3', .38], [1, '#ffe3a3', 0]], .65, .25, .6)}</defs>
+      <rect width="${W}" height="${H}" fill="url(#${d})"/>
+      ${Array.from({ length: 14 }, (_, i) => `<rect x="0" y="${i * H / 14}" width="${W}" height="1" fill="#000" opacity=".12"/>`).join('')}
+      ${paper(W * .12, H * .1, W * .36, H * .78, -8, 9)}
+      ${paper(W * .42, H * .16, W * .34, H * .72, 6, 10)}
+      <g transform="rotate(-12 ${W * .62} ${H * .5})"><circle cx="${W * .62}" cy="${H * .52}" r="${H * .12}" fill="none" stroke="${C.teal}" stroke-width="5" opacity=".85"/><circle cx="${W * .62}" cy="${H * .52}" r="${H * .095}" fill="none" stroke="${C.teal}" stroke-width="2" opacity=".85"/><rect x="${W * .58}" y="${H * .5}" width="${W * .08}" height="${H * .04}" fill="${C.teal}" opacity=".85"/></g>
+      <g transform="rotate(28 ${W * .82} ${H * .7})"><rect x="${W * .7}" y="${H * .69}" width="${W * .26}" height="${H * .025}" fill="${C.amber}"/><path d="M${W * .96} ${H * .69} l${W * .03} ${H * .0125} l-${W * .03} ${H * .0125}z" fill="#d8d3c4"/></g>
+      <g><rect x="${W * .8}" y="${H * .1}" width="${W * .16}" height="${H * .2}" fill="${C.navy3}"/><rect x="${W * .82}" y="${H * .13}" width="${W * .12}" height="${H * .02}" fill="${C.amber}" opacity=".8"/><circle cx="${W * .88}" cy="${H * .22}" r="${H * .035}" fill="none" stroke="${C.amber}" stroke-width="2" opacity=".7"/></g>
+      <circle cx="${W * .06}" cy="${H * .78}" r="${H * .1}" fill="none" stroke="#3a2a1c" stroke-width="6" opacity=".4"/>
+      <rect width="${W}" height="${H}" fill="url(#${lamp})"/>`;
+    },
+    containers(W, H) {
+      const sky = id('k'), sh = id('s'); const r = rnd(9);
+      const cols = [C.teal, C.navy3, C.amber, '#c9c4b5', C.teal2, C.rust, '#d8d3c4'];
+      let s = ''; const cw = W / 5.2, ch = H / 7.5;
+      for (let row = 0; row < 6; row++) for (let i = 0; i < 6; i++) {
+        if (row > 3 && r() > .55) continue;
+        const x = i * (cw + 4) - cw * .3 + (row % 2) * cw * .2, y = H - (row + 1) * (ch + 3), c = cols[Math.floor(r() * cols.length)];
+        s += `<rect x="${x}" y="${y}" width="${cw}" height="${ch}" fill="${c}"/>${Array.from({ length: 10 }, (_, k) => `<rect x="${x + 6 + k * cw / 10.5}" y="${y + 5}" width="${cw / 30}" height="${ch - 10}" fill="#000" opacity=".16"/>`).join('')}<rect x="${x}" y="${y}" width="${cw}" height="${ch}" fill="url(#${sh})"/>`;
+      }
+      return `<defs>${lg(sky, [[0, '#1a3a52'], [.7, '#b07a42'], [1, C.amber2]])}${lg(sh, [[0, '#fff', .18], [1, '#000', .5]], 1, 1)}</defs><rect width="${W}" height="${H}" fill="url(#${sky})"/><g stroke="#0a1b28" stroke-width="${W * .012}"><path d="M${W * .72} ${H} V${H * .08} M${W * .86} ${H} V${H * .08} M${W * .66} ${H * .11} H${W} M${W * .72} ${H * .2} L${W * .86} ${H * .09}"/></g>${s}`;
+    },
+    coastal(W, H) {
+      const sky = id('k'), sea = id('w'), sh = id('sh'), glow = id('g');
+      return `<defs>${lg(sky, [[0, '#2b5566'], [.45, '#c6a77a'], [.7, C.amber2], [1, '#f8e2b0']])}${lg(sea, [[0, '#3b7f8b'], [1, '#123848']])}${sheenDef(sh)}${rg(glow, [[0, '#fff1c9', .9], [1, '#fff1c9', 0]])}</defs>
+      <rect width="${W}" height="${H}" fill="url(#${sky})"/>
+      <circle cx="${W * .2}" cy="${H * .44}" r="${H * .25}" fill="url(#${glow})"/><circle cx="${W * .2}" cy="${H * .44}" r="${H * .045}" fill="#fff6dc"/>
+      <path d="M0 ${H * .47} C${W * .2} ${H * .44} ${W * .4} ${H * .46} ${W * .55} ${H * .45} V${H * .5} H0Z" fill="#4a6e6a" opacity=".7"/>
+      <rect y="${H * .49}" width="${W}" height="${H * .51}" fill="url(#${sea})"/>
+      ${Array.from({ length: 22 }, (_, i) => `<rect x="${W * .1 + (i * 53) % (W * .25)}" y="${H * .5 + i * H * .012}" width="${30 + (i * 19) % 80}" height="1.5" fill="#ffe6ad" opacity="${.18 + (i % 4) * .08}"/>`).join('')}
+      <path d="M${W * .35} ${H} C${W * .45} ${H * .72} ${W * .6} ${H * .52} ${W} ${H * .36} V${H}Z" fill="#1d4434"/>
+      <path d="M${W * .52} ${H} C${W * .6} ${H * .78} ${W * .75} ${H * .62} ${W} ${H * .55} V${H}Z" fill="#2a2f33"/>
+      <path d="M${W * .6} ${H} C${W * .66} ${H * .82} ${W * .8} ${H * .66} ${W} ${H * .6}" stroke="${C.amber}" stroke-width="3" stroke-dasharray="18 16" fill="none"/>
+      ${car('suv', W * .6, H * .58, W * .26, '#eceae2', '#3b5361', sh)}
+      ${palm(W * .93, H * .74, H / 520, '#0d2a1f')}${palm(W * .4, H * 1.02, H / 400, '#0d2a1f')}`;
+    },
+    showroom(W, H, el) {
+      const bg = id('b'), fl = id('f'), sh = id('sh'), sp = id('sp');
+      const light = el?.dataset.tone === 'light';
+      const kind = el?.dataset.car || 'sedan';
+      const body = { sedan: light ? C.navy3 : '#e7e4da', suv: C.teal, pickup: light ? '#d8d3c4' : C.amber }[kind];
+      const back = light ? ['#f1efe8', '#d9d6cb'] : ['#122d42', C.navy];
+      const cw = W * .74, cx = (W - cw) / 2, cy = H * .7 - cw * .44;
+      return `<defs>${rg(bg, [[0, back[0]], [1, back[1]]], .5, .3, .9)}${lg(fl, [[0, light ? '#cfccc0' : '#0a1f30'], [1, light ? '#bdb9ab' : '#050f17']])}${sheenDef(sh)}${rg(sp, [[0, '#fff', light ? .5 : .22], [1, '#fff', 0]])}</defs>
+      <rect width="${W}" height="${H}" fill="url(#${bg})"/>
+      ${Array.from({ length: 7 }, (_, i) => `<rect x="${i * W / 6.5}" y="0" width="1" height="${H * .7}" fill="${light ? '#000' : '#fff'}" opacity=".05"/>`).join('')}
+      <ellipse cx="${W / 2}" cy="${H * .12}" rx="${W * .42}" ry="${H * .32}" fill="url(#${sp})"/>
+      <rect y="${H * .7}" width="${W}" height="${H * .3}" fill="url(#${fl})"/>
+      <g opacity=".18" transform="translate(0 ${H * 1.4}) scale(1 -1)">${car(kind, cx, cy, cw, body, '#3b5361', sh)}</g>
+      ${car(kind, cx, cy, cw, body, '#3b5361', sh)}`;
+    },
+    jungle(W, H) {
+      const sky = id('k'), road = id('r'), mist = id('m');
+      const trees = (seed, cnt, yMin, yMax, col, side) => { const r = rnd(seed); let s = ''; for (let i = 0; i < cnt; i++) { const x = side < 0 ? r() * W * .42 : W * .58 + r() * W * .42, y = yMin + r() * (yMax - yMin), rr = 30 + r() * 80; s += `<circle cx="${x}" cy="${y}" r="${rr}" fill="${col}"/>`; } return s; };
+      return `<defs>${lg(sky, [[0, '#cfdcd2'], [1, '#f2e7c9']])}${lg(road, [[0, '#4a4f52'], [1, '#22272b']])}${lg(mist, [[0, '#f2efe4', .0], [.5, '#f2efe4', .55], [1, '#f2efe4', 0]])}</defs>
+      <rect width="${W}" height="${H}" fill="url(#${sky})"/>
+      <path d="M0 ${H * .42} C${W * .25} ${H * .3} ${W * .4} ${H * .36} ${W * .5} ${H * .34} S${W * .8} ${H * .28} ${W} ${H * .38} V${H * .55} H0Z" fill="#6f8e7c"/>
+      <rect y="${H * .36}" width="${W}" height="${H * .14}" fill="url(#${mist})"/>
+      ${trees(3, 26, H * .3, H * .55, '#2f5c45', -1)}${trees(4, 26, H * .3, H * .55, '#2f5c45', 1)}
+      <path d="M${W * .47} ${H * .48} L${W * .53} ${H * .48} L${W * .85} ${H} L${W * .15} ${H}Z" fill="url(#${road})"/>
+      <path d="M${W * .5} ${H * .48} L${W * .5} ${H}" stroke="${C.amber}" stroke-width="4" stroke-dasharray="26 22"/>
+      ${trees(7, 30, H * .45, H * 1.05, '#1d4433', -1)}${trees(8, 30, H * .45, H * 1.05, '#1d4433', 1)}
+      ${trees(11, 14, H * .7, H * 1.15, '#123326', -1)}${trees(12, 14, H * .7, H * 1.15, '#123326', 1)}
+      ${palm(W * .1, H * 1.02, H / 380, '#0b2419')}${palm(W * .92, H * 1.02, H / 420, '#0b2419')}`;
+    },
+    beach(W, H) {
+      const sky = id('k'), sea = id('w'), sand = id('s');
+      return `<defs>${lg(sky, [[0, '#7fb2c0'], [1, '#e9efe6']])}${lg(sea, [[0, '#46a3a8'], [1, C.teal]])}${lg(sand, [[0, '#f4ead3'], [1, '#e1d1ac']])}</defs><rect width="${W}" height="${H}" fill="url(#${sky})"/><path d="M0 ${H * .42} C${W * .4} ${H * .38} ${W * .7} ${H * .4} ${W} ${H * .43} V${H * .47} H0Z" fill="#3d6e58"/><rect y="${H * .46}" width="${W}" height="${H * .3}" fill="url(#${sea})"/>${Array.from({ length: 10 }, (_, i) => `<rect x="${(i * 97) % W}" y="${H * .5 + (i * 23) % (H * .2)}" width="${30 + (i * 13) % 60}" height="1.5" fill="#fff" opacity=".35"/>`).join('')}<path d="M0 ${H * .72} C${W * .3} ${H * .66} ${W * .6} ${H * .7} ${W} ${H * .64} V${H} H0Z" fill="url(#${sand})"/><path d="M0 ${H * .72} C${W * .3} ${H * .66} ${W * .6} ${H * .7} ${W} ${H * .64}" stroke="#fff" stroke-width="4" fill="none" opacity=".8"/>${palm(W * .12, H * 1.02, H / 260, '#0d2a1f')}`;
+    },
+    lake(W, H) {
+      const sky = id('k'), l = id('l');
+      return `<defs>${lg(sky, [[0, '#a9bfbf'], [1, '#e6e8de']])}${lg(l, [[0, C.teal2], [1, C.navy3]])}</defs><rect width="${W}" height="${H}" fill="url(#${sky})"/><path d="M0 ${H * .4} C${W * .2} ${H * .22} ${W * .35} ${H * .28} ${W * .5} ${H * .34} S${W * .8} ${H * .2} ${W} ${H * .32} V${H} H0Z" fill="#4c7a5c"/><path d="M0 ${H * .5} C${W * .3} ${H * .4} ${W * .5} ${H * .48} ${W * .7} ${H * .44} S${W * .9} ${H * .42} ${W} ${H * .48} V${H} H0Z" fill="#2f5c45"/><ellipse cx="${W * .5}" cy="${H * .7}" rx="${W * .4}" ry="${H * .13}" fill="url(#${l})"/><ellipse cx="${W * .45}" cy="${H * .67}" rx="${W * .2}" ry="${H * .015}" fill="#cfe4e4" opacity=".5"/><path d="M0 ${H * .82} C${W * .3} ${H * .76} ${W * .7} ${H * .8} ${W} ${H * .84} V${H} H0Z" fill="#163a2a"/>`;
+    },
+    carenage(W, H) {
+      const sky = id('k'), w = id('w'); const r = rnd(21);
+      const hill = x => H * .32 - Math.sin(x / (W / 6)) * H * .05 + x * .03;
+      let hs = ''; const walls = [C.warm, '#f1d9a8', '#d8e2e0', '#e8c7b6', '#fbefd2']; const roofs = [C.rust, '#b8573b', C.rust, C.teal];
+      for (let i = 0; i < 55; i++) { const x = r() * W, y = hill(x) + r() * H * .16, ww = W * (.025 + r() * .03), hh = ww * .7; hs += `<rect x="${x}" y="${y}" width="${ww}" height="${hh}" fill="${walls[i % 5]}"/><path d="M${x - 1} ${y} L${x + ww / 2} ${y - hh * .5} L${x + ww + 1} ${y}z" fill="${roofs[i % 4]}"/>`; }
+      return `<defs>${lg(sky, [[0, '#7aa1ae'], [1, '#f1e1bd']])}${lg(w, [[0, C.teal2], [1, C.navy3]])}</defs><rect width="${W}" height="${H}" fill="url(#${sky})"/><path d="M0 ${hill(0)} ${Array.from({ length: 21 }, (_, i) => `L${i * W / 20} ${hill(i * W / 20)}`).join(' ')} L${W} ${H * .6} L0 ${H * .6}Z" fill="#3a6a4c"/>${hs}<rect y="${H * .58}" width="${W}" height="${H * .42}" fill="url(#${w})"/>${Array.from({ length: 12 }, (_, i) => `<rect x="${(i * 131) % W}" y="${H * .62 + (i * 29) % (H * .3)}" width="${30 + (i * 17) % 50}" height="1.5" fill="#fff" opacity=".25"/>`).join('')}<g transform="translate(${W * .15} ${H * .78})"><path d="M0 0 H${W * .2} L${W * .18} ${H * .05} H${W * .02}Z" fill="${C.warm}"/><path d="M${W * .09} 0 V-${H * .22} L${W * .17} -${H * .01}Z" fill="${C.warm}" opacity=".95"/></g><g transform="translate(${W * .58} ${H * .84})"><path d="M0 0 H${W * .25} L${W * .22} ${H * .06} H${W * .03}Z" fill="${C.rust}"/><rect x="${W * .07}" y="-${H * .05}" width="${W * .09}" height="${H * .05}" fill="${C.warm}"/></g>`;
+    },
+    eastcoast(W, H) {
+      const sky = id('k'), w = id('w');
+      return `<defs>${lg(sky, [[0, '#33586a'], [.6, '#e0a960'], [1, '#f7d79a']])}${lg(w, [[0, '#2f6b7b'], [1, C.navy2]])}</defs><rect width="${W}" height="${H}" fill="url(#${sky})"/><circle cx="${W * .3}" cy="${H * .52}" r="${H * .07}" fill="#fff1c9"/><rect y="${H * .56}" width="${W}" height="${H * .44}" fill="url(#${w})"/><rect x="${W * .22}" y="${H * .6}" width="${W * .16}" height="2" fill="#ffe2a3" opacity=".6"/><path d="M${W} ${H * .3} C${W * .8} ${H * .4} ${W * .68} ${H * .58} ${W * .62} ${H * .78} C${W * .6} ${H * .88} ${W * .6} ${H * .95} ${W * .6} ${H} H${W}Z" fill="#1f4434"/><path d="M${W} ${H * .48} C${W * .86} ${H * .54} ${W * .78} ${H * .68} ${W * .75} ${H * .8} C${W * .73} ${H * .9} ${W * .73} ${H * .96} ${W * .74} ${H}" stroke="#22272b" stroke-width="${W * .045}" fill="none"/><path d="M${W} ${H * .48} C${W * .86} ${H * .54} ${W * .78} ${H * .68} ${W * .75} ${H * .8} C${W * .73} ${H * .9} ${W * .73} ${H * .96} ${W * .74} ${H}" stroke="${C.amber}" stroke-width="2" stroke-dasharray="10 9" fill="none"/>${palm(W * .92, H * .68, H / 380, '#0b2419')}`;
+    },
+    ship(W, H) {
+      const sky = id('k'), sea = id('w');
+      const cols = [C.teal, '#d8d3c4', C.amber, C.rust, C.teal2, C.navy3];
+      let c = ''; for (let r = 0; r < 3; r++) for (let i = 0; i < 14; i++) c += `<rect x="${W * .2 + i * W * .042}" y="${H * .5 - r * H * .055}" width="${W * .04}" height="${H * .05}" fill="${cols[(i + r * 2) % 6]}"/>`;
+      return `<defs>${lg(sky, [[0, '#1a3a52'], [.75, '#c4874a'], [1, C.amber2]])}${lg(sea, [[0, C.navy3], [1, C.navy]])}</defs><rect width="${W}" height="${H}" fill="url(#${sky})"/><circle cx="${W * .82}" cy="${H * .58}" r="${H * .06}" fill="#fff1c9" opacity=".9"/><rect y="${H * .62}" width="${W}" height="${H * .38}" fill="url(#${sea})"/>${Array.from({ length: 18 }, (_, i) => `<rect x="${W * .7 + (i * 31) % (W * .2)}" y="${H * .64 + i * H * .018}" width="${30 + (i * 17) % 70}" height="1.5" fill="${C.amber2}" opacity="${.15 + (i % 4) * .08}"/>`).join('')}<path d="M${W * .17} ${H * .55} H${W * .83} L${W * .79} ${H * .66} H${W * .2}Z" fill="#05121c"/><rect x="${W * .17}" y="${H * .55}" width="${W * .66}" height="${H * .012}" fill="${C.rust}"/>${c}<rect x="${W * .78}" y="${H * .34}" width="${W * .045}" height="${H * .21}" fill="#d8d3c4"/>`;
+    }
+  };
+  function paint(el) {
+    const name = el.dataset.scene; const f = S[name]; if (!f) return;
+    const r = el.getBoundingClientRect();
+    const ratio = r.width && r.height ? r.width / r.height : 16 / 9;
+    const H = 900, W = Math.round(Math.max(600, Math.min(2400, H * ratio)));
+    let svg = el.querySelector(':scope > svg.scene');
+    if (!svg) { svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg'); svg.setAttribute('class', 'scene'); svg.setAttribute('aria-hidden', 'true'); svg.setAttribute('preserveAspectRatio', 'xMidYMid slice'); el.prepend(svg); }
+    svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
+    svg.innerHTML = f(W, H, el);
+  }
+  return { paint };
+})();
+
+/* ---------- Media: real photo if configured, otherwise illustration ---------- */
+function renderMedia(el) {
+  const key = el.dataset.img; const img = key && SITE.images[key];
+  el.querySelectorAll(':scope > img, :scope > svg.scene, :scope > .illus, :scope > .photo-note').forEach(n => n.remove());
+  el.classList.toggle('photo', !!img);
+  if (img) {
+    const o = typeof img === 'string' ? { src: img } : img;
+    const i = new Image();
+    const hero = !!el.closest('.hero');
+    if (o.srcset) { i.srcset = o.srcset; i.sizes = el.dataset.sizes || '100vw'; }
+    i.src = o.src; i.width = 1672; i.height = 941;
+    i.alt = el.dataset.alt || ''; i.loading = hero ? 'eager' : 'lazy'; i.decoding = 'async';
+    if (hero) i.fetchPriority = 'high';
+    if (o.position) el.style.setProperty('--pos', o.position); else el.style.removeProperty('--pos');
+    if (o.mobile) el.style.setProperty('--pos-m', o.mobile); else el.style.removeProperty('--pos-m');
+    if (o.zoom) i.style.scale = o.zoom;
+    el.prepend(i);
+    if (o.note) { const t = document.createElement('span'); t.className = 'photo-note'; t.textContent = o.note; el.append(t); }
+  } else {
+    Scenes.paint(el);
+    if (!el.querySelector('.pending')) { const t = document.createElement('span'); t.className = 'illus'; t.textContent = 'Illustration'; el.append(t); }
+  }
+}
+
+/* ---------- Config-driven fields ---------- */
+const get = (path) => path.split('.').reduce((o, k) => (o == null ? o : o[k]), SITE);
+function renderFields() {
+  const prod = SITE.mode === 'prod';
+  document.body.classList.toggle('prod', prod);
+  document.querySelectorAll('[data-f]').forEach(el => {
+    const v = get(el.dataset.f);
+    if (v != null && v !== '') { el.textContent = v; el.className = el.className.replace(/\bph\b/g, '').trim(); }
+    else { el.textContent = '[' + (el.dataset.ph || 'To confirm') + ']'; el.classList.add('ph'); }
+  });
+  document.querySelectorAll('[data-needs]').forEach(el => {
+    const missing = el.dataset.needs.split(' ').some(p => { const v = get(p); return v == null || v === ''; });
+    el.hidden = prod && missing;
+  });
+  renderInventory();
+}
+
+/* ---------- Inventory ---------- */
+function renderInventory() {
+  const box = document.getElementById('inventory');
+  const prod = SITE.mode === 'prod';
+  const real = SITE.inventory.filter(v => v.title && v.price && v.photo);
+  const list = prod ? real : SITE.inventory;
+  const cams = ['suv', 'sedan', 'pickup'];
+  if (!list.length) {
+    box.innerHTML = `<div class="inv-empty"><h3>New arrivals are on the way.</h3><p>Tell us what you're looking for, the budget and the timing, and we'll let you know when a match comes in, or source one for you.</p><a class="btn btn-navy" href="#contact" data-service="buy">Tell us what you need <span class="ar" aria-hidden="true">→</span></a></div>`;
+    return;
+  }
+  const ph = (v, label) => v ? escapeHTML(v) : `<span class="ph">[${label}]</span>`;
+  box.innerHTML = list.map((v, i) => `
+    <article class="unit">
+      <div class="media" ${v.photo ? '' : ''}>
+        ${v.photo ? `<img src="${escapeHTML(v.photo)}" alt="${escapeHTML(v.title || 'Vehicle for sale')}" loading="lazy" decoding="async">` :
+        `<div class="pending"><div><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="1"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-5-8 8"/></svg>Vehicle photo pending<br><small>Real photos only. No stand-ins for inventory.</small></div></div>`}
+        <span class="status">${v.status ? escapeHTML(v.status) : 'Availability TBC'}</span>
+      </div>
+      <div class="unit-body">
+        <h3>${ph(v.title, 'Year Make Model')}</h3>
+        <dl class="spec">
+          <div><dt>Mileage</dt><dd>${ph(v.mileage, 'Mileage')}</dd></div>
+          <div><dt>Transmission</dt><dd>${ph(v.transmission, 'Auto or Manual')}</dd></div>
+          <div><dt>Fuel</dt><dd>${ph(v.fuel, 'Fuel type')}</dd></div>
+          <div><dt>Year</dt><dd>${ph(v.year, 'Year')}</dd></div>
+        </dl>
+        <div class="unit-foot"><span class="price">EC$ ${ph(v.price, 'Price')}</span><a class="btn btn-line" href="#contact" data-service="buy" data-vehicle="${escapeHTML(v.title || 'Vehicle ' + (i + 1))}">Enquire</a></div>
+      </div>
+    </article>`).join('');
+}
+function escapeHTML(s) { return String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c])); }
+
+/* ---------- Fleet selector ---------- */
+const FLEET = {
+  eco:  { name: 'Economy and Compact', short: 'Economy', car: 'sedan',  desc: 'Easy on gas, easy to park. Great for getting around town.', seats: '4 to 5', best: 'Town and short trips', hl: 'Fuel saver, city friendly' },
+  suv:  { name: 'SUVs', short: 'SUV', car: 'suv', desc: 'Room for the family, the luggage and the hills.', seats: '5 to 7', best: 'Families and hill roads', hl: 'Higher clearance, big trunk' },
+  pick: { name: 'Pickups and Vans', short: 'Pickup or Van', car: 'pickup', desc: 'For moving, hauling and getting the job done.', seats: 'Varies', best: 'Moving day and work', hl: 'Open bed, work ready' }
+};
+function showFleet(k, focus) {
+  const d = FLEET[k];
+  const tabs = [...document.querySelectorAll('.tabs [role=tab]')];
+  const apply = () => {
+    tabs.forEach(t => { const on = t.dataset.k === k; t.setAttribute('aria-selected', on); t.tabIndex = on ? 0 : -1; if (on && focus) t.focus(); });
+    document.getElementById('fleet-panel').setAttribute('aria-labelledby', 'tab-' + k);
+    const m = document.getElementById('fleet-media');
+    m.dataset.img = 'fleet_' + k; m.dataset.car = d.car; m.dataset.alt = d.name; renderMedia(m);
+    document.getElementById('fp-title').textContent = d.name;
+    document.getElementById('fp-desc').textContent = d.desc;
+    document.getElementById('fp-seats').textContent = d.seats;
+    document.getElementById('fp-best').textContent = d.best;
+    document.getElementById('fp-hl').textContent = d.hl;
+    document.getElementById('fp-rate').dataset.f = `rental.${k}.rate`;
+    document.getElementById('fp-avail').dataset.f = `rental.${k}.availability`;
+    const b = document.getElementById('fp-book'); b.dataset.category = d.name; b.firstChild.textContent = `Book ${/^[AEIOU]/.test(d.short) ? 'an' : 'a'} ${d.short} `;
+    renderFields();
+  };
+  if (document.startViewTransition && !matchMedia('(prefers-reduced-motion: reduce)').matches) document.startViewTransition(apply); else apply();
+}
+
+/* ---------- Quote form ---------- */
+const SVC_FIELDS = {
+  customs: { hint: 'About your shipment', fields: [
+    ['select', 'c-type', 'What are you clearing?', ['Barrel or personal effects', 'Commercial cargo', 'Vehicle', 'Other']],
+    ['input', 'c-arrival', 'Expected arrival', 'date', true],
+    ['input', 'c-ref', 'Bill of lading or airway bill no.', 'text', true, 'If you have it'],
+    ['textarea', 'c-details', 'What\'s in the shipment?', 'A short description helps us estimate duty.'] ] },
+  import: { hint: 'About the vehicle', fields: [
+    ['input', 'i-link', 'Link to the listing', 'url', false, 'https://'],
+    ['input', 'i-country', 'Where is it now?', 'text', true, 'e.g. USA, Japan, UK'],
+    ['select', 'i-stage', 'Where are you in the process?', ['Still looking', 'Found one, not bought', 'Bought, needs shipping', 'Already shipped']],
+    ['textarea', 'i-details', 'Anything else?', 'Year, make, model, budget or timing.'] ] },
+  rental: { hint: 'About your rental', fields: [
+    ['select', 'r-cat', 'Vehicle type', ['Economy and Compact', 'SUVs', 'Pickups and Vans']],
+    ['input', 'r-from', 'Pick-up date', 'date', true],
+    ['input', 'r-to', 'Return date', 'date', true],
+    ['textarea', 'r-details', 'Anything else?', 'Pick-up location, flight time, or special requests.'] ] },
+  buy: { hint: 'What you\'re looking for', fields: [
+    ['input', 'b-vehicle', 'Vehicle of interest', 'text', true, 'A listed vehicle, or the type you want'],
+    ['input', 'b-budget', 'Budget (EC$)', 'text', true, 'Optional'],
+    ['textarea', 'b-details', 'Anything else?', 'Timing, trade-in, or questions.'] ] },
+  other: { hint: 'Your question', fields: [ ['textarea', 'o-details', 'How can we help?', 'Tell us a little about what you need.'] ] }
+};
+function renderSvcFields(svc, preset = {}) {
+  const box = document.getElementById('svc-fields');
+  const cfg = SVC_FIELDS[svc];
+  box.innerHTML = `<span class="hint">${cfg.hint}</span>` + cfg.fields.map(([t, id, label, a, half, ph]) => {
+    const opt = (t === 'input' && half && ph === 'Optional') || id.endsWith('ref') ? ' <span class="opt">(optional)</span>' : '';
+    const cls = (t === 'input' && half) ? 'f half' : 'f';
+    if (t === 'select') return `<div class="f"><label for="${id}">${label}</label><select id="${id}" name="${id}">${a.map(o => `<option${preset[id] === o ? ' selected' : ''}>${o}</option>`).join('')}</select></div>`;
+    if (t === 'textarea') return `<div class="f"><label for="${id}">${label} <span class="opt">(optional)</span></label><textarea id="${id}" name="${id}" placeholder="${a}">${preset[id] ? escapeHTML(preset[id]) : ''}</textarea></div>`;
+    return `<div class="${cls}"><label for="${id}">${label}${opt}</label><input id="${id}" name="${id}" type="${a}"${ph && ph !== 'Optional' ? ` placeholder="${ph}"` : ''}${preset[id] ? ` value="${escapeHTML(preset[id])}"` : ''}></div>`;
+  }).join('');
+}
+function selectService(svc, preset) {
+  const r = document.getElementById('sv-' + svc); if (r) r.checked = true;
+  renderSvcFields(svc, preset);
+}
+function setupForm() {
+  const f = document.getElementById('qf'), note = document.getElementById('q-notice');
+  f.addEventListener('change', e => { if (e.target.name === 'service') renderSvcFields(e.target.value); });
+  renderSvcFields('customs');
+  f.addEventListener('submit', async e => {
+    e.preventDefault();
+    const name = f.elements.name, phone = f.elements.phone;
+    [name, phone].forEach(i => i.setAttribute('aria-invalid', !i.value.trim()));
+    note.hidden = false;
+    if (!name.value.trim() || !phone.value.trim()) {
+      note.className = 'notice err';
+      note.textContent = 'Please add your name and a phone or WhatsApp number so we can reach you.';
+      (!name.value.trim() ? name : phone).focus(); return;
+    }
+    const data = Object.fromEntries(new FormData(f).entries());
+    if (!SITE.formEndpoint) {
+      note.className = 'notice';
+      note.innerHTML = '<b>Not sent.</b> This form isn\'t connected to an inbox yet, so your request has not gone anywhere. ' +
+        (SITE.phone ? 'Please call or WhatsApp us on ' + escapeHTML(SITE.phone) + ' instead.' : 'Please contact E&amp;D directly for now.') +
+        ' <span class="devonly"><br><small>Developer: set <code>SITE.formEndpoint</code> to enable sending.</small></span>';
+      return;
+    }
+    const btn = document.getElementById('q-submit'); btn.disabled = true;
+    try {
+      const res = await fetch(SITE.formEndpoint, { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' }, body: JSON.stringify(data) });
+      if (!res.ok) throw new Error(res.status);
+      note.className = 'notice ok'; note.textContent = 'Thanks, ' + name.value.trim().split(' ')[0] + '. Your request has been sent. We\'ll be in touch soon.'; f.reset(); selectService('customs');
+    } catch (err) {
+      note.className = 'notice err'; note.textContent = 'Something went wrong and your request was not sent. Please try again, or contact us directly.';
+    } finally { btn.disabled = false; }
+  });
+  // Any [data-service] link pre-selects the form
+  document.addEventListener('click', e => {
+    const a = e.target.closest('a[data-service]'); if (!a) return;
+    const preset = {};
+    if (a.dataset.category) preset['r-cat'] = a.dataset.category;
+    if (a.dataset.vehicle) preset['b-vehicle'] = a.dataset.vehicle;
+    selectService(a.dataset.service, preset);
+  });
+}
+
+/* ---------- Checklist ---------- */
+function setupChecklist() {
+  const rows = [...document.querySelectorAll('.doc-row')];
+  let saved = {}; try { saved = JSON.parse(localStorage.getItem('ed-docs') || '{}'); } catch (e) {}
+  const update = () => {
+    const req = rows.slice(0, 4), done = rows.filter(r => r.getAttribute('aria-pressed') === 'true').length;
+    document.getElementById('doc-count').textContent = `${done} of ${rows.length} ready`;
+    document.getElementById('doc-meter').style.width = (done / rows.length * 100) + '%';
+    rows.forEach(r => { const s = r.querySelector('small'); s.textContent = r.getAttribute('aria-pressed') === 'true' ? 'Ready' : (r.id === 'doc-veh' ? 'If importing a vehicle' : 'Needed'); });
+    try { localStorage.setItem('ed-docs', JSON.stringify(Object.fromEntries(rows.map(r => [r.id, r.getAttribute('aria-pressed') === 'true'])))); } catch (e) {}
+  };
+  rows.forEach(r => { if (saved[r.id]) r.setAttribute('aria-pressed', 'true'); r.addEventListener('click', () => { r.setAttribute('aria-pressed', r.getAttribute('aria-pressed') !== 'true'); update(); }); });
+  update();
+}
+
+/* ---------- Nav ---------- */
+function setupNav() {
+  const b = document.getElementById('burger'), m = document.getElementById('mnav');
+  const set = open => { b.setAttribute('aria-expanded', open); m.hidden = !open; };
+  b.addEventListener('click', () => set(b.getAttribute('aria-expanded') !== 'true'));
+  m.addEventListener('click', e => { if (e.target.closest('a')) set(false); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && !m.hidden) { set(false); b.focus(); } });
+  matchMedia('(min-width: 1021px)').addEventListener('change', e => { if (e.matches) set(false); });
+}
+
+/* ---------- Dev mode toggle ---------- */
+function setupDev() {
+  document.querySelectorAll('#devbar [data-mode]').forEach(btn => btn.addEventListener('click', () => {
+    SITE.mode = btn.dataset.mode;
+    document.querySelectorAll('#devbar [data-mode]').forEach(x => x.setAttribute('aria-pressed', x === btn));
+    renderFields();
+    document.getElementById('devbar').style.display = 'block';
+  }));
+}
+
+/* ---------- Boot ---------- */
+document.querySelectorAll('.media[data-img], .media[data-scene]').forEach(renderMedia);
+renderFields();
+setupNav(); setupForm(); setupChecklist(); setupDev();
+document.querySelectorAll('.tabs [role=tab]').forEach(t => t.addEventListener('click', () => showFleet(t.dataset.k)));
+document.querySelector('.tabs').addEventListener('keydown', e => {
+  const order = ['eco', 'suv', 'pick']; const cur = order.indexOf(document.querySelector('.tabs [aria-selected=true]').dataset.k);
+  if (e.key === 'ArrowRight') showFleet(order[(cur + 1) % 3], true);
+  if (e.key === 'ArrowLeft') showFleet(order[(cur + 2) % 3], true);
+});
+let rz; addEventListener('resize', () => { clearTimeout(rz); rz = setTimeout(() => document.querySelectorAll('.media').forEach(m => { if (m.querySelector(':scope > svg.scene')) Scenes.paint(m); }), 200); });
+</script>
+
+</body>
+</html>
