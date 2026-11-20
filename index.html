@@ -688,16 +688,16 @@ footer { background: var(--navy); color: var(--on-navy-2); }
                 <div><dt>Seats</dt><dd id="fp-seats">4 to 5</dd></div>
                 <div><dt>Best for</dt><dd id="fp-best">Town and short trips</dd></div>
                 <div><dt>Highlights</dt><dd id="fp-hl">Fuel saver</dd></div>
-                <div><dt>Availability</dt><dd><span data-f="rental.eco.availability" data-ph="Availability" id="fp-avail"></span></dd></div>
+                <div><dt>Availability</dt><dd><span data-f="rental.eco.availability" data-ph="Availability" data-fallback="Ask us" id="fp-avail"></span></dd></div>
               </dl>
-              <div class="rate"><span class="from">From</span><span class="amt">EC$ <span data-f="rental.eco.rate" data-ph="Rate" id="fp-rate"></span></span><span class="per">per day</span></div>
+              <div class="rate" data-rate><span class="from">From</span><span class="amt">EC$ <span data-f="rental.eco.rate" data-ph="Rate" id="fp-rate"></span></span><span class="per">per day</span></div>
               <a class="btn btn-amber" id="fp-book" href="#contact" data-service="rental" data-category="Economy and Compact">Book an Economy car <span class="ar" aria-hidden="true">→</span></a>
             </div>
           </div>
           <dl class="terms">
             <div><dt>To rent</dt><dd>Valid driver's license</dd></div>
-            <div><dt>Minimum age</dt><dd><span data-f="rental.minAge" data-ph="Age"></span></dd></div>
-            <div><dt>Deposit</dt><dd>EC$ <span data-f="rental.deposit" data-ph="Amount"></span></dd></div>
+            <div><dt>Minimum age</dt><dd><span data-f="rental.minAge" data-ph="Age" data-fallback="Ask us"></span></dd></div>
+            <div><dt>Deposit</dt><dd><span data-f="rental.deposit" data-ph="Amount" data-prefix="EC$ " data-fallback="Ask us"></span></dd></div>
             <div><dt>Longer stays</dt><dd>Weekly and monthly rates on request</dd></div>
           </dl>
         </div>
@@ -836,7 +836,7 @@ footer { background: var(--navy); color: var(--on-navy-2); }
    ========================================================= */
 function photo(name, o = {}) { return { src: `img/${name}-1672.webp`, srcset: `img/${name}-960.webp 960w, img/${name}-1672.webp 1672w`, ...o }; }
 const SITE = {
-  mode: 'draft',              // 'draft' | 'prod'
+  mode: 'prod',               // 'draft' shows placeholders and the review bar; 'prod' is the public site
   formEndpoint: null,         // e.g. 'https://formspree.io/f/xxxx' — the quote form will not send until this is set
   phone: '+1 (473) 422-6198', whatsapp: '14734226198', email: null, address: null, parish: null, hours: null,
   owner: 'Tiffany Miller', license: null, years: null,
@@ -1066,9 +1066,17 @@ function renderFields() {
       if (el.dataset.f === 'phone') {
         const tel = '+' + String(v).replace(/\D/g, '');
         el.innerHTML = `<a href="tel:${tel}">${escapeHTML(v)}</a>` + (SITE.whatsapp ? ` · <a href="https://wa.me/${SITE.whatsapp}" target="_blank" rel="noopener">Message on WhatsApp</a>` : '');
-      } else el.textContent = v;
+      } else el.textContent = (el.dataset.prefix || '') + v;
+      const r = el.closest('[data-rate]'); if (r) r.hidden = false;
     }
-    else { el.textContent = '[' + (el.dataset.ph || 'To confirm') + ']'; el.classList.add('ph'); }
+    else if (prod) {
+      // Public view: never show bracketed placeholders
+      el.classList.remove('ph');
+      const r = el.closest('[data-rate]');
+      if (r) { r.hidden = true; el.textContent = ''; }
+      else el.textContent = el.dataset.fallback || 'Ask us';
+    }
+    else { el.textContent = (el.dataset.prefix || '') + '[' + (el.dataset.ph || 'To confirm') + ']'; el.classList.add('ph'); const r = el.closest('[data-rate]'); if (r) r.hidden = false; }
   });
   document.querySelectorAll('[data-needs]').forEach(el => {
     const missing = el.dataset.needs.split(' ').some(p => { const v = get(p); return v == null || v === ''; });
