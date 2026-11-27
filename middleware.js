@@ -1,50 +1,106 @@
-// Password-protects everything under /staff (the hidden staff pages).
-// The username and password are NOT stored here. Set them in Vercel:
-//   Project → Settings → Environment Variables
-//     STAFF_USER      (optional, defaults to "staff")
-//     STAFF_PASSWORD  (required; until it is set, /staff stays locked)
-// Then redeploy so the new values take effect.
+// Locks everything under /staff behind a branded sign-in page.
+//
+// Only one-way hashes of the password live here, never the password itself.
+// To change the password, ask Claude to reset it: it regenerates SALT,
+// LOGIN_HASH and COOKIE_CHECK below. Nothing needs to be set in Vercel.
 import { next } from '@vercel/functions';
 
-export const config = {
-  matcher: ['/staff', '/staff/:path*'],
-};
+export const config = { matcher: ['/staff', '/staff/:path*'] };
+
+const SALT = '6e2027580f330f7be4f70299a970dabe';
+const ITERATIONS = 150000;
+const LOGIN_HASH = 'dca0ec64b96315e4008e771968a73964aa03248f01833844a9c2564438565670';
+const COOKIE_CHECK = '1bce632ea70cca0edd8fed041c92bab0eb0772712fe15a400d8e0de9dc2aead5';
+const COOKIE = 'ed_staff';
+const MAX_AGE = 60 * 60 * 24 * 30; // stay signed in for 30 days on that device
+
+const hex = (buf) => [...new Uint8Array(buf)].map((b) => b.toString(16).padStart(2, '0')).join('');
+const bytes = (h) => new Uint8Array(h.match(/../g).map((x) => parseInt(x, 16)));
+
+async function pbkdf2(password, label) {
+  const key = await crypto.subtle.importKey('raw', new TextEncoder().encode(password), 'PBKDF2', false, ['deriveBits']);
+  const salt = new Uint8Array([...bytes(SALT), ...new TextEncoder().encode(label)]);
+  return hex(await crypto.subtle.deriveBits({ name: 'PBKDF2', hash: 'SHA-256', salt, iterations: ITERATIONS }, key, 256));
+}
+const sha256 = async (s) => hex(await crypto.subtle.digest('SHA-256', new TextEncoder().encode(s)));
 
 function same(a, b) {
-  // Compare without stopping at the first different character.
-  if (typeof a !== 'string' || typeof b !== 'string') return false;
-  let diff = a.length ^ b.length;
-  for (let i = 0; i < Math.max(a.length, b.length); i++) {
-    diff |= (a.charCodeAt(i) || 0) ^ (b.charCodeAt(i) || 0);
-  }
-  return diff === 0;
+  if (typeof a !== 'string' || typeof b !== 'string' || a.length !== b.length) return false;
+  let d = 0;
+  for (let i = 0; i < a.length; i++) d |= a.charCodeAt(i) ^ b.charCodeAt(i);
+  return d === 0;
 }
 
-const locked = (msg) =>
-  new Response(msg, {
-    status: 401,
-    headers: {
-      'WWW-Authenticate': 'Basic realm="E&D Brokerage staff", charset="UTF-8"',
-      'Cache-Control': 'no-store',
-      'X-Robots-Tag': 'noindex, nofollow',
-      'Content-Type': 'text/plain; charset=utf-8',
-    },
-  });
+function readCookie(request) {
+  const raw = request.headers.get('cookie') || '';
+  const m = raw.match(/(?:^|;\s*)ed_staff=([a-f0-9]{64})/);
+  return m ? m[1] : '';
+}
 
-export default function middleware(request) {
-  const user = process.env.STAFF_USER || 'staff';
-  const pass = process.env.STAFF_PASSWORD;
-  if (!pass) return locked('The staff area is locked until a password is set in Vercel (STAFF_PASSWORD).');
+const SECURE = { 'Cache-Control': 'no-store', 'X-Robots-Tag': 'noindex, nofollow' };
 
-  const header = request.headers.get('authorization') || '';
-  const [scheme, encoded] = header.split(' ');
-  if (scheme === 'Basic' && encoded) {
-    let decoded = '';
-    try { decoded = atob(encoded); } catch (e) { decoded = ''; }
-    const i = decoded.indexOf(':');
-    if (i > -1 && same(decoded.slice(0, i), user) && same(decoded.slice(i + 1), pass)) {
-      return next({ headers: { 'Cache-Control': 'no-store', 'X-Robots-Tag': 'noindex, nofollow' } });
-    }
+function page(error, status) {
+  const html = `<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#081C2C"><title>E&amp;D Staff sign in</title>
+<style>
+*{box-sizing:border-box}body{margin:0;min-height:100vh;display:grid;place-items:center;background:#081C2C;color:#F6F5F0;font:400 1rem/1.5 "Inter","Segoe UI",system-ui,-apple-system,sans-serif;padding:24px 16px}
+.card{width:100%;max-width:400px;background:#F6F5F0;color:#0b1a26;padding:32px 28px;border-top:4px solid #E9AD34}
+.brand{display:flex;align-items:center;gap:12px;margin-bottom:24px}.mark{width:40px;height:40px;display:grid;place-items:center;background:#E9AD34;color:#081C2C;font-weight:800}
+.brand b{display:block;font-size:1.05rem}.brand small{color:#6a7680;font-size:.75rem;letter-spacing:.12em;text-transform:uppercase}
+h1{font-size:1.5rem;margin:0 0 6px;letter-spacing:-.02em}p{margin:0 0 20px;color:#3c4b57;font-size:.95rem}
+label{display:block;font-weight:600;font-size:.88rem;margin-bottom:6px}
+.pw{display:flex}input{flex:1;font:inherit;font-size:1rem;padding:13px 12px;border:1px solid #dedbd1;border-bottom:1.5px solid #3c4b57;background:#fff;min-width:0;border-radius:0}
+input:focus{outline:none;border-color:#245361;box-shadow:0 0 0 3px rgba(36,83,97,.2)}
+.show{border:1px solid #dedbd1;border-left:0;background:#fff;padding:0 14px;font:600 .85rem/1 inherit;color:#245361;cursor:pointer}
+.go{width:100%;margin-top:16px;padding:14px;font:600 1rem/1 inherit;background:#E9AD34;color:#081C2C;border:0;cursor:pointer}
+button:focus-visible,input:focus-visible{outline:3px solid #E9AD34;outline-offset:2px}
+.err{background:#fbe9e7;border-left:3px solid #b3261e;padding:10px 12px;font-size:.9rem;margin-bottom:16px}
+.back{display:block;margin-top:18px;text-align:center;color:#245361;font-size:.88rem}
+</style></head><body><main class="card">
+<div class="brand"><span class="mark">E&amp;D</span><div><b>E&amp;D Brokerage</b><small>Staff area</small></div></div>
+<h1>Staff sign in</h1><p>Enter the staff password to open the rental agreement and other staff tools.</p>
+${error ? '<div class="err" role="alert">' + error + '</div>' : ''}
+<form method="post"><label for="pw">Password</label>
+<div class="pw"><input id="pw" name="password" type="password" autocomplete="current-password" autocapitalize="none" autocorrect="off" spellcheck="false" required autofocus>
+<button type="button" class="show" onclick="var i=document.getElementById('pw');i.type=i.type==='password'?'text':'password';this.textContent=i.type==='password'?'Show':'Hide'">Show</button></div>
+<button type="submit" class="go">Sign in</button></form>
+<a class="back" href="/">Back to the E&amp;D website</a></main></body></html>`;
+  return new Response(html, { status, headers: { ...SECURE, 'Content-Type': 'text/html; charset=utf-8' } });
+}
+
+export default async function middleware(request) {
+  const url = new URL(request.url);
+
+  if (url.pathname === '/staff/logout') {
+    return new Response(null, {
+      status: 303,
+      headers: { ...SECURE, Location: '/staff', 'Set-Cookie': COOKIE + '=; Path=/staff; Max-Age=0; HttpOnly; Secure; SameSite=Lax' },
+    });
   }
-  return locked('Staff only. Please sign in.');
+
+  const token = readCookie(request);
+  if (token && same(await sha256(token), COOKIE_CHECK)) {
+    return next({ headers: SECURE });
+  }
+
+  if (request.method === 'POST') {
+    let pw = '';
+    try { pw = String((await request.formData()).get('password') || ''); } catch (e) { pw = ''; }
+    pw = pw.trim();
+    if (pw && same(await pbkdf2(pw, 'login'), LOGIN_HASH)) {
+      const cookie = await pbkdf2(pw, 'cookie');
+      return new Response(null, {
+        status: 303,
+        headers: {
+          ...SECURE,
+          Location: url.pathname + url.search,
+          'Set-Cookie': COOKIE + '=' + cookie + '; Path=/staff; Max-Age=' + MAX_AGE + '; HttpOnly; Secure; SameSite=Lax',
+        },
+      });
+    }
+    return page("That password didn't work. Check the capital letters and the dashes, then try again.", 401);
+  }
+
+  return page('', 401);
 }
