@@ -1,0 +1,8 @@
+{
+  "name": "ed-brokerage",
+  "private": true,
+  "description": "E&D Brokerage website. Static pages plus a password check on /staff.",
+  "dependencies": {
+    "@vercel/functions": "3.11.1"
+  }
+}

@@ -306,7 +306,7 @@ input[aria-invalid="true"],select[aria-invalid="true"]{border-color:var(--err);b
   </section>
   </form>
 
-  <p class="legal"><a href="/" style="color:var(--teal);font-weight:600">← Back to the E&amp;D website</a><br><br><b>A note on the legal text.</b> These terms are a practical starting template for a Grenada car rental. Have a Grenada attorney review them, along with your insurance cover, before you use them with customers. Nothing you type here is sent anywhere. The saved file is created on your device.</p>
+  <p class="legal"><a href="/staff" style="color:var(--teal);font-weight:600">← Staff tools</a><br><br><b>A note on the legal text.</b> These terms are a practical starting template for a Grenada car rental. Have a Grenada attorney review them, along with your insurance cover, before you use them with customers. Nothing you type here is sent anywhere. The saved file is created on your device.</p>
 </main>
 
 <script>
@@ -575,7 +575,7 @@ function afterPdf(){
   $("af_sub").value="Your car rental agreement "+$("agNo").textContent;
   $("af_msg").value="Hi "+first+",\n\nThank you for renting with E&D Brokerage. Your signed rental agreement is attached as a PDF for your records.\n\nSafe travels, and remember Grenada drives on the left.\n\nE&D Brokerage, Grenada";
   $("af_status").textContent="Your signed agreement is ready: "+lastPdf.name;
-  $("af_open").hidden=true;$("af_mail").hidden=!MC;$("af_nomail").hidden=!!MC;
+  $("af_open").hidden=true;$("af_mail").hidden=false;$("af_nomail").hidden=!!MC;if(!MC){$("af_send").textContent="Open in my email app"}
   p.scrollIntoView({behavior:"smooth",block:"start"});
   var jobs=[];
   if(AS){jobs.push(AS.upload(lastPdf.blob).then(function(r){if(r&&r.url){lastPdf.url=r.url;var a=$("af_open");a.href=r.url;a.hidden=false}}).catch(function(){}))}
@@ -596,7 +596,7 @@ function afterPdf(){
         sb.onclick=function(){navigator.share({files:[file],title:"Rental agreement "+$("agNo").textContent,text:$("af_msg").value}).catch(function(){})};
       }
     }catch(e){}
-    $("af_nomail").textContent="The signed PDF has been downloaded to this device. Use Share PDF to send it by WhatsApp or email, or attach the downloaded file yourself.";
+    $("af_nomail").textContent="The signed PDF has been saved to this device\u2019s Downloads. Share PDF sends it straight to WhatsApp or email with the file attached.";
   }
   return Promise.all(jobs);
 }
@@ -606,7 +606,12 @@ $("af_send").addEventListener("click",function(){
   st.className="notice";st.hidden=false;
   if(!lastPdf){st.className="notice err";st.textContent="Complete the agreement first.";return}
   if(!okm(to)||(cc&&!okm(cc))){st.className="notice err";st.textContent="Please enter a valid email address.";return}
-  if(!MC){st.className="notice err";st.textContent="Email is not available here. Use the PDF link above instead.";return}
+  if(!MC){
+    var mt="mailto:"+encodeURIComponent(to)+"?subject="+encodeURIComponent($("af_sub").value)+(cc?"&cc="+encodeURIComponent(cc):"")+"&body="+encodeURIComponent($("af_msg").value+"\n\n[Signed agreement attached: "+lastPdf.name+"]");
+    window.location.href=mt;
+    st.className="notice ok";st.textContent="Your email app should open with the message filled in. Attach "+lastPdf.name+" from your Downloads folder before you send it. On a phone, Share PDF attaches it for you.";
+    return;
+  }
   var b=$("af_send");b.disabled=true;b.textContent="Sending...";st.textContent="Sending to "+to+"...";
   toB64(lastPdf.blob).then(function(b64){
     var input={to:[to],subject:$("af_sub").value,body:$("af_msg").value,attachments:[{content:b64,filename:lastPdf.name,mimeType:"application/pdf"}]};
