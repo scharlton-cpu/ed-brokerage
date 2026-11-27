@@ -1,16 +1,17 @@
 // Locks everything under /staff behind a branded sign-in page.
 //
-// Only one-way hashes of the password live here, never the password itself.
-// To change the password, ask Claude to reset it: it regenerates SALT,
-// LOGIN_HASH and COOKIE_CHECK below. Nothing needs to be set in Vercel.
+// Sign in with a user ID and password. Only one-way hashes live here,
+// never the password itself. To change them, ask Claude: it regenerates
+// SALT, LOGIN_HASH and COOKIE_CHECK below. Nothing needs to be set in Vercel.
+// The user ID is not case-sensitive; the password is.
 import { next } from '@vercel/functions';
 
 export const config = { matcher: ['/staff', '/staff/:path*'] };
 
-const SALT = '6e2027580f330f7be4f70299a970dabe';
-const ITERATIONS = 150000;
-const LOGIN_HASH = 'dca0ec64b96315e4008e771968a73964aa03248f01833844a9c2564438565670';
-const COOKIE_CHECK = '1bce632ea70cca0edd8fed041c92bab0eb0772712fe15a400d8e0de9dc2aead5';
+const SALT = '66d9173d44ddec23e53ba1c130c3764e';
+const ITERATIONS = 310000;
+const LOGIN_HASH = 'e896fa324ba1318438dc50728dc86b07d313b001a83e66e8dbcb1d85e5b975a3';
+const COOKIE_CHECK = '8d246c8c7786afe2165461ae30601d9feb79228e8c12026d1b4bac730bf93728';
 const COOKIE = 'ed_staff';
 const MAX_AGE = 60 * 60 * 24 * 30; // stay signed in for 30 days on that device
 
@@ -59,10 +60,12 @@ button:focus-visible,input:focus-visible{outline:3px solid #E9AD34;outline-offse
 .back{display:block;margin-top:18px;text-align:center;color:#245361;font-size:.88rem}
 </style></head><body><main class="card">
 <div class="brand"><span class="mark">E&amp;D</span><div><b>E&amp;D Brokerage</b><small>Staff area</small></div></div>
-<h1>Staff sign in</h1><p>Enter the staff password to open the rental agreement and other staff tools.</p>
+<h1>Staff sign in</h1><p>Sign in to open the rental agreement and other staff tools.</p>
 ${error ? '<div class="err" role="alert">' + error + '</div>' : ''}
-<form method="post"><label for="pw">Password</label>
-<div class="pw"><input id="pw" name="password" type="password" autocomplete="current-password" autocapitalize="none" autocorrect="off" spellcheck="false" required autofocus>
+<form method="post"><label for="uid">User ID</label>
+<input id="uid" name="username" type="text" autocomplete="username" autocapitalize="none" autocorrect="off" spellcheck="false" required autofocus style="width:100%;margin-bottom:14px">
+<label for="pw">Password</label>
+<div class="pw"><input id="pw" name="password" type="password" autocomplete="current-password" autocapitalize="none" autocorrect="off" spellcheck="false" required>
 <button type="button" class="show" onclick="var i=document.getElementById('pw');i.type=i.type==='password'?'text':'password';this.textContent=i.type==='password'?'Show':'Hide'">Show</button></div>
 <button type="submit" class="go">Sign in</button></form>
 <a class="back" href="/">Back to the E&amp;D website</a></main></body></html>`;
@@ -85,11 +88,15 @@ export default async function middleware(request) {
   }
 
   if (request.method === 'POST') {
-    let pw = '';
-    try { pw = String((await request.formData()).get('password') || ''); } catch (e) { pw = ''; }
-    pw = pw.trim();
-    if (pw && same(await pbkdf2(pw, 'login'), LOGIN_HASH)) {
-      const cookie = await pbkdf2(pw, 'cookie');
+    let pw = '', uid = '';
+    try {
+      const f = await request.formData();
+      pw = String(f.get('password') || '');
+      uid = String(f.get('username') || '').trim().toLowerCase();
+    } catch (e) { pw = ''; uid = ''; }
+    const secret = uid + ':' + pw;
+    if (uid && pw && same(await pbkdf2(secret, 'login'), LOGIN_HASH)) {
+      const cookie = await pbkdf2(secret, 'cookie');
       return new Response(null, {
         status: 303,
         headers: {
@@ -99,7 +106,7 @@ export default async function middleware(request) {
         },
       });
     }
-    return page("That password didn't work. Check the capital letters and the dashes, then try again.", 401);
+    return page("That user ID or password didn't work. Check the capital letters and symbols, then try again.", 401);
   }
 
   return page('', 401);
