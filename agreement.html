@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#081C2C">
+<meta name="robots" content="noindex, nofollow">
+<title>E&amp;D Brokerage | Car Rental Agreement</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<style>
+:root{--navy:#081C2C;--navy-2:#0e2a40;--navy-3:#16374f;--amber:#E9AD34;--teal:#245361;--warm:#F6F5F0;--white:#fff;--ink:#0b1a26;--ink-2:#3c4b57;--muted:#6a7680;--line:#dedbd1;--on-navy:#F6F5F0;--on-navy-2:#b7c3cc;--ph:#2f6fe4;--err:#b3261e;
+--fh:"Sora","Segoe UI",system-ui,sans-serif;--fb:"Inter","Segoe UI",system-ui,-apple-system,sans-serif;color-scheme:light}
+*,*::before,*::after{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--warm);color:var(--ink);font:400 1rem/1.6 var(--fb);-webkit-font-smoothing:antialiased;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+h1,h2,h3{font-family:var(--fh);margin:0;line-height:1.08;letter-spacing:-.03em;font-weight:700;text-wrap:balance}
+p{margin:0}
+:focus-visible{outline:3px solid var(--amber);outline-offset:2px}
+.wrap{max-width:980px;margin:0 auto;padding:0 max(16px,env(safe-area-inset-left,0px)) 0 max(16px,env(safe-area-inset-right,0px))}
+@media(min-width:760px){.wrap{padding:0 32px}}
+
+.top{background:var(--navy);color:var(--on-navy);border-bottom:1px solid rgba(246,245,240,.14)}
+.top .wrap{display:flex;align-items:center;gap:.8rem;min-height:68px}
+.mark{width:40px;height:40px;display:grid;place-items:center;background:var(--amber);color:var(--navy);font:800 .95rem/1 var(--fh);letter-spacing:-.04em}
+.bn{font:700 1.05rem/1.1 var(--fh);letter-spacing:-.02em}
+.bn small{display:block;font:500 .68rem/1.3 var(--fb);letter-spacing:.12em;text-transform:uppercase;color:var(--on-navy-2)}
+.top .ag{margin-left:auto;text-align:right;font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:var(--on-navy-2)}
+.top .ag b{display:block;font:600 .9rem var(--fh);letter-spacing:0;color:var(--amber);text-transform:none}
+
+.hero{background:var(--navy);color:var(--on-navy);padding:clamp(2.2rem,6vw,4rem) 0 clamp(2.5rem,6vw,4rem)}
+.eyebrow{font:600 .74rem/1 var(--fb);letter-spacing:.2em;text-transform:uppercase;color:var(--amber);display:inline-flex;gap:.7rem;align-items:center}
+.eyebrow::before{content:"";width:26px;height:1.5px;background:var(--amber)}
+.hero h1{font-size:clamp(2.2rem,6vw,3.8rem);font-weight:800;letter-spacing:-.045em;margin-top:1.1rem}
+.hero h1 span{color:var(--amber)}
+.hero p{margin-top:1rem;max-width:34rem;color:#d5dde3;font-size:1.08rem}
+.hero .mini{display:flex;flex-wrap:wrap;gap:.5rem 1.5rem;margin-top:1.6rem;font-size:.85rem;color:var(--on-navy-2)}
+.hero .mini span::before{content:"";display:inline-block;width:6px;height:6px;background:var(--amber);margin-right:.5rem;vertical-align:middle}
+
+.draft{background:#eef1fb;color:#1d2a55;font-size:.84rem;border-bottom:1.5px dashed var(--ph)}
+.draft .wrap{padding-block:.55rem}
+.draft b{font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ph);margin-right:.5rem}
+
+.steps{display:flex;gap:0;margin:1.5rem 0 0;padding:0;list-style:none;border-bottom:1px solid var(--line);overflow-x:auto}
+.steps a{display:block;white-space:nowrap;padding:.8rem 1rem;text-decoration:none;color:var(--muted);font-weight:600;font-size:.88rem;border-bottom:3px solid transparent}
+.steps a:hover{color:var(--ink);border-color:var(--amber)}
+
+section.card{background:var(--white);border:1px solid var(--line);margin-top:1.25rem;scroll-margin-top:12px}
+.card-h{display:flex;align-items:center;gap:1rem;padding:1.1rem 1.4rem;border-bottom:1px solid var(--line);background:var(--warm)}
+.card-h .n{width:34px;height:34px;display:grid;place-items:center;background:var(--navy);color:var(--on-navy);font:700 .85rem var(--fh);flex:none}
+.card-h h2{font-size:1.25rem;letter-spacing:-.02em}
+.card-h small{margin-left:auto;color:var(--muted);font-size:.8rem;text-align:right}
+.card-b{padding:1.4rem;display:grid;grid-template-columns:1fr 1fr;gap:1.1rem}
+@media(max-width:600px){.card-b{grid-template-columns:1fr}.card-h small{display:none}}
+.f{display:grid;gap:.4rem;min-width:0}
+.f.full{grid-column:1/-1}
+label,.lbl{font-weight:600;font-size:.88rem}
+.opt{font-weight:400;color:var(--muted)}
+input,select,textarea{font:inherit;font-size:1rem;color:var(--ink);background:var(--warm);border:1px solid var(--line);border-bottom:1.5px solid var(--ink-2);border-radius:0;padding:.8rem .85rem;width:100%;min-height:48px}
+input:focus,select:focus,textarea:focus{outline:none;background:#fff;border-color:var(--teal);box-shadow:0 0 0 3px rgba(36,83,97,.18)}
+textarea{min-height:90px;resize:vertical}
+input.ph{border:1.5px dashed var(--ph);background:rgba(47,111,228,.07)}
+input[aria-invalid="true"],select[aria-invalid="true"]{border-color:var(--err);background:#fdf0ee}
+.hint{font-size:.8rem;color:var(--muted)}
+.sub{grid-column:1/-1;font:600 .74rem var(--fb);letter-spacing:.14em;text-transform:uppercase;color:var(--teal);padding-top:.4rem;border-top:1px dashed var(--line)}
+.sub:first-child{border-top:0;padding-top:0}
+
+.sum{grid-column:1/-1;border:1px solid var(--line);background:var(--warm);display:grid;grid-template-columns:repeat(4,1fr)}
+.sum div{padding:.9rem 1rem;border-left:1px solid var(--line)}
+.sum div:first-child{border-left:0}
+.sum dt{font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.sum dd{margin:.15rem 0 0;font:700 1.25rem var(--fh);letter-spacing:-.02em}
+.sum .tot{background:var(--navy);color:var(--on-navy)}
+.sum .tot dt{color:var(--on-navy-2)}
+.sum .tot dd{color:var(--amber)}
+@media(max-width:640px){.sum{grid-template-columns:1fr 1fr}.sum div:nth-child(3){border-left:0}.sum div:nth-child(n+3){border-top:1px solid var(--line)}}
+
+/* condition */
+.diagram{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,320px) 1fr;gap:1.4rem;align-items:start}
+@media(max-width:720px){.diagram{grid-template-columns:1fr}}
+.car{background:var(--warm);border:1px solid var(--line);padding:.6rem;position:relative;touch-action:manipulation}
+.car svg{width:100%;height:auto;display:block;cursor:crosshair}
+.car .tip{position:absolute;left:.7rem;bottom:.5rem;font-size:.72rem;color:var(--muted)}
+.dmg{list-style:none;margin:0;padding:0;display:grid;gap:.5rem}
+.dmg li{display:grid;grid-template-columns:30px 1fr 40px;gap:.6rem;align-items:center}
+.dmg .pin{width:28px;height:28px;border-radius:50%;background:var(--err);color:#fff;display:grid;place-items:center;font:700 .8rem var(--fh)}
+.dmg input{min-height:42px;padding:.5rem .7rem;font-size:.93rem}
+.dmg button{min-height:42px;border:1px solid var(--line);background:#fff;cursor:pointer;font-size:1.1rem;color:var(--ink-2)}
+.dmg-empty{color:var(--muted);font-size:.92rem;border:1px dashed var(--line);padding:1rem}
+.chk{grid-column:1/-1;display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:.5rem}
+.chk label{display:flex;gap:.6rem;align-items:center;font-weight:500;padding:.65rem .8rem;border:1px solid var(--line);background:var(--warm);cursor:pointer;min-height:48px}
+.chk input{width:20px;height:20px;min-height:0;accent-color:var(--teal);flex:none;padding:0}
+
+/* terms */
+.terms{grid-column:1/-1;border:1px solid var(--line);max-height:420px;overflow:auto;padding:1.1rem 1.3rem;background:#fff}
+.terms ol{margin:0;padding:0;list-style:none;counter-reset:t;display:grid;gap:1rem}
+.terms li{counter-increment:t;display:grid;grid-template-columns:2.4rem 1fr;gap:.2rem}
+.terms li::before{content:counter(t,decimal-leading-zero);font:700 .82rem var(--fh);color:var(--teal);padding-top:.2rem}
+.terms h3{font-size:1rem;letter-spacing:-.01em;margin-bottom:.2rem}
+.terms p{font-size:.93rem;color:var(--ink-2)}
+.ack{grid-column:1/-1;display:grid;gap:.5rem}
+.ack label{display:grid;grid-template-columns:24px 1fr;gap:.75rem;align-items:start;font-weight:500;padding:.8rem .9rem;border:1px solid var(--line);background:var(--warm);cursor:pointer}
+.ack input{width:20px;height:20px;min-height:0;accent-color:var(--teal);margin-top:.2rem;padding:0}
+
+/* signatures */
+.sigs{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;gap:1.1rem}
+@media(max-width:700px){.sigs{grid-template-columns:1fr}}
+.sig{display:grid;gap:.5rem;align-content:start}
+.pad{position:relative;border:1.5px solid var(--ink-2);background:#fff;height:170px;touch-action:none}
+.pad canvas{width:100%;height:100%;display:block;touch-action:none;cursor:crosshair}
+.pad .base{position:absolute;left:14px;right:14px;bottom:36px;border-bottom:1px dashed var(--line);pointer-events:none}
+.pad .x{position:absolute;left:16px;bottom:40px;font:700 1rem var(--fh);color:var(--line);pointer-events:none}
+.pad .empty{position:absolute;inset:0;display:grid;place-items:center;color:var(--muted);font-size:.88rem;pointer-events:none}
+.pad.has .empty{display:none}
+.padbar{display:flex;justify-content:space-between;align-items:center;font-size:.8rem;color:var(--muted)}
+.linkbtn{background:none;border:0;color:var(--teal);font:600 .85rem var(--fb);cursor:pointer;text-decoration:underline;padding:.3rem 0;min-height:36px}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.6rem;min-height:50px;padding:.8rem 1.4rem;font:600 .97rem/1 var(--fb);border:1.5px solid transparent;border-radius:4px;cursor:pointer;transition:background .2s}
+.btn-amber{background:var(--amber);color:var(--navy)}
+.btn-amber:hover{background:#f2bd4f}
+.btn-navy{background:var(--navy);color:var(--on-navy)}
+.btn-navy:hover{background:var(--navy-3)}
+.btn-line{border-color:var(--ink);color:var(--ink);background:transparent}
+.btn-line:hover{background:var(--ink);color:var(--warm)}
+.btn[disabled]{opacity:.5;cursor:not-allowed}
+.actions{display:flex;flex-wrap:wrap;gap:.75rem;padding:1.4rem;border-top:1px solid var(--line);background:var(--warm)}
+.notice{margin:1rem 1.4rem 0;padding:.9rem 1.1rem;font-size:.93rem;border-left:3px solid var(--amber);background:#fbf3df}
+.notice.err{border-color:var(--err);background:#fbe9e7}
+.notice.ok{border-color:var(--teal);background:#e5f0f1}
+.legal{margin:1.5rem 0 3rem;font-size:.82rem;color:var(--muted);max-width:44rem}
+.legal b{color:var(--ink)}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <span class="mark" aria-hidden="true">E&amp;D</span>
+    <span class="bn">E&amp;D Brokerage<small>Grenada</small></span>
+    <span class="ag">Agreement no.<b id="agNo">ED-000000-000</b></span>
+  </div>
+</header>
+
+<div class="draft"><div class="wrap"><b>Draft</b><span>Boxes with a <span style="border:1.5px dashed var(--ph);padding:0 .35em;color:var(--ph);font-weight:600">dashed blue edge</span> are E&amp;D's own rates and rules. Fill them in once and they carry into every agreement you sign.</span></div></div>
+
+<div class="hero">
+  <div class="wrap">
+    <span class="eyebrow">Car rental</span>
+    <h1>Vehicle rental agreement. <span>Signed on the spot.</span></h1>
+    <p>Fill it in, walk around the car together, and sign on screen. Both of you get a copy before the keys change hands.</p>
+    <div class="mini"><span>Takes about five minutes</span><span>Mark damage on the car</span><span>Sign with your finger</span></div>
+  </div>
+</div>
+
+<main class="wrap">
+  <ul class="steps" aria-label="Sections">
+    <li><a href="#s1">1 Renter</a></li><li><a href="#s2">2 Vehicle and dates</a></li><li><a href="#s3">3 Condition</a></li><li><a href="#s4">4 Terms</a></li><li><a href="#s5">5 Sign</a></li>
+  </ul>
+
+  <form id="rf" novalidate>
+
+  <section class="card" id="s1" aria-labelledby="h1a">
+    <div class="card-h"><span class="n">1</span><h2 id="h1a">Renter details</h2><small>As shown on the driver's license</small></div>
+    <div class="card-b">
+      <div class="f"><label for="r_name">Full name</label><input id="r_name" autocomplete="name" required></div>
+      <div class="f"><label for="r_dob">Date of birth</label><input id="r_dob" type="date" required></div>
+      <div class="f"><label for="r_phone">Phone or WhatsApp</label><input id="r_phone" inputmode="tel" autocomplete="tel" required></div>
+      <div class="f"><label for="r_email">Email <span class="opt">(optional)</span></label><input id="r_email" type="email" autocomplete="email"></div>
+      <div class="f full"><label for="r_addr">Home address</label><input id="r_addr" autocomplete="street-address" required></div>
+      <div class="f full"><label for="r_stay">Where will you stay in Grenada? <span class="opt">(visitors)</span></label><input id="r_stay" placeholder="Hotel, villa or address"></div>
+      <div class="sub">Driver's license</div>
+      <div class="f"><label for="r_lic">License number</label><input id="r_lic" required></div>
+      <div class="f"><label for="r_licc">Issued in <span class="opt">(country or parish)</span></label><input id="r_licc" required></div>
+      <div class="f"><label for="r_lice">License expiry</label><input id="r_lice" type="date" required></div>
+      <div class="f"><label for="r_permit">Grenada driving permit no. <span class="opt">(visitors)</span></label><input id="r_permit"><span class="hint">Visitors need a local driving permit. Ask us how to get one.</span></div>
+      <div class="f"><label for="r_id">Passport or ID number</label><input id="r_id" required></div>
+      <div class="f"><label for="r_ec">Emergency contact <span class="opt">(name and phone)</span></label><input id="r_ec" required></div>
+      <div class="sub">Additional driver <span style="text-transform:none;letter-spacing:0;font-weight:400;color:var(--muted)">(optional)</span></div>
+      <div class="f"><label for="d_name">Name</label><input id="d_name"></div>
+      <div class="f"><label for="d_lic">License number</label><input id="d_lic"></div>
+    </div>
+  </section>
+
+  <section class="card" id="s2" aria-labelledby="h2a">
+    <div class="card-h"><span class="n">2</span><h2 id="h2a">Vehicle, dates and charges</h2><small>All amounts in EC$</small></div>
+    <div class="card-b">
+      <div class="f"><label for="v_make">Make and model</label><input id="v_make" placeholder="e.g. Suzuki Vitara" required></div>
+      <div class="f"><label for="v_plate">Plate number</label><input id="v_plate" required></div>
+      <div class="f"><label for="v_cat">Category</label>
+        <select id="v_cat"><option>Economy and Compact</option><option>SUV</option><option>Pickup</option><option>Van</option></select></div>
+      <div class="f"><label for="v_col">Colour <span class="opt">(optional)</span></label><input id="v_col"></div>
+      <div class="f"><label for="t_out">Pick up</label><input id="t_out" type="datetime-local" required></div>
+      <div class="f"><label for="t_in">Return by</label><input id="t_in" type="datetime-local" required></div>
+      <div class="f full"><label for="t_loc">Pick up and return location</label><input id="t_loc" value="E&D Brokerage office"></div>
+      <div class="sub">E&amp;D rates and rules</div>
+      <div class="f"><label for="c_rate">Daily rate (EC$)</label><input id="c_rate" class="ph" type="number" min="0" step="0.01" inputmode="decimal" placeholder="Rate"></div>
+      <div class="f"><label for="c_dep">Security deposit (EC$)</label><input id="c_dep" class="ph" type="number" min="0" step="0.01" inputmode="decimal" placeholder="Amount"></div>
+      <div class="f"><label for="c_ext">Extras (EC$) <span class="opt">(child seat, GPS and so on)</span></label><input id="c_ext" type="number" min="0" step="0.01" inputmode="decimal" value="0"></div>
+      <div class="f"><label for="c_late">Late fee per extra hour (EC$)</label><input id="c_late" class="ph" type="number" min="0" step="0.01" inputmode="decimal" placeholder="Amount"></div>
+      <div class="f"><label for="c_km">Daily mileage allowance</label><input id="c_km" class="ph" placeholder="e.g. 150 km, or Unlimited"></div>
+      <div class="f"><label for="c_exc">Damage excess, renter pays up to (EC$)</label><input id="c_exc" class="ph" type="number" min="0" step="0.01" inputmode="decimal" placeholder="Amount"></div>
+      <div class="f"><label for="c_age">Minimum renter age</label><input id="c_age" class="ph" type="number" min="16" inputmode="numeric" placeholder="Age"></div>
+      <div class="f"><label for="c_pay">Payment method</label>
+        <select id="c_pay"><option>Cash</option><option>Card</option><option>Bank transfer</option><option>Mixed</option></select></div>
+      <dl class="sum" aria-live="polite">
+        <div><dt>Rental days</dt><dd id="o_days">0</dd></div>
+        <div><dt>Rental charge</dt><dd id="o_rent">EC$ 0.00</dd></div>
+        <div><dt>Deposit held</dt><dd id="o_dep">EC$ 0.00</dd></div>
+        <div class="tot"><dt>Due at pick up</dt><dd id="o_tot">EC$ 0.00</dd></div>
+      </dl>
+      <p class="hint full" style="grid-column:1/-1">A rental day is each 24 hours from pick up. Part of a day counts as a full day. The deposit is returned after the car is checked in, less anything owed under the terms below.</p>
+    </div>
+  </section>
+
+  <section class="card" id="s3" aria-labelledby="h3a">
+    <div class="card-h"><span class="n">3</span><h2 id="h3a">Condition at pick up</h2><small>Walk around the car together</small></div>
+    <div class="card-b">
+      <div class="f"><label for="k_odo">Odometer (km)</label><input id="k_odo" inputmode="numeric" required></div>
+      <div class="f"><label for="k_fuel">Fuel level</label>
+        <select id="k_fuel"><option>Full</option><option>3/4</option><option>1/2</option><option>1/4</option><option>Empty</option></select></div>
+      <div class="diagram">
+        <div class="car" id="car">
+          <svg viewBox="0 0 200 400" role="img" aria-label="Top view of the car. Tap anywhere on it to mark damage.">
+            <rect x="0" y="0" width="200" height="400" fill="#F6F5F0"/>
+            <g fill="#fff" stroke="#0b1a26" stroke-width="2.5" stroke-linejoin="round">
+              <rect x="22" y="70" width="14" height="46" rx="6" fill="#16374f"/><rect x="164" y="70" width="14" height="46" rx="6" fill="#16374f"/>
+              <rect x="22" y="272" width="14" height="46" rx="6" fill="#16374f"/><rect x="164" y="272" width="14" height="46" rx="6" fill="#16374f"/>
+              <path d="M60 22 Q100 8 140 22 L152 70 L156 120 L156 290 L150 350 Q100 372 50 350 L44 290 L44 120 L48 70 Z"/>
+            </g>
+            <path d="M62 110 Q100 98 138 110 L142 150 L58 150 Z" fill="#cfe0e6" stroke="#0b1a26" stroke-width="2"/>
+            <path d="M58 252 L142 252 L138 296 Q100 308 62 296 Z" fill="#cfe0e6" stroke="#0b1a26" stroke-width="2"/>
+            <rect x="58" y="158" width="84" height="86" rx="6" fill="#fff" stroke="#0b1a26" stroke-width="2"/>
+            <text x="100" y="62" text-anchor="middle" font-family="Sora,sans-serif" font-size="12" font-weight="700" fill="#6a7680">FRONT</text>
+            <text x="100" y="338" text-anchor="middle" font-family="Sora,sans-serif" font-size="12" font-weight="700" fill="#6a7680">REAR</text>
+            <g id="pins"></g>
+          </svg>
+          <span class="tip">Tap the car to drop a marker</span>
+        </div>
+        <div>
+          <p class="lbl" style="margin-bottom:.6rem">Existing damage</p>
+          <ul class="dmg" id="dmgList"></ul>
+        </div>
+      </div>
+      <div class="f full"><span class="lbl">Checked and present</span></div>
+      <div class="chk" id="chk"></div>
+      <div class="f full"><label for="k_notes">Other notes <span class="opt">(optional)</span></label><textarea id="k_notes" placeholder="Anything else worth recording before the keys are handed over"></textarea></div>
+    </div>
+  </section>
+
+  <section class="card" id="s4" aria-labelledby="h4a">
+    <div class="card-h"><span class="n">4</span><h2 id="h4a">Terms and conditions</h2><small>Please read before signing</small></div>
+    <div class="card-b">
+      <div class="terms" tabindex="0" aria-label="Terms and conditions"><ol id="termsList"></ol></div>
+      <div class="ack" id="ack">
+        <label><input type="checkbox" id="a1"><span>I have read and agree to these terms and conditions.</span></label>
+        <label><input type="checkbox" id="a2"><span>The condition notes above match the car I was shown, and I accept the car in that condition.</span></label>
+        <label><input type="checkbox" id="a3"><span>I hold a valid driver's license, and I understand Grenada drives on the left.</span></label>
+      </div>
+    </div>
+  </section>
+
+  <section class="card" id="s5" aria-labelledby="h5a">
+    <div class="card-h"><span class="n">5</span><h2 id="h5a">Sign</h2><small>Use your finger, a stylus or a mouse</small></div>
+    <div class="card-b">
+      <div class="sigs">
+        <div class="sig">
+          <span class="lbl">Renter signature</span>
+          <div class="pad" id="padR"><canvas aria-label="Renter signature pad"></canvas><span class="base"></span><span class="x">X</span><span class="empty">Sign here</span></div>
+          <div class="padbar"><span id="sigRName">Renter</span><button type="button" class="linkbtn" data-clear="R">Clear</button></div>
+        </div>
+        <div class="sig">
+          <span class="lbl">E&amp;D representative</span>
+          <div class="f" style="margin-bottom:.1rem"><input id="e_name" placeholder="Representative name" aria-label="Representative name" required></div>
+          <div class="pad" id="padE"><canvas aria-label="Representative signature pad"></canvas><span class="base"></span><span class="x">X</span><span class="empty">Sign here</span></div>
+          <div class="padbar"><span>E&amp;D Brokerage</span><button type="button" class="linkbtn" data-clear="E">Clear</button></div>
+        </div>
+      </div>
+      <p class="hint" style="grid-column:1/-1">Signed on <b id="signedOn"></b>. By signing, both parties agree this electronic signature has the same effect as signing on paper.</p>
+    </div>
+    <div class="notice" id="note" role="status" hidden></div>
+    <div id="after" hidden style="margin:1rem 1.4rem 0;border:1px solid var(--line);background:var(--warm);padding:1.2rem;display:grid;gap:.9rem" tabindex="-1">
+      <div><span class="eyebrow" style="color:var(--teal)">Agreement complete</span><h3 style="font-size:1.3rem;margin-top:.6rem" id="af_status">Your signed agreement is ready</h3></div>
+      <div style="display:flex;flex-wrap:wrap;gap:.75rem">
+        <a class="btn btn-navy" id="af_open" href="#" target="_blank" rel="noopener" hidden style="text-decoration:none">Open signed PDF</a>
+        <button type="button" class="btn btn-amber" id="af_share" hidden>Share PDF</button>
+      </div>
+      <div id="af_mail" style="display:grid;gap:.8rem" hidden>
+        <p class="lbl">Email the PDF to the customer</p>
+        <div class="f"><label for="af_to">To</label><input id="af_to" type="email" inputmode="email" placeholder="customer@example.com"></div>
+        <div class="f"><label for="af_cc">Copy to <span class="opt">(optional, for your own records)</span></label><input id="af_cc" type="email" inputmode="email"></div>
+        <div class="f"><label for="af_sub">Subject</label><input id="af_sub"></div>
+        <div class="f"><label for="af_msg">Message</label><textarea id="af_msg" style="min-height:130px"></textarea></div>
+        <div><button type="button" class="btn btn-amber" id="af_send">Send PDF by email</button></div>
+        <div class="notice" id="af_res" hidden style="margin:0" role="status"></div>
+      </div>
+      <p class="hint" id="af_nomail" hidden>Email is not available in this view. Open the PDF above to send it yourself.</p>
+    </div>
+    <div class="actions">
+      <button type="submit" class="btn btn-amber" id="goBtn">Complete and save agreement</button>
+      <button type="button" class="btn btn-navy" id="copyBtn">Copy summary</button>
+      <button type="button" class="btn btn-line" id="resetBtn">Start a new agreement</button>
+    </div>
+  </section>
+  </form>
+
+  <p class="legal"><a href="/" style="color:var(--teal);font-weight:600">← Back to the E&amp;D website</a><br><br><b>A note on the legal text.</b> These terms are a practical starting template for a Grenada car rental. Have a Grenada attorney review them, along with your insurance cover, before you use them with customers. Nothing you type here is sent anywhere. The saved file is created on your device.</p>
+</main>
+
+<script>
+(function(){
+"use strict";
+var $=function(id){return document.getElementById(id)};
+function esc(s){return String(s==null?"":s).replace(/[&<>"']/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]})}
+function ls(op,k,v){try{if(op==="g")return localStorage.getItem(k);if(op==="s")localStorage.setItem(k,v);if(op==="r")localStorage.removeItem(k)}catch(e){}return null}
+
+/* terms */
+var TERMS=[
+["The renter and the driver","The renter named above, and any additional driver listed, must hold a valid driver's license for at least the period set by E&D and meet the minimum age shown. Visitors must also hold a Grenada driving permit. Only the renter and the listed additional driver may drive the vehicle."],
+["Rental period and return","The vehicle must be returned to the agreed location by the return time shown, in the same condition as at pick up, allowing for fair wear. Late returns are charged at the late fee per extra hour, and a full day once the delay passes the grace period E&D tells you. To extend a rental, contact E&D before the return time. An extension depends on availability."],
+["Charges and payment","The rental charge, extras and security deposit are shown above and are due at pick up. Fuel, fines, tolls, parking, towing and any other costs created during the rental are the renter's responsibility. E&D may deduct amounts owed from the deposit and will bill the renter for any balance."],
+["Security deposit","The deposit is held as security for the vehicle and for anything owed under this agreement. It is returned after the vehicle is checked in and any charges have been settled. The deposit is not a limit on what the renter may owe."],
+["Permitted use","The vehicle is for personal or business travel on public roads in Grenada only. It may not be taken to another island or country, used for racing, towing, hire or reward, driving instruction, off road or on beaches, or carrying more passengers or load than the vehicle is made for. It may not be sub-rented or lent to anyone."],
+["Safe driving","Grenada drives on the left. The renter will obey all traffic laws, wear seat belts and keep within speed limits. The renter will not drive under the influence of alcohol, drugs or any medication that affects driving, or while using a hand held phone. E&D may end the rental at once if the vehicle is driven unsafely or unlawfully."],
+["Fuel and mileage","The vehicle is released with the fuel level recorded above and should be returned with the same level. Missing fuel is charged at the pump price plus a refuelling fee. Distance beyond the daily mileage allowance may be charged at a rate E&D confirms. Use the correct fuel type."],
+["Care of the vehicle","The renter will lock the vehicle when it is unattended, keep the keys safe, check oil, water and tyre pressure on longer rentals, and not make repairs or changes without E&D's approval. Lost keys, lost documents and damage to the interior, including stains, burns and smoke or pet odour, are charged at cost."],
+["Damage, theft and insurance","The renter is responsible for loss of or damage to the vehicle during the rental, up to the damage excess shown above, unless E&D's insurance policy states otherwise in writing. The renter is responsible in full for damage caused by breach of these terms, including driving under the influence, unauthorised drivers, off road use, and damage to tyres, glass, roof, underbody or interior. Theft is covered only if the keys are returned and a police report is made. Cover for other people or property is subject to E&D's insurance policy, a copy of which is available on request."],
+["Accidents and breakdowns","After any accident, theft or breakdown, the renter will stay safe, call the police where required, call E&D straight away, take photos, collect names of other drivers and witnesses, and not admit fault. A police report is required for any accident or theft. Do not leave the vehicle unattended after an accident unless E&D agrees. E&D will arrange repair or a replacement vehicle when it can, depending on the cause."],
+["Fines, tickets and tolls","The renter pays all traffic fines, parking charges and penalties incurred during the rental. E&D may give the renter's details to the authorities and may charge an admin fee for handling any notice."],
+["Cancellation","If the renter cancels a confirmed booking, E&D will refund payments received, less any cancellation charge E&D told the renter about when booking. E&D may cancel or replace a vehicle for safety or availability reasons and will refund any amount paid for days not provided."],
+["Ending the rental early","E&D may take back the vehicle without notice if the renter breaks these terms, if the vehicle appears abandoned or in danger, or if the renter gives false information. No refund is due for the days not used in that case."],
+["Personal belongings","E&D is not responsible for items left in the vehicle during or after the rental."],
+["Privacy","E&D uses the renter's details only to run this rental, handle claims, fines and legal duties, and will not share them for marketing. E&D may keep a record of this agreement for as long as the law or its insurer requires."],
+["Law and disputes","This agreement is governed by the laws of Grenada. Both sides will try to settle any dispute in good faith first. If that fails, the courts of Grenada have jurisdiction."],
+["Whole agreement","This agreement, with the condition record above, is the whole agreement between the renter and E&D Brokerage. Changes must be in writing and agreed by both sides. If any part is found unenforceable, the rest stays in force."]
+];
+var tl=$("termsList");
+TERMS.forEach(function(t){var li=document.createElement("li");var d=document.createElement("div");var h=document.createElement("h3");h.textContent=t[0];var p=document.createElement("p");p.textContent=t[1];d.appendChild(h);d.appendChild(p);li.appendChild(d);tl.appendChild(li)});
+
+/* checklist */
+var ITEMS=["Spare tyre and jack","Tyres in good order","Lights and indicators work","Air conditioning works","Windscreen free of cracks","Registration and insurance papers","Floor mats and seats clean","Keys handed over (count: 2)"];
+var chk=$("chk");
+ITEMS.forEach(function(t,i){var l=document.createElement("label");var c=document.createElement("input");c.type="checkbox";c.id="ck"+i;c.checked=true;var s=document.createElement("span");s.textContent=t;l.appendChild(c);l.appendChild(s);chk.appendChild(l)});
+
+/* agreement number and date */
+var now=new Date();
+function pad2(n){return(n<10?"0":"")+n}
+var stamp=String(now.getFullYear()).slice(2)+pad2(now.getMonth()+1)+pad2(now.getDate());
+var seq=(parseInt(ls("g","ed_seq")||"0",10)||0)+1;
+function setNo(){$("agNo").textContent="ED-"+stamp+"-"+String(seq).padStart(3,"0")}
+setNo();
+$("signedOn").textContent=now.toLocaleDateString(undefined,{weekday:"long",year:"numeric",month:"long",day:"numeric"});
+
+/* remember E&D's own rates */
+var KEEP=["c_rate","c_dep","c_late","c_km","c_exc","c_age","t_loc","e_name"];
+KEEP.forEach(function(id){var v=ls("g","ed_"+id);if(v!==null&&v!=="")$(id).value=v;$(id).addEventListener("input",function(){ls("s","ed_"+id,$(id).value)})});
+
+/* charges */
+function money(n){return "EC$ "+(isFinite(n)?n:0).toLocaleString(undefined,{minimumFractionDigits:2,maximumFractionDigits:2})}
+function calc(){
+  var out=$("t_out").value,inn=$("t_in").value,rate=parseFloat($("c_rate").value)||0,dep=parseFloat($("c_dep").value)||0,ext=parseFloat($("c_ext").value)||0;
+  var days=0;
+  if(out&&inn){var ms=new Date(inn)-new Date(out);if(ms>0)days=Math.max(1,Math.ceil(ms/86400000-0.0001))}
+  var rent=days*rate+ext;
+  $("o_days").textContent=days;$("o_rent").textContent=money(rent);$("o_dep").textContent=money(dep);$("o_tot").textContent=money(rent+dep);
+  return{days:days,rent:rent,dep:dep,total:rent+dep,rate:rate,ext:ext};
+}
+["t_out","t_in","c_rate","c_dep","c_ext"].forEach(function(id){$(id).addEventListener("input",calc)});
+calc();
+
+/* damage markers */
+var marks=[];
+var NS="http://www.w3.org/2000/svg";
+function drawPins(){
+  var g=$("pins");while(g.firstChild)g.removeChild(g.firstChild);
+  marks.forEach(function(m,i){
+    var c=document.createElementNS(NS,"circle");c.setAttribute("cx",m.x);c.setAttribute("cy",m.y);c.setAttribute("r",11);c.setAttribute("fill","#b3261e");c.setAttribute("stroke","#fff");c.setAttribute("stroke-width","2");
+    var t=document.createElementNS(NS,"text");t.setAttribute("x",m.x);t.setAttribute("y",m.y+4.5);t.setAttribute("text-anchor","middle");t.setAttribute("font-size","12");t.setAttribute("font-weight","700");t.setAttribute("fill","#fff");t.setAttribute("font-family","Sora,sans-serif");t.textContent=String(i+1);
+    g.appendChild(c);g.appendChild(t);
+  });
+  var ul=$("dmgList");ul.innerHTML="";
+  if(!marks.length){var e=document.createElement("li");e.className="dmg-empty";e.style.display="block";e.textContent="No damage marked. If the car is clean and unmarked, leave this empty. Otherwise tap the spot on the car and describe it.";ul.appendChild(e);return}
+  marks.forEach(function(m,i){
+    var li=document.createElement("li");
+    var pin=document.createElement("span");pin.className="pin";pin.textContent=String(i+1);
+    var inp=document.createElement("input");inp.value=m.note;inp.placeholder="Describe it (scratch, dent, chip)";inp.setAttribute("aria-label","Damage "+(i+1)+" description");
+    inp.addEventListener("input",function(){m.note=inp.value});
+    var b=document.createElement("button");b.type="button";b.textContent="×";b.setAttribute("aria-label","Remove marker "+(i+1));
+    b.addEventListener("click",function(){marks.splice(i,1);drawPins()});
+    li.appendChild(pin);li.appendChild(inp);li.appendChild(b);ul.appendChild(li);
+  });
+}
+$("car").querySelector("svg").addEventListener("click",function(ev){
+  var svg=ev.currentTarget,r=svg.getBoundingClientRect();
+  var x=Math.round((ev.clientX-r.left)/r.width*200),y=Math.round((ev.clientY-r.top)/r.height*400);
+  if(marks.length>=12)return;
+  marks.push({x:x,y:y,note:""});drawPins();
+  var ins=$("dmgList").querySelectorAll("input");if(ins.length)ins[ins.length-1].focus();
+});
+drawPins();
+
+/* signature pads */
+function Pad(wrapId){
+  var wrap=$(wrapId),cv=wrap.querySelector("canvas"),ctx=cv.getContext("2d"),drawing=false,last=null,dirty=false;
+  function size(){var r=wrap.getBoundingClientRect(),d=window.devicePixelRatio||1,keep=dirty?cv.toDataURL():null;
+    cv.width=Math.round(r.width*d);cv.height=Math.round(r.height*d);ctx.setTransform(d,0,0,d,0,0);ctx.lineWidth=2.4;ctx.lineCap="round";ctx.lineJoin="round";ctx.strokeStyle="#081C2C";
+    if(keep){var im=new Image();im.onload=function(){ctx.drawImage(im,0,0,r.width,r.height)};im.src=keep}}
+  size();window.addEventListener("resize",size);
+  function pt(e){var r=cv.getBoundingClientRect();return{x:e.clientX-r.left,y:e.clientY-r.top}}
+  cv.addEventListener("pointerdown",function(e){e.preventDefault();drawing=true;last=pt(e);try{cv.setPointerCapture(e.pointerId)}catch(x){}
+    ctx.beginPath();ctx.arc(last.x,last.y,1.2,0,6.3);ctx.fillStyle="#081C2C";ctx.fill();dirty=true;wrap.classList.add("has")});
+  cv.addEventListener("pointermove",function(e){if(!drawing)return;e.preventDefault();var p=pt(e);ctx.beginPath();ctx.moveTo(last.x,last.y);ctx.lineTo(p.x,p.y);ctx.stroke();last=p});
+  function up(){drawing=false}
+  cv.addEventListener("pointerup",up);cv.addEventListener("pointercancel",up);cv.addEventListener("pointerleave",up);
+  return{
+    has:function(){return dirty},
+    ratio:function(){return cv.width/cv.height},
+    clear:function(){var r=wrap.getBoundingClientRect();ctx.clearRect(0,0,r.width,r.height);dirty=false;wrap.classList.remove("has")},
+    data:function(){return dirty?cv.toDataURL("image/png"):""}
+  };
+}
+var padR=Pad("padR"),padE=Pad("padE");
+document.querySelectorAll("[data-clear]").forEach(function(b){b.addEventListener("click",function(){(b.getAttribute("data-clear")==="R"?padR:padE).clear()})});
+$("r_name").addEventListener("input",function(){$("sigRName").textContent=$("r_name").value.trim()||"Renter"});
+
+/* validation */
+var REQ=["r_name","r_dob","r_phone","r_addr","r_lic","r_licc","r_lice","r_id","r_ec","v_make","v_plate","t_out","t_in","k_odo","e_name"];
+function note(msg,kind){var n=$("note");n.hidden=false;n.className="notice "+(kind||"");n.textContent=msg;n.scrollIntoView({behavior:"smooth",block:"center"})}
+function validate(){
+  var bad=[];
+  REQ.forEach(function(id){var el=$(id);var ok=el.value.trim()!=="";el.setAttribute("aria-invalid",ok?"false":"true");if(!ok)bad.push(el)});
+  var msgs=[];
+  if(bad.length)msgs.push("Please complete the highlighted fields.");
+  var out=$("t_out").value,inn=$("t_in").value;
+  if(out&&inn&&new Date(inn)<=new Date(out)){msgs.push("The return time must be after the pick up time.");$("t_in").setAttribute("aria-invalid","true")}
+  var lic=$("r_lice").value;
+  if(lic&&inn&&new Date(lic)<new Date(inn)){msgs.push("The driver's license expires before the return date.")}
+  var dob=$("r_dob").value,min=parseInt($("c_age").value,10);
+  if(dob&&min){var age=(new Date()-new Date(dob))/31557600000;if(age<min)msgs.push("The renter is under the minimum age of "+min+".")}
+  if(!$("a1").checked||!$("a2").checked||!$("a3").checked)msgs.push("Please tick all three confirmations in the terms section.");
+  if(!padR.has())msgs.push("The renter's signature is missing.");
+  if(!padE.has())msgs.push("The E&D representative's signature is missing.");
+  if(msgs.length){note(msgs.join(" "),"err");if(bad.length)bad[0].focus();return false}
+  return true;
+}
+
+/* record builder */
+function val(id){return $(id).value.trim()}
+function fmtDT(v){if(!v)return"";return new Date(v).toLocaleString(undefined,{dateStyle:"medium",timeStyle:"short"})}
+function summaryText(){
+  var c=calc();
+  var L=[];
+  L.push("E&D BROKERAGE, CAR RENTAL AGREEMENT");
+  L.push("Agreement no: "+$("agNo").textContent);
+  L.push("Date: "+now.toLocaleDateString());
+  L.push("");
+  L.push("RENTER: "+val("r_name")+" | "+val("r_phone")+(val("r_email")?" | "+val("r_email"):""));
+  L.push("License: "+val("r_lic")+" ("+val("r_licc")+"), expires "+val("r_lice"));
+  if(val("d_name"))L.push("Additional driver: "+val("d_name")+" | "+val("d_lic"));
+  L.push("");
+  L.push("VEHICLE: "+val("v_make")+" | Plate "+val("v_plate")+" | "+val("v_cat"));
+  L.push("Pick up: "+fmtDT($("t_out").value)+" at "+val("t_loc"));
+  L.push("Return by: "+fmtDT($("t_in").value));
+  L.push("Odometer: "+val("k_odo")+" km | Fuel: "+$("k_fuel").value);
+  L.push("");
+  L.push("CHARGES: "+c.days+" day(s) at "+money(c.rate)+(c.ext?" + extras "+money(c.ext):"")+" = "+money(c.rent));
+  L.push("Deposit: "+money(c.dep)+" | Due at pick up: "+money(c.total));
+  L.push("Damage excess: "+(val("c_exc")?money(parseFloat(val("c_exc"))):"as agreed")+" | Mileage: "+(val("c_km")||"as agreed"));
+  L.push("");
+  L.push("EXISTING DAMAGE: "+(marks.length?marks.map(function(m,i){return(i+1)+") "+(m.note||"marked")}).join("; "):"none noted"));
+  return L.join("\n");
+}
+function recordHTML(){
+  var c=calc();
+  var row=function(a,b){return"<tr><th>"+esc(a)+"</th><td>"+esc(b)+"</td></tr>"};
+  var checks=ITEMS.map(function(t,i){return"<li>"+($("ck"+i).checked?"✓ ":"✗ ")+esc(t)+"</li>"}).join("");
+  var dm=marks.length?marks.map(function(m,i){return"<li>"+(i+1)+". "+esc(m.note||"Marked on diagram")+"</li>"}).join(""):"<li>No existing damage noted</li>";
+  var pins=marks.map(function(m,i){return'<circle cx="'+m.x+'" cy="'+m.y+'" r="11" fill="#b3261e" stroke="#fff" stroke-width="2"/><text x="'+m.x+'" y="'+(m.y+4.5)+'" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">'+(i+1)+"</text>"}).join("");
+  var carSvg=$("car").querySelector("svg").outerHTML.replace(/<g id="pins">.*?<\/g>/s,'<g>'+pins+'</g>');
+  var terms=TERMS.map(function(t,i){return"<li><b>"+esc(t[0])+".</b> "+esc(t[1])+"</li>"}).join("");
+  return'<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>'+esc($("agNo").textContent)+' Rental Agreement</title><style>'+
+  'body{font:15px/1.55 -apple-system,Segoe UI,Arial,sans-serif;color:#0b1a26;max-width:820px;margin:0 auto;padding:28px 20px}h1{font-size:26px;margin:0}h2{font-size:14px;letter-spacing:.12em;text-transform:uppercase;color:#245361;border-bottom:2px solid #E9AD34;padding-bottom:6px;margin:28px 0 10px}'+
+  '.hd{background:#081C2C;color:#F6F5F0;padding:20px 24px;display:flex;justify-content:space-between;align-items:center;gap:16px}.hd b{color:#E9AD34}.m{background:#E9AD34;color:#081C2C;font-weight:800;padding:8px 10px;margin-right:12px}'+
+  'table{width:100%;border-collapse:collapse}th,td{text-align:left;padding:7px 10px;border-bottom:1px solid #dedbd1;vertical-align:top}th{width:34%;color:#6a7680;font-weight:600}'+
+  '.car{width:200px;float:right;margin:0 0 10px 16px}ol{padding-left:20px}li{margin:6px 0}.sg{display:flex;gap:24px;flex-wrap:wrap}.sg div{flex:1;min-width:240px}.sg img{border:1px solid #dedbd1;width:100%;height:auto;background:#fff}.f{font-size:12px;color:#6a7680;margin-top:26px}@media print{body{padding:0}}'+
+  '</style></head><body><div class="hd"><div><span class="m">E&amp;D</span><b>E&amp;D Brokerage</b>, Grenada<h1>Vehicle Rental Agreement</h1></div><div style="text-align:right">Agreement no.<br><b>'+esc($("agNo").textContent)+'</b><br>'+esc(now.toLocaleDateString())+'</div></div>'+
+  '<h2>Renter</h2><table>'+row("Name",val("r_name"))+row("Date of birth",val("r_dob"))+row("Phone",val("r_phone"))+row("Email",val("r_email"))+row("Address",val("r_addr"))+row("Staying at",val("r_stay"))+row("License",val("r_lic")+" ("+val("r_licc")+"), expires "+val("r_lice"))+row("Grenada permit",val("r_permit"))+row("Passport or ID",val("r_id"))+row("Emergency contact",val("r_ec"))+row("Additional driver",val("d_name")?val("d_name")+" | "+val("d_lic"):"None")+'</table>'+
+  '<h2>Vehicle and period</h2><table>'+row("Vehicle",val("v_make")+(val("v_col")?", "+val("v_col"):""))+row("Plate",val("v_plate"))+row("Category",$("v_cat").value)+row("Pick up",fmtDT($("t_out").value))+row("Return by",fmtDT($("t_in").value))+row("Location",val("t_loc"))+'</table>'+
+  '<h2>Charges (EC$)</h2><table>'+row("Rental",c.days+" day(s) at "+money(c.rate))+row("Extras",money(c.ext))+row("Rental charge",money(c.rent))+row("Security deposit",money(c.dep))+row("Due at pick up",money(c.total))+row("Payment method",$("c_pay").value)+row("Late fee per extra hour",val("c_late")?money(parseFloat(val("c_late"))):"As agreed")+row("Mileage allowance",val("c_km")||"As agreed")+row("Damage excess",val("c_exc")?money(parseFloat(val("c_exc"))):"As agreed")+'</table>'+
+  '<h2>Condition at pick up</h2>'+carSvg.replace("<svg",'<svg class="car"')+'<table>'+row("Odometer",val("k_odo")+" km")+row("Fuel level",$("k_fuel").value)+'</table><p><b>Existing damage</b></p><ul>'+dm+'</ul><p><b>Checklist</b></p><ul style="list-style:none;padding:0">'+checks+'</ul>'+(val("k_notes")?'<p><b>Notes:</b> '+esc(val("k_notes"))+'</p>':'')+'<div style="clear:both"></div>'+
+  '<h2>Terms and conditions</h2><ol>'+terms+'</ol>'+
+  '<h2>Signatures</h2><p>The renter confirms they have read and agree to these terms, accept the vehicle in the condition recorded, hold a valid license, and understand Grenada drives on the left.</p><div class="sg"><div><img alt="Renter signature" src="'+padR.data()+'"><p><b>'+esc(val("r_name"))+'</b><br>Renter<br>'+esc(now.toLocaleString())+'</p></div><div><img alt="Representative signature" src="'+padE.data()+'"><p><b>'+esc(val("e_name"))+'</b><br>For E&amp;D Brokerage<br>'+esc(now.toLocaleString())+'</p></div></div>'+
+  '<p class="f">Signed electronically. Generated '+esc(now.toISOString())+'.</p></body></html>';
+}
+
+/* PDF */
+function carPng(){
+  return new Promise(function(res){
+    try{
+      var pins=marks.map(function(m,i){return'<circle cx="'+m.x+'" cy="'+m.y+'" r="11" fill="#b3261e" stroke="#fff" stroke-width="2"/><text x="'+m.x+'" y="'+(m.y+4.5)+'" text-anchor="middle" font-size="12" font-weight="700" fill="#fff" font-family="Arial">'+(i+1)+"</text>"}).join("");
+      var s=$("car").querySelector("svg").outerHTML.replace(/<g id="pins">.*?<\/g>/s,"<g>"+pins+"</g>").replace("<svg",'<svg xmlns="http://www.w3.org/2000/svg" width="400" height="800"');
+      var im=new Image();
+      im.onload=function(){try{var c=document.createElement("canvas");c.width=400;c.height=800;c.getContext("2d").drawImage(im,0,0,400,800);res(c.toDataURL("image/png"))}catch(e){res("")}};
+      im.onerror=function(){res("")};
+      im.src="data:image/svg+xml;charset=utf-8,"+encodeURIComponent(s);
+      setTimeout(function(){res("")},4000);
+    }catch(e){res("")}
+  });
+}
+function buildPDF(){
+  var J=window.jspdf&&window.jspdf.jsPDF;
+  if(!J)return Promise.reject(new Error("pdf library missing"));
+  return carPng().then(function(car){
+    var c=calc(),doc=new J({unit:"pt",format:"letter"}),W=612,H=792,M=44,CW=W-2*M,y=0;
+    function head(){doc.setFillColor(8,28,44);doc.rect(0,0,W,64,"F");doc.setFillColor(233,173,52);doc.rect(M,18,34,28,"F");
+      doc.setTextColor(8,28,44);doc.setFont("helvetica","bold");doc.setFontSize(11);doc.text("E&D",M+17,36,{align:"center"});
+      doc.setTextColor(246,245,240);doc.setFontSize(13);doc.text("E&D Brokerage, Grenada",M+46,29);
+      doc.setFont("helvetica","normal");doc.setFontSize(9);doc.text("Vehicle Rental Agreement",M+46,43);
+      doc.setTextColor(233,173,52);doc.setFont("helvetica","bold");doc.setFontSize(10);doc.text($("agNo").textContent,W-M,29,{align:"right"});
+      doc.setTextColor(183,195,204);doc.setFont("helvetica","normal");doc.setFontSize(9);doc.text(now.toLocaleDateString(),W-M,43,{align:"right"});y=88}
+    function ensure(h){if(y+h>H-50){doc.addPage();head()}}
+    function sect(t){ensure(40);y+=8;doc.setFont("helvetica","bold");doc.setFontSize(10);doc.setTextColor(36,83,97);doc.text(t.toUpperCase(),M,y);doc.setDrawColor(233,173,52);doc.setLineWidth(1.5);doc.line(M,y+5,W-M,y+5);y+=22}
+    function kv(a,b){if(!b)return;var lines=doc.splitTextToSize(String(b),CW-150);ensure(lines.length*13+6);doc.setFont("helvetica","normal");doc.setFontSize(9);doc.setTextColor(106,118,128);doc.text(a,M,y);doc.setFont("helvetica","bold");doc.setFontSize(10);doc.setTextColor(11,26,38);doc.text(lines,M+150,y);y+=lines.length*13+4}
+    function para(t,sz,bold){doc.setFont("helvetica",bold?"bold":"normal");doc.setFontSize(sz||9.5);doc.setTextColor(60,75,87);var l=doc.splitTextToSize(t,CW);ensure(l.length*(sz||9.5)*1.35+4);doc.text(l,M,y);y+=l.length*(sz||9.5)*1.35+4}
+    head();
+    sect("Renter");
+    kv("Name",val("r_name"));kv("Date of birth",val("r_dob"));kv("Phone",val("r_phone"));kv("Email",val("r_email"));kv("Address",val("r_addr"));kv("Staying at",val("r_stay"));
+    kv("License",val("r_lic")+" ("+val("r_licc")+"), expires "+val("r_lice"));kv("Grenada permit",val("r_permit"));kv("Passport or ID",val("r_id"));kv("Emergency contact",val("r_ec"));
+    kv("Additional driver",val("d_name")?val("d_name")+" | "+val("d_lic"):"None");
+    sect("Vehicle and period");
+    kv("Vehicle",val("v_make")+(val("v_col")?", "+val("v_col"):""));kv("Plate",val("v_plate"));kv("Category",$("v_cat").value);kv("Pick up",fmtDT($("t_out").value));kv("Return by",fmtDT($("t_in").value));kv("Location",val("t_loc"));
+    sect("Charges (EC$)");
+    kv("Rental",c.days+" day(s) at "+money(c.rate));kv("Extras",money(c.ext));kv("Rental charge",money(c.rent));kv("Security deposit",money(c.dep));kv("Due at pick up",money(c.total));kv("Payment method",$("c_pay").value);
+    kv("Late fee per extra hour",val("c_late")?money(parseFloat(val("c_late"))):"As agreed");kv("Mileage allowance",val("c_km")||"As agreed");kv("Damage excess",val("c_exc")?money(parseFloat(val("c_exc"))):"As agreed");
+    sect("Condition at pick up");
+    kv("Odometer",val("k_odo")+" km");kv("Fuel level",$("k_fuel").value);
+    var dmg=marks.length?marks.map(function(m,i){return(i+1)+") "+(m.note||"Marked on diagram")}).join("\n"):"No existing damage noted";
+    kv("Existing damage",dmg);
+    kv("Checklist",ITEMS.map(function(t,i){return t+": "+($("ck"+i).checked?"Yes":"No")}).join("\n"));
+    kv("Notes",val("k_notes"));
+    if(car){ensure(250);y+=4;doc.addImage(car,"PNG",M+150,y,110,220);y+=228}
+    sect("Terms and conditions");
+    TERMS.forEach(function(t,i){para((i+1)+". "+t[0],10,true);para(t[1],9.5,false);y+=2});
+    sect("Signatures");
+    para("The renter confirms they have read and agree to these terms, accept the vehicle in the condition recorded, hold a valid license, and understand Grenada drives on the left.",9.5);
+    ensure(150);y+=6;
+    var sw=(CW-24)/2,sh=70;
+    [[padR,val("r_name"),"Renter",M],[padE,val("e_name"),"For E&D Brokerage",M+sw+24]].forEach(function(s){
+      var rt=s[0].ratio();if(!isFinite(rt)||rt<=0)rt=2.5;
+      var w=sw,h=Math.min(sh,w/rt);if(h<sh)w=h*rt;
+      doc.setDrawColor(222,219,209);doc.setLineWidth(1);doc.rect(s[3],y,sw,sh);
+      doc.addImage(s[0].data(),"PNG",s[3]+2,y+(sh-h)/2,w-4,h-0);
+      doc.setFont("helvetica","bold");doc.setFontSize(10);doc.setTextColor(11,26,38);doc.text(s[1],s[3],y+sh+14);
+      doc.setFont("helvetica","normal");doc.setFontSize(9);doc.setTextColor(106,118,128);doc.text(s[2]+" | "+now.toLocaleString(),s[3],y+sh+27)});
+    y+=sh+44;
+    doc.setFontSize(8);doc.setTextColor(106,118,128);doc.text("Signed electronically. Generated "+now.toISOString(),M,Math.min(y,H-30));
+    return doc.output("blob");
+  });
+}
+
+/* actions */
+var dl=null,AS=null,MC=null,lastPdf=null;
+if(window.claude&&claude.use){
+  claude.use("downloads").then(function(d){dl=d||null}).catch(function(){dl=null});
+  claude.use("assets").then(function(a){AS=a||null}).catch(function(){AS=null});
+  claude.use("mcp").then(function(m){MC=m||null}).catch(function(){MC=null});
+}
+function toB64(blob){return new Promise(function(res,rej){var r=new FileReader();r.onload=function(){res(String(r.result).split(",")[1]||"")};r.onerror=rej;r.readAsDataURL(blob)})}
+function afterPdf(){
+  var p=$("after");p.hidden=false;
+  var first=(val("r_name").split(/\s+/)[0])||"there";
+  $("af_to").value=val("r_email");$("af_cc").value="";
+  $("af_sub").value="Your car rental agreement "+$("agNo").textContent;
+  $("af_msg").value="Hi "+first+",\n\nThank you for renting with E&D Brokerage. Your signed rental agreement is attached as a PDF for your records.\n\nSafe travels, and remember Grenada drives on the left.\n\nE&D Brokerage, Grenada";
+  $("af_status").textContent="Your signed agreement is ready: "+lastPdf.name;
+  $("af_open").hidden=true;$("af_mail").hidden=!MC;$("af_nomail").hidden=!!MC;
+  p.scrollIntoView({behavior:"smooth",block:"start"});
+  var jobs=[];
+  if(AS){jobs.push(AS.upload(lastPdf.blob).then(function(r){if(r&&r.url){lastPdf.url=r.url;var a=$("af_open");a.href=r.url;a.hidden=false}}).catch(function(){}))}
+  if(dl){jobs.push(Promise.resolve().then(function(){return dl.save({filename:lastPdf.name,data:lastPdf.blob})}).catch(function(){}))}
+  if(!AS&&!dl){
+    /* Regular website: give the PDF a real link and download it straight away */
+    try{
+      if(lastPdf.url&&lastPdf.url.indexOf("blob:")===0)URL.revokeObjectURL(lastPdf.url);
+      lastPdf.url=URL.createObjectURL(lastPdf.blob);
+      var a=$("af_open");a.href=lastPdf.url;a.setAttribute("download",lastPdf.name);a.textContent="Download signed PDF";a.hidden=false;
+      a.click();
+    }catch(e){}
+    /* Phones: share the PDF to WhatsApp, email and so on */
+    try{
+      var file=new File([lastPdf.blob],lastPdf.name,{type:"application/pdf"});
+      if(navigator.canShare&&navigator.canShare({files:[file]})){
+        var sb=$("af_share");sb.hidden=false;
+        sb.onclick=function(){navigator.share({files:[file],title:"Rental agreement "+$("agNo").textContent,text:$("af_msg").value}).catch(function(){})};
+      }
+    }catch(e){}
+    $("af_nomail").textContent="The signed PDF has been downloaded to this device. Use Share PDF to send it by WhatsApp or email, or attach the downloaded file yourself.";
+  }
+  return Promise.all(jobs);
+}
+$("af_send").addEventListener("click",function(){
+  var to=$("af_to").value.trim(),cc=$("af_cc").value.trim(),st=$("af_res");
+  var okm=function(s){return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(s)};
+  st.className="notice";st.hidden=false;
+  if(!lastPdf){st.className="notice err";st.textContent="Complete the agreement first.";return}
+  if(!okm(to)||(cc&&!okm(cc))){st.className="notice err";st.textContent="Please enter a valid email address.";return}
+  if(!MC){st.className="notice err";st.textContent="Email is not available here. Use the PDF link above instead.";return}
+  var b=$("af_send");b.disabled=true;b.textContent="Sending...";st.textContent="Sending to "+to+"...";
+  toB64(lastPdf.blob).then(function(b64){
+    var input={to:[to],subject:$("af_sub").value,body:$("af_msg").value,attachments:[{content:b64,filename:lastPdf.name,mimeType:"application/pdf"}]};
+    if(cc)input.cc=[cc];
+    return Promise.resolve(MC.server("Gmail")).then(function(s){
+      if(s&&typeof s.send_message==="function")return s.send_message(input);
+      return MC.callTool("Gmail","send_message",input);
+    });
+  }).then(function(){
+    st.className="notice ok";st.textContent="Sent to "+to+(cc?" and "+cc:"")+". A copy is in your Gmail sent folder.";
+  }).catch(function(){
+    st.className="notice err";st.textContent="The email could not be sent from here. Use the PDF link to open it and send it yourself, or tap Copy summary.";
+  }).then(function(){b.disabled=false;b.textContent="Send PDF by email"});
+});
+$("rf").addEventListener("submit",function(e){
+  e.preventDefault();
+  if(!validate())return;
+  var base=$("agNo").textContent+"_"+val("r_name").replace(/[^A-Za-z0-9]+/g,"_");
+  ls("s","ed_seq",String(seq));
+  var btn=$("goBtn");btn.disabled=true;btn.textContent="Creating PDF...";
+  var restore=function(){btn.disabled=false;btn.textContent="Complete and save agreement"};
+  buildPDF().then(function(blob){
+    lastPdf={blob:blob,name:base+".pdf",url:""};
+    return afterPdf();
+  }).catch(function(){
+    note("The PDF could not be made. Your agreement is still on screen. Tap Copy summary to keep the key details, or try again.","err");
+  }).then(restore,restore);
+});
+$("copyBtn").addEventListener("click",function(){
+  var t=summaryText();
+  var ok=function(){note("Summary copied. Paste it into WhatsApp or an email.","ok")};
+  var fail=function(){var ta=document.createElement("textarea");ta.value=t;ta.style.cssText="position:fixed;opacity:0";document.body.appendChild(ta);ta.select();var r=false;try{r=document.execCommand("copy")}catch(x){}document.body.removeChild(ta);if(r)ok();else note("Copy was blocked here. Select the details on screen instead.","err")};
+  try{navigator.clipboard.writeText(t).then(ok,fail)}catch(x){fail()}
+});
+$("resetBtn").addEventListener("click",function(){
+  var keep={};KEEP.forEach(function(id){keep[id]=$(id).value});
+  $("rf").reset();marks=[];drawPins();padR.clear();padE.clear();$("sigRName").textContent="Renter";
+  KEEP.forEach(function(id){$(id).value=keep[id]});
+  document.querySelectorAll("[aria-invalid]").forEach(function(el){el.removeAttribute("aria-invalid")});
+  seq=(parseInt(ls("g","ed_seq")||"0",10)||0)+1;setNo();calc();
+  $("note").hidden=true;$("after").hidden=true;$("af_res").hidden=true;lastPdf=null;window.scrollTo({top:0,behavior:"smooth"});
+});
+})();
+</script>
+</body>
+</html>
